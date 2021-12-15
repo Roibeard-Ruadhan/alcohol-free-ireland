@@ -1,1 +1,1 @@
-web: gunicorn non-alc-ireland.wsgi
+web: gunicorn nonalc.wsgi

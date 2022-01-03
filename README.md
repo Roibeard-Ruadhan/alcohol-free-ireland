@@ -109,7 +109,7 @@
 |     Key    |     Name     |     Type       |
 | -----------| -------------| ---------------|
 |            |Title(Unique) |Char(200)       |
-| ForeignKey |Author        |User model      |
+|ForeignKey  |Author        |User model      |
 |            |Created date  |DateTime        |
 |            |Updated date  |DateTime        |
 |            |Content       |TextField       |
@@ -122,8 +122,8 @@
 
 |     Key    |    Name    |     Type    |   Extra Info    |
 | ---------- | -----------| ------------|-----------------|
-|            |post        | Post model  |Cascade on delete|
-|            |name        | CharField   |Max length 80    |
+|ForeignKey  |post        |Post model   |Cascade on delete|
+|            |name        |CharField    |Max length 80    |
 |            |email       |EmailField   |                 |
 |            |body        |TextField    |                 |
 |            |created+on  |DateTimeField|auto_now_add_True|

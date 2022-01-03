@@ -22,6 +22,7 @@
   - [**Site Navigation**](#site-navigation)
   - [**Features Implemented**](#features-implemented)
   - [**Future Features**](#future-features)
+  - [**Database Layout**](#database-layout)
   - [**Responsive Design**](#responsive-design)
 - [**Version Control**](#version-control)
 - [**Testing**](#testing)

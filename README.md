@@ -103,12 +103,12 @@
 ### **Future Features**
 
 ## **Database Layout** ....
-
+- **Posts Diagram**
 | Key        | Name         |       Type     |
 | -----------| -------------| ---------------|
-|            | Title(Unique)| Char(200)      |
-| ForeignKey | Author       | User model     |
-|            | Created date | DateTime       |
+|            |Title(Unique) |Char(200)      |
+| ForeignKey |Author        |User model     |
+|            |Created date  |DateTime       |
 |            |Updated date  |DateTime        |
 |            |Content       |TextField       |
 |            |Featured Image|Cloudinary Image|
@@ -116,6 +116,15 @@
 |Many to Many|Likes         |User model      |
 |            |Slug(Unique)  |SlugField       |
 |            |Status        |Integer         |
+- **Comments Diagram**
+| Key        |   Name     | Type | Extra Info|
+| ---------- | -----------| ------------|-----------------|
+|            | post       | Post model  |Cascade on delete|
+|            | name       | CharField   |Max length 80    |
+|            |email       |EmailField   |                 |
+|            |body        |TextField    |                 |
+|            |created+on  |DateTimeField|auto_now_add_True|
+|            |approved    |BooleanField |default False    |
 
 [Back to contents](#contents)
 

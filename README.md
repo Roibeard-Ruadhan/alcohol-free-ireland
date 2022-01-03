@@ -103,7 +103,7 @@
 
 ### **Future Features**
 
-## **Database Layout** ....
+## **Database Layout**
 - **Posts Diagram**
 | Key        | Name         |       Type     |
 | -----------| -------------| ---------------|

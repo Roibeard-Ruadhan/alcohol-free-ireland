@@ -105,6 +105,7 @@
 
 ## **Database Layout**
 - **Posts Diagram**
+
 |     Key    |     Name     |     Type       |
 | -----------| -------------| ---------------|
 |            |Title(Unique) |Char(200)       |
@@ -118,6 +119,7 @@
 |            |Slug(Unique)  |SlugField       |
 |            |Status        |Integer         |
 - **Comments Diagram**
+
 |     Key    |    Name    |     Type    |   Extra Info    |
 | ---------- | -----------| ------------|-----------------|
 |            |post        | Post model  |Cascade on delete|

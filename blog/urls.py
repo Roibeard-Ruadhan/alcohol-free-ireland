@@ -1,10 +1,9 @@
 from django.urls import path
-from django.conf.urls import * 
-from .views import BlogList, ArticleDetail, index
+from .views import BlogList, ArticleDetail
+from . import views
 
-urlpatterns = ['',
-    url(r'^$', views.index, name='index'),
+urlpatterns = [
+    path('', views.index),
     path(BlogList.as_view(), name="blog"),
     path('article/<int:pk>', ArticleDetail.as_view(), name='article-detail'),
-
 ]

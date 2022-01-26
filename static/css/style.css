@@ -139,6 +139,13 @@ body {
     background: transparent;
     border: none;
 }
+
+/* Hero image */
+.hero-image {
+    background-size:cover;
+    max-height: fit-content;
+}
+
 /* Footer */
 .container{
 	max-width:fit-content;

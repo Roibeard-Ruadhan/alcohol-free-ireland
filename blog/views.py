@@ -6,7 +6,9 @@ class Homepage(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html')
 
-
+class contact(View):
+    def contact(request):
+        return render(request, 'contact.html')
 
 class PostList(generic.ListView):
     model = Post

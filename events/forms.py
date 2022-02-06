@@ -5,19 +5,19 @@ from .models import Event
 class EventForm(ModelForm):
     class Meta:
         model = Event
-        fields = ('name', 'location', 'event_date', 'description' 'attendees_number')
+        fields = ('name', 'location', 'event_date', 'attendees_number', 'description')
         labels = {
-            'location': '',
-            'venue': '',
-            'event_date': '',
-            'description': '',
-            'attendees_number': '',
+            'location': 'County/Town',
+            'venue': 'Venue',
+            'event_date': 'Event Date',
+            'attendees_number': 'Max Attendees',
+            'description': 'Description',
         }
         widgets = {
-            'location': froms.TextInput(attrs={'class':'form-control', 'placeholder':'Location'})
-            'venue': froms.TextInput(attrs={'class':'form-control', 'placeholder':'Venue'})
-            'event_date': froms.Date Input(attrs={'class':'form-control', 'placeholder':'Event Date'})
-            'description': froms.TextInput(attrs={'class':'form-control', 'placeholder':'Description'})
-            'attendees_number': froms.NumberInput(attrs={'class':'form-control', 'placeholder':'Maximum number that can attend'})
+            'location': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Location'}),
+            'venue': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Venue'}),
+            'event_date': forms.DateInput(attrs={'class':'form-control', 'placeholder':'YYYY-MM-DD HH:MM:SS'}),
+            'attendees_number': forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Maximum number that can attend'}),
+            'description': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Description'}),
         }
 

@@ -1,6 +1,9 @@
 # Non Alcoholic Social Drinks Ireland
 
 ## About
+This website was setup to provide a platform for people who are considering taking a break from alcohol & those don't drink alcohol. It allows people to freely share their experiences with a non-alcoholic drink lifestyle & leaves open a comments space for curious people to interact.
+
+It is also a place for people who enjoy going out to drink non-alcoholic drinks to meet other alcohol free drinkers in their locality. 
 
 ## **Contents**
 
@@ -39,21 +42,57 @@
 
 
 ### **User Stories**
+- All users
+    - I would like to find more information on alcohol free drinks.
+    - I would like to find more information on peoples experience of replacing alcohol with a alcohol free lifestyle so that I can make a more informed decision. 
+    - I would like to share my experiences of replacing alcohol with a alcohol free lifestyle so that those considering can make a more informed decision.
+    - I want the site to be easy to navigate on mobile primarily so I can use it on the go.
+    - I want the site to be responsive on all devices.
+    - I would like to be able to comment on articles/blogs so that I can express my views to share with others
+    - I would like to be able to write my own blog post to share my experience with others who may be curious
+    - I would like to be able to like the posts by other Users on the website so I can express my appreciation
+    - I would like to be able to arrange an event so that I can meet other people in my area who enjoy drinking alcohol free drinks
+    - I would like to be able to like comments so that I can express my agreement
+
+- As a first time user
+    - I would like to be able to register with no problems and minimal information required.
+    - I would like it to be able to read the articles before I register to participate.
+    - I would like to be able to register via a simple process so that I can join the community.
+    - I would like the navigation to be self explanotory & User friendly on all devices
+
+- As a returning user
+  - I would like to be able to delete my posts or comments or likes on request.
+  - I would like to be able to log in to see book reviews I have written and favourited on one page
+
 
 ### **Site Owner Goals** 
-
+  - To allow alcohol free drinkers a space to share their positive & negative experiences with a non-alcoholic drink lifestyle.
+  - To give alcohol free drinkers the opportunity to easily set up social/meetup events in their local communities.  
+  - To provide a place for the approx 20% of the population who do not drink alcohol to join social meetups in their locality, as not drinking alcohol can sometimes cause them to miss out on some social interactions.
 
 ## **Design Choices**
 
 ### **Colours**
+The Colours started with a dark mahogony frame to express an atmosphere of a dark, trendy, stylish cocktail bar. 
 
 ### **Fonts**
 
 ### **Imagery**
+The images were sourced using various websites _________ which offered free images when referenced respectively 
 
 ### **Wireframes**
 
 ## **Technologies**
+- [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
+  - Used as the main markup language for the website content.
+- [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+  - Used to style the individual webpages.
+- [Python 3](https://www.python.org/)
+    - [Django](https://www.djangoproject.com/)
+       - Used to run the site and database
+<!-- - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+    - Used to show the questions through pagination and for the game play. -->
+
 
 ### **Languages**
 

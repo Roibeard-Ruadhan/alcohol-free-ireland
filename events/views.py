@@ -1,5 +1,4 @@
-from . import views
-from django.shortcuts import render
+from . import views, redirect 
 from django.views import generic, View
 from blog.models import User
 from datetime import datetime
@@ -24,6 +23,6 @@ def add_event(request):
         return render(request, 'events/add_event.html', {'form':form, 'submitted':submitted})
 
 
-class events(View):
-    def events(request):
-        return render(request, 'add_events.html')
+# class events(View):
+#     def events(request):
+#         return render(request, 'add_events.html')

@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 
+
 class Homepage(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html')

@@ -1,7 +1,7 @@
-# Non Alcoholic Social Drinks Ireland
+# Alcoholic Free Social Drinks Ireland
 
 ## About
-This website was setup to provide a platform for people who are considering taking a break from alcohol & those don't drink alcohol. It allows people to freely share their experiences with a non-alcoholic drink lifestyle & leaves open a comments space for curious people to interact.
+This website was setup to provide a platform for people who are considering taking a break from alcohol & those who don't drink alcohol. It allows people to freely share their experiences with a non-alcoholic drink lifestyle & leaves open a comments space for curious people to interact.
 
 It is also a place for people who enjoy going out to drink non-alcoholic drinks to meet other alcohol free drinkers in their locality. 
 
@@ -88,17 +88,18 @@ The images were sourced using various websites _________ which offered free imag
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
   - Used to style the individual webpages.
 - [Python 3](https://www.python.org/)
-    - [Django](https://www.djangoproject.com/)
-       - Used to run the site and database
-<!-- - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
     - Used to show the questions through pagination and for the game play. -->
 
 
 ### **Languages**
 
 ### **Database**
+- [Postgres]
 
-### **Libraries**
+### **Libraries & Frameworks**
+- [Django](https://www.djangoproject.com/)
+    -High level framework used for rapid development of the site.
 
 ### **Tools**
 

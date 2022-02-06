@@ -1,11 +1,12 @@
 from . import views
-from django.urls import path
+from django.urls import path, include
+
 
 urlpatterns = [
     path('', views.Homepage.as_view(), name="home"),
     path('blog/', views.PostList.as_view(), name='blog'),
+    path('events/', include('events.urls'), name='events-urls'),
     path('contact/', views.contact, name='contact'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
-
 ]

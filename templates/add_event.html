@@ -2,83 +2,24 @@
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
 
-<!-- {% load crispy_forms_tags %} -->
+{% load crispy_forms_tags %}
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <!-- Page Heading -->
-            <h2 class="page-heading heading">Add Event</h2>
-        </div>
-    </div>
+<h1>Add Event</h1>
+<br/><br/>
 
-    <form id="add-event-form" class="content-border" method="POST" action="{{ url_for('add-event')}}">
-        <!-- Recipe Name -->
-        <div class="row form-section">
-            <div class="col-12">
-                <label for="event_name" class="form-label">Event Bar Name:</label>
-            </div>
-            <div class="col-12 form-event-name form-input">
-                <input id="event_name" name="event_name" type="text" minlength="1" maxlength="45"
-                    pattern="^[a-zA-Z0-9_][a-zA-Z0-9_ &]*[a-zA-Z0-9_]{1,45}$" class="add-recipe input-field validate" placeholder="Recipe Name" required>
-            </div>
-        </div>
-        <!-- Recipe Description -->
-        <div class="row form-section">
-            <div class="col-12">
-                <label for="event_description" class="form-label">Event Description:</label>
-            </div>
-            <div class="col-12 form-event-name form-input">
-                <textarea name="event_description" id="event_description" class="add-event input-field validate"
-                placeholder="Event description" minlength="5" maxlength="150" required></textarea>
-            </div>
-        </div>
-        <!-- Ingredients -->
-        <div class="row form-section">
-            <div class="col-12">
-                <label for="ingredients" class="form-label">Details of available drinks:</label>
-            </div>
-            <div class="col-12">
-                <div id="ing-help" class="form-text help-text">One non alcoholic drink per line
-                </div>
-            </div>
-            <div class="col-12 form-ingredients form-input">
-                <textarea name="ingredients" id="ingredients" class="add-event input-field validate" rows="8" placeholder="Ingredients"
-                    required></textarea>
-            </div>
-        </div>
-        <!-- Method -->
-        <div class="row form-section">
-            <div class="col-12">
-                <label for="method" class="form-label">Date:</label>
-            </div>
-            <div class="col-12">
-                <div id="method-help" class="form-text help-text">Date & time of event + max capacity
-                </div>
-            </div>
-            <div class="col-12 form-method form-input">
-                <textarea name="method" id="method" class="add-event input-field validate" rows="12" placeholder="Method" required></textarea>
-            </div>
-        </div>
-        <!-- Recipe Image URL -->
-        <div class="row form-section">
-            <div class="col-12">
-                <label for="event_url" class="form-label">Image URL:</label>
-            </div>
-            <div class="col-12 form-image-url form-input">
-                <input id="event_url" name="event_url" type="text" class="add-event input-field validate"
-                    placeholder="Event Image URL" required>
-            </div>
-        </div>
-        <!-- Submit Button -->
-        <div class="row">
-            <div class="col sub">
-                <a href="{{ url_for('index') }}" class="cancel-button button">Cancel</a>
-                <input class="submit-button button" type="submit" value="Add Event">
-            </div>
-        </div>
-    </form>
+{% if submitted %}
+<p>Your Event Was Submitted Successfully</p>
 
-</div>
+    {% else %}
 
+        <form action="" method="POST" style="margin-top: 1.3em;">
+            {% csrf_token %}
+
+            {{ form.as_p}}
+
+            <input type="submit" value="Submit" class="btn btn-success">
+        </form>
+
+
+<br/><br/>
 {% endblock content %}

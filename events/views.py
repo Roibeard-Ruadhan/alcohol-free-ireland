@@ -1,4 +1,4 @@
-from . import views, redirect 
+from . import views
 from django.views import generic, View
 from blog.models import User
 from datetime import datetime

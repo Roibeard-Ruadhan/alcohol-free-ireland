@@ -100,6 +100,8 @@ The images were sourced using various websites _________ which offered free imag
 ### **Libraries & Frameworks**
 - [Django](https://www.djangoproject.com/)
     -High level framework used for rapid development of the site.
+- [Bootstrap5.0](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+    -CSS Framework for developing responsive and mobile-first websites.
 
 ### **Tools**
 

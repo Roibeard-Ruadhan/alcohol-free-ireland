@@ -2,11 +2,16 @@ from django.db import models
 
 # Create your models here.
 class Event(models.Model):
-    location = models.CharField(max_length=45)
+    location = models.CharField('location', max_length=150)
     Venue = models.CharField('Event Venue')
     event_date = models.DateTimeField('Event Time')
-    attendees_number = models.ManyToManyField('Users Attending')
+    arrive_when = models.DateTimeField('Arrival time', null = True, blank = True)
+    registration_limit = models.IntegerField('Guest limit',
+                                        default=0,
+                                        choices=[(0, u"No limit")] + list(zip(range(1,100), range(1,100))))
     description = models.TextField(blank=True, max_length=200)
+
+
     # user_name = models.ManyToManyField(?)
 
     def __str__(self):

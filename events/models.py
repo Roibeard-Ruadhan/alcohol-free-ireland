@@ -6,7 +6,7 @@ class Event(models.Model):
     Venue = models.CharField('Event Venue')
     event_date = models.DateTimeField('Event Time')
     arrive_when = models.DateTimeField('Arrival time', null = True, blank = True)
-    registration_limit = models.IntegerField('Guest limit',
+    guest_limit = models.IntegerField('Guest limit',
                                         default=0,
                                         choices=[(0, u"No limit")] + list(zip(range(1,100), range(1,100))))
     description = models.TextField(blank=True, max_length=200)

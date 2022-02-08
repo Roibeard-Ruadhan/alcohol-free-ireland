@@ -8,6 +8,10 @@ from .forms import EventForm
 
 # Create your views here.
 
+class events(View):
+    def events(request):
+        return render(request, 'add_events.html')
+
 def add_event(request):
     submitted = False
     if request.method == "POST":
@@ -23,6 +27,3 @@ def add_event(request):
         return render(request, 'events/add_event.html', {'form':form, 'submitted':submitted})
 
 
-# class events(View):
-#     def events(request):
-#         return render(request, 'add_events.html')

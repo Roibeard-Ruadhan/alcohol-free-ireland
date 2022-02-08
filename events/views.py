@@ -10,7 +10,7 @@ from .forms import EventForm
 
 class events(View):
     def events(request):
-        return render(request, 'add_events.html')
+        return render(request, 'events.html')
 
 def add_event(request):
     submitted = False

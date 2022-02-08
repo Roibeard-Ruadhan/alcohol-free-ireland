@@ -94,12 +94,12 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #fff;
 }
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #364652;
 }
 
 .post-title {
@@ -160,9 +160,20 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    max-height: fit-content;
-    object-fit: contain
+    height: 90vh;
+    object-fit: contain;
+    position: relative;
 }
+
+.blog-image {
+    position: inherit;
+    display: block;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50$;
+  }
 
 .berry-body {
     padding: 0;
@@ -171,13 +182,17 @@ body {
 
 .berry-image {
     background: url('/static/images/frogs.jpg') no-repeat center center fixed;
-    height: 30vh;
+    height: 50vh;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     max-height: fit-content;
     object-fit: contain;
+}
+
+.text-position-1 {
+    text-align: center;
 }
 
 /* Footer */

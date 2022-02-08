@@ -168,11 +168,11 @@ body {
 .blog-image {
     position: inherit;
     display: block;
-    width: 30%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 50$;
+    right: 0px;
   }
 
 .berry-body {

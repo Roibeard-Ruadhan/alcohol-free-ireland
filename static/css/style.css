@@ -165,22 +165,30 @@ body {
     position: relative;
 }
 
-.blog-image {
-    position: inherit;
-    display: block;
-    width: 20%;
+.blog-circle {
+    background-image: url('/static/css/static/images/blog.jpg');
+    object-fit: contain;
+    float: left;
+    width: 30%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 0px;
+    left: 0px;
   }
 
-.berry-body {
+.events-circle {
+    background-image: url('static/images/strawberry.jpg');
+    object-fit: contain;
+    float: right;
+    width: 30%;
+    display: flex;
+    left: 0px;
+}
+
+.events-body {
     padding: 0;
     background-color: #24262b;
 }
 
-.berry-image {
+.events-image {
     background: url('/static/images/frogs.jpg') no-repeat center center fixed;
     height: 50vh;
     -webkit-background-size: cover;

@@ -175,7 +175,7 @@ body {
   }
 
 .events-circle {
-    background-image: url('../strawberry.jpg');
+    background-image: url('../images/strawberry.jpg');
     object-fit: contain;
     float: right;
     width: 30%;
@@ -189,7 +189,7 @@ body {
 }
 
 .events-image {
-    background: url('../static/images/frogs.jpg') no-repeat center center fixed;
+    background: url('../images/frogs.jpg') no-repeat center center fixed;
     height: 50vh;
     -webkit-background-size: cover;
     -moz-background-size: cover;

@@ -155,7 +155,7 @@ body {
 }
 
 .hero-image {
-    background: url('../static/images/bar.jpg') no-repeat center center fixed;
+    background: url('../images/bar.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -166,7 +166,7 @@ body {
 }
 
 .blog-circle {
-    background-image: url('../blog.jpg');
+    background-image: url('../images/blog.jpg');
     object-fit: contain;
     float: left;
     width: 30%;

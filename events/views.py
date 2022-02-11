@@ -21,7 +21,7 @@ def add_event(request):
             return HttpResponseRedirect('/add_event?submitted=True')
         else:
             form = EventForm
-            if 'submitted' in request.GET:
+            if 'submitted' in request.POST:
                 submitted = True
 
         return render(request, 'events/add_event.html', {'form':form, 'submitted':submitted})

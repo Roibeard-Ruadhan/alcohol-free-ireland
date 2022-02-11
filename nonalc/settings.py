@@ -35,7 +35,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['non-alc-ireland.herokuapp.com', 'localhost']
 
-# CSRF_TRUSTED_ORIGINS = ['https://8000-scarlet-silkworm-3mxkukz9.ws-eu25.gitpod.io', 'non-alc-ireland.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-scarlet-silkworm-3mxkukz9.ws-eu25.gitpod.io', 'https://non-alc-ireland.herokuapp.com']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

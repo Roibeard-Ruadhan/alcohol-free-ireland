@@ -8,9 +8,14 @@ from .forms import EventForm
 
 # Create your views here.
 
-class events(View):
-    def events(request):
-        return render(request, 'events.html')
+class EventList(generics.ListView):
+        model = Event
+        queryset = Event.objects.filter(status=1).order_by("-created_on")
+        template_name = "events.html"
+        paginate_by = 6
+        # upcoming = Event.objects.filter(date__gte=now).order_by('date')
+        # passed = Event.objects.filter(date__lt=now).order_by('-date')
+        # return list(upcoming) + list(passed)
 
 def add_event(request):
     submitted = False

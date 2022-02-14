@@ -32,9 +32,17 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
                         <i class="fas fa-home"></i> Home</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="{% url 'blog' %}"><i class="fas fa-book"></i> Blog</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle bg-dark" href="{% url 'blog' %}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-glass-martini-alt"></i> Blog
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+                          <li><a class="dropdown-item" href="{% url 'blog' %}">Blog</a></li>
+                          <li><a class="dropdown-item" href="{% url 'add_blog' %}">Add Blog</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                        </ul>
                     </li>
+                    <li class="nav-item">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle bg-dark" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-glass-martini-alt"></i> Events

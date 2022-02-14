@@ -1,9 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
-class Event(models.Model):
-    location = models.CharField('location', max_length=150)
-    venue = models.CharField('Event Venue', max_length=150)
+class events(models.Model):
+    # organiser = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    location = models.CharField(max_length=150, unique=True)
+    venue = models.CharField(max_length=150, unique=True)
     event_date = models.DateTimeField('Event Time')
     guest_limit = models.IntegerField('Guest limit',
                                         default=0,
@@ -14,5 +16,5 @@ class Event(models.Model):
     # user_name = models.ManyToManyField(?)
 
     def __str__(self):
-        return self.name
+        return self.location
 

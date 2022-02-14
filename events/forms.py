@@ -1,10 +1,8 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Event
 
 class EventForm(ModelForm):
     class Meta:
-        model = Event
         fields = ('location', 'venue', 'event_date', 'guest_limit', 'description')
         labels = {
             'location': 'County/Town',
@@ -20,4 +18,3 @@ class EventForm(ModelForm):
             'guest_limit': forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Maximum number that can attend'}),
             'description': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Arrival time & other details'}),
         }
-

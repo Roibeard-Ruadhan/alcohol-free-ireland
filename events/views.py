@@ -3,14 +3,12 @@ from django.views import generic, View
 from blog.models import User
 from datetime import datetime
 from django.http import HttpResponseRedirect
-from .models import Event
 from .forms import EventForm
 
 # Create your views here.
 
-class EventList(generics.ListView):
-        model = Event
-        queryset = Event.objects.filter(status=1).order_by("-created_on")
+class EventList(generic.ListView):
+        queryset = Post.objects.filter(status=1).order_by("-created_on")
         template_name = "events.html"
         paginate_by = 6
         # upcoming = Event.objects.filter(date__gte=now).order_by('date')
@@ -29,6 +27,6 @@ def add_event(request):
             if 'submitted' in request.POST:
                 submitted = True
 
-        return render(request, 'events/add_event.html', {'form':form, 'submitted':submitted})
+        return render(request, 'add_event.html', {'form':form, 'submitted':submitted})
 
 

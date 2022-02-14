@@ -2,12 +2,22 @@ from django.shortcuts import render, get_object_or_404, reverse , redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 def Homepage(request):
     template_name= 'index.html'
     return render(request, template_name)
+
+def create_post(request):
+    form = PostForm()
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return redirect("home")
+    return render(request,"add_blog.html",{"form":form})
 
 
 # class contact(View):
@@ -15,6 +25,8 @@ def Homepage(request):
 #         return render(request, 'contact.html')
 def contact(request):
     return redirect("home")
+
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")

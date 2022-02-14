@@ -6,12 +6,12 @@ from .forms import CommentForm
 
 
 class Homepage(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'index.html')
+    template_name= 'index.html'
 
-class contact(View):
-    def contact(request):
-        return render(request, 'contact.html')
+
+# class contact(View):
+#     def contact(request):
+#         return render(request, 'contact.html')
 
 class PostList(generic.ListView):
     model = Post

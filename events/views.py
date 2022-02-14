@@ -4,6 +4,7 @@ from blog.models import User
 from datetime import datetime
 from django.http import HttpResponseRedirect
 from .forms import EventForm
+from .models import Post
 
 # Create your views here.
 

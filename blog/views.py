@@ -5,8 +5,9 @@ from .models import Post
 from .forms import CommentForm
 
 
-class Homepage(View):
+def Homepage(request):
     template_name= 'index.html'
+    return render(request, template_name)
 
 
 # class contact(View):

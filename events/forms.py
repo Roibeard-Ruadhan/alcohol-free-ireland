@@ -1,8 +1,10 @@
 from django import forms
 from django.forms import ModelForm
+from .models import events
 
 class EventForm(ModelForm):
     class Meta:
+        model = events
         fields = ('location', 'venue', 'event_date', 'guest_limit', 'description')
         labels = {
             'location': 'County/Town',

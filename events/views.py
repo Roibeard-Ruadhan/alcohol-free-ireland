@@ -2,9 +2,9 @@ from .models import events
 from django.views import generic, View
 from blog.models import User
 from datetime import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,HttpResponse
 from .forms import EventForm
-
+from django.shortcuts import render
 # Create your views here.
 
 class EventList(generic.ListView):
@@ -21,14 +21,15 @@ class EventList(generic.ListView):
 # @login_required
 def add_event(request):
     submitted = False
+    form = EventForm()
     if request.method == "POST":
         form = EventForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/add_event?submitted=True')
+            return HttpResponse('success')
         else:
             form = EventForm
             if 'submitted' in request.POST:
                 submitted = True
 
-        return render(request, 'add_event.html', {'form':form, 'submitted':submitted})
+    return render(request, 'add_event.html', {'form':form, 'submitted':submitted})

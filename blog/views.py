@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse , redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
@@ -12,7 +12,8 @@ class Homepage(View):
 # class contact(View):
 #     def contact(request):
 #         return render(request, 'contact.html')
-
+def contact(request):
+    return redirect("home")
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")

@@ -3,6 +3,6 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('events/', views.events.as_view(), name='events'),
-    path('add_events/', views.events.as_view(), name='add-events'),
+    path('events/', views.EventList.as_view(), name='events'),
+    path('add_events/', views.add_event, name='add-events'),
 ]

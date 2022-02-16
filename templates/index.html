@@ -6,8 +6,11 @@
     <div class="hero py-5 bg-image-full hero-image">
         <div class="columns is-mobile is-justify-content-center">
             <div class="text-position-1">   
+                <img src="{% static 'images/logo.png' %}" alt="Logo Image" width="280" height="220">
                 <h1 class="text-white fs-3 fw-bolder">Alcohol Free Ireland</h1>
-                <h3 class="text-white-50 mb-0">Join Us-*Sign Up link</h3>
+                <form class="">
+                    <button formaction="{% url 'account_signup' %}">Join Us!</button>
+                </form>
             </div> 
         </div>
     </div>
@@ -20,7 +23,14 @@
                 <div class="col-lg-6 text-light justify-content-center">
                     <h2>Check out the Blog</h2>
                     <p class="lead">A place to add your experience with Alcohol Free Drnks</p>
-                    <p class="mb-0">A space to share a variety of storys from drink reviews, dry January, to times of soberiety. -Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptas architecto, fuga, sit 
+                    <p class="mb-0">A space to share a variety of storys from drink reviews, dry January, to times of soberiety. 20% of the population of Ireland 
+                        do not drink aclocohol & often feel left out of weekend social gatherings. <br><br>
+                        Have you enjoyed any non alcohol drinks recently that you would like to share your experience of, feel free to share in the blog space. 
+                        Walking in to large supermarkets recently I can't help notice how the non alcoholic section continues to grow, take you more shelf space
+                        & seems to add a new drink every week. <br><br>
+                        Many people are quietly considerning taking a break from alcohol & would like to learn more about other peoples experiences with this.
+                        The Blog provides that space for people to share there good & bad experiences with abstaining from alcohol.
+                        -Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptas architecto, fuga, sit 
                         facilis nulla tempora placeat distinctio culpa officia debitis nesciunt optio voluptates laudantium itaque animi 
                         inventore ex. Vitae.</p>
                 </div>

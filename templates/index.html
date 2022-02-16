@@ -8,8 +8,13 @@
             <div class="text-position-1">   
                 <img src="{% static 'images/logo.png' %}" alt="Logo Image" width="280" height="220">
                 <h1 class="text-white fs-3 fw-bolder">Alcohol Free Ireland</h1>
-                <form class="">
-                    <button formaction="{% url 'account_signup' %}">Join Us!</button>
+                <div class="line"></div>
+                    <a href="https://vintagecocktailclub.com/order/" class="link ">Blog</a>
+                    <a class="link " href="https://vintagecocktailclub.com/vcc-cocktail-delivery/">Events</a>
+                <div class="line"></div>
+                <form>
+                    <button type="button" class="btn btn-success px-3"><i class="fas fa-users" aria-hidden="true"
+                        class="signup-btn" formaction="{% url 'account_signup' %}">  Join Us!</i></button>
                 </form>
             </div> 
         </div>
@@ -22,7 +27,7 @@
             <img src="{% static 'images/blog.jpg' %}"  class="rounded-circle mb-1 blog-circle" alt="Blog page image introduction" />
                 <div class="col-lg-6 text-light justify-content-center">
                     <h2>Check out the Blog</h2>
-                    <p class="lead">A place to add your experience with Alcohol Free Drnks</p>
+                    <p class="lead">A place to add your experience with Alcohol Free Drinks</p>
                     <p class="mb-0">A space to share a variety of storys from drink reviews, dry January, to times of soberiety. 20% of the population of Ireland 
                         do not drink aclocohol & often feel left out of weekend social gatherings. <br><br>
                         Have you enjoyed any non alcohol drinks recently that you would like to share your experience of, feel free to share in the blog space. 

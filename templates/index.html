@@ -7,11 +7,13 @@
         <div class="columns is-mobile is-justify-content-center">
             <div class="text-position-1">   
                 <img src="{% static 'images/logo.png' %}" alt="Logo Image" width="280" height="220">
-                <h1 class="text-white fs-3 fw-bolder">Alcohol Free Ireland</h1>
-                    <div class="line"></div>
-                        <a href="{% url 'blog' %}" class="links">Blog</a>
-                        <a class="links" href="{% url 'events' %}">Events</a>
-                    <div class="line"></div>
+                <h1 class="text-white fs-3 fw-bolder">ALCOHOL FREE IRELAND</h1>
+                    <div class="line-up">
+                        <!-- <div class="line"></div> -->
+                            <a href="{% url 'blog' %}" class="links">Blog</a>
+                            <a class="links" href="{% url 'events' %}">Events</a>
+                        <!-- <div class="line"></div> -->
+                    </div>
                 <form>
                     <button formaction="{% url 'account_signup' %}" type="button" class="btn btn-primary px-3">
                         <i class="fas fa-users" aria-hidden="true"></i>  JOIN US   <i class="far fa-hand-point-right" aria-hidden="true"></i></button>

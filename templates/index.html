@@ -8,13 +8,11 @@
             <div class="text-position-1">   
                 <img src="{% static 'images/logo.png' %}" alt="Logo Image" width="280" height="220">
                 <h1 class="text-white fs-3 fw-bolder">Alcohol Free Ireland</h1>
-                <div class="line"></div>
-                    <a href="https://vintagecocktailclub.com/order/" class="link ">Blog</a>
-                    <a class="link " href="https://vintagecocktailclub.com/vcc-cocktail-delivery/">Events</a>
-                <div class="line"></div>
+                    <a href="{% url 'blog' %}" class="#">Blog</a>
+                    <a class="#" href="{% url 'events' %}">Events</a>
                 <form>
-                    <button type="button" class="btn btn-success px-3"><i class="fas fa-users" aria-hidden="true"
-                        class="signup-btn" formaction="{% url 'account_signup' %}">  Join Us!</i></button>
+                    <button formaction="{% url 'account_signup' %}" type="button" class="btn btn-primary px-3">
+                        <i class="fas fa-users" aria-hidden="true"></i>  JOIN US   <i class="far fa-hand-point-right" aria-hidden="true"></i></button>
                 </form>
             </div> 
         </div>

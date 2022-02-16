@@ -171,6 +171,21 @@ The images were sourced using various websites _________ which offered free imag
 |            |created+on  |DateTimeField|auto_now_add_True|
 |            |approved    |BooleanField |default False    |
 
+- **Add Events Diagram**
+
+|     Key    |     Name     |     Type       |
+| -----------| -------------| ---------------|
+|            |Title(Unique) |Char(200)       |
+<!-- |ForeignKey  |Author        |User model      |
+|            |Created date  |DateTime        |
+|            |Updated date  |DateTime        |
+|            |Content       |TextField       |
+|            |Featured Image|Cloudinary Image|
+|            |Excerpt       |TextField       |
+|Many to Many|Likes         |User model      |
+|            |Slug(Unique)  |SlugField       |
+|            |Status        |Integer         |  -->
+
 [Back to contents](#contents)
 
 ## **Version Control**

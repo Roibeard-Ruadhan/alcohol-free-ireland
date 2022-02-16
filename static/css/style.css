@@ -166,7 +166,6 @@ body {
 }
 
 .blog-circle {
-    background-image: url('../images/blog.jpg');
     object-fit: contain;
     float: left;
     width: 30%;
@@ -175,7 +174,6 @@ body {
   }
 
 .events-circle {
-    background: url('../images/new.jpg');
     object-fit: contain;
     float: right;
     width: 30%;

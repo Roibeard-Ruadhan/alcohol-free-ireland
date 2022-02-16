@@ -1,10 +1,25 @@
 {% load static %}
 {% extends "base.html" %}
-{% block title %}Contact Page{% endblock %}
+{% block title %}Contact Us{% endblock title %}
+  
 {% block content %}
-from django import forms
+<h1>Contact us</h1>
 
+{% if submitted %}
+<p class="success">
+    Your message was submitted successfully. Thank you.
+</p>
 
-<h3>Contact Page</h3>
-
-{%endblock%}
+{% else %}
+<form action="" method="post" novalidate>
+<table>
+    {{ form.as_table }}
+    <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" value="Submit"></td>
+    </tr>
+</table>
+{% csrf_token %}
+</form>
+{% endif %}
+{% endblock content %}

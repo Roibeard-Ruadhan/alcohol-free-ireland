@@ -9,7 +9,7 @@ from django.shortcuts import render
 
 class EventList(generic.ListView):
         model = events
-        queryset = events.objects.all().order_by("-event_date")
+        queryset = events.objects.filter(approve = True).order_by("-event_date")
         template_name = "events.html"
         paginate_by = 6
         # upcoming = Event.objects.filter(date__gte=now).order_by('date')

@@ -11,7 +11,7 @@ class events(models.Model):
                                         default=0,
                                         choices=[(0, u"No limit")] + list(zip(range(1,100), range(1,100))))
     description = models.TextField(blank=True, max_length=200)
-
+    approve = models.BooleanField(default=False)
 
     # user_name = models.ManyToManyField(?)
 

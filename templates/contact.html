@@ -1,15 +1,15 @@
-{% load static %}
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}Contact Us{% endblock title %}
   
 {% block content %}
 <h1>Contact us</h1>
 
 {% if submitted %}
-<p class="success">
+<h1 class="success">
     Your message was submitted successfully. Thank you.
-</p>
-
+</h1>
 {% else %}
 <form action="" method="post" novalidate>
 <table>

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse , redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm, PostForm
+from .forms import CommentForm, PostForm, ContactForm
 
 
 def Homepage(request):
@@ -24,7 +24,22 @@ def create_post(request):
 #     def contact(request):
 #         return render(request, 'contact.html')
 def contact(request):
-    return redirect("home")
+    submitted = False
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            # assert False
+            return HttpResponseRedirect('/contact?submitted=True')
+    else:
+        form = ContactForm()
+        if 'submitted' in request.GET:
+            submitted = True
+ 
+    return render(request, 
+        'contact.html', 
+        {'form': form, 'submitted': submitted}
+        )
 
 
 class PostList(generic.ListView):

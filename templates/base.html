@@ -43,12 +43,12 @@
                     </li>
                     <li class="nav-item">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle bg-dark" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle bg-dark" href="{% url 'events' %}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-glass-martini-alt"></i> Events
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
                           <li><a class="dropdown-item" href="{% url 'events' %}">Events</a></li>
-                          <li><a class="dropdown-item" href="{% url 'add-events' %}">Add Event</a></li>
+                          <li><a class="dropdown-item" href="{% url 'add-event' %}">Add Event</a></li>
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" href="#">Attend Event</a></li>
                         </ul>

@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm, PostForm, ContactForm
-
+from django.template.defaultfilters import slugify
 
 def Homepage(request):
     template_name= 'index.html'
@@ -12,8 +12,12 @@ def Homepage(request):
 def create_post(request):
     form = PostForm()
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST,request.FILES)
         if form.is_valid():
+            new = form.save(commit = False)
+            new.slug = slugify(new.slug)
+            new.author = request.user
+            new.save()
             form.save()
 
             return redirect("home")

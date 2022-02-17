@@ -10,7 +10,7 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <h1>Add Blog</h1>
             <br/><br/>
-            <form action="" method="POST" style="margin-top: 1.3em;">
+            <form action="" method="POST" style="margin-top: 1.3em;"  enctype="multipart/form-data" >
                 {% csrf_token %}
 
                 {{ form.as_p}}

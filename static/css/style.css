@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Convergence&display=swap');
 *{
-	margin:0;
-	padding:0;
 	box-sizing: border-box;
 }
 
@@ -9,7 +7,10 @@ body {
     background-color: black;
     color: white;
     font-family: 'Convergence', sans-serif;
-    overflow: hidden;
+    margin:0;
+	padding:0;
+    width: 100%;
+    /* overflow: hidden; */
 }
 
 .brand {

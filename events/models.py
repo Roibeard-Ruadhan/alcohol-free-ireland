@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class events(models.Model):
     # organiser = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     location = models.CharField(max_length=150, unique=True)
     venue = models.CharField(max_length=150, unique=True)
+    venue_image = CloudinaryField('image', default='placeholder')
     event_date = models.DateTimeField('Event Time')
     guest_limit = models.IntegerField('Guest limit',
                                         default=0,
@@ -13,7 +15,6 @@ class events(models.Model):
     description = models.TextField(blank=True, max_length=200)
     approve = models.BooleanField(default=False)
 
-    # user_name = models.ManyToManyField(?)
 
     def __str__(self):
         return self.location

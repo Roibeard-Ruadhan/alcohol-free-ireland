@@ -11,17 +11,31 @@
         <div class="col-12 mt-3 left">
             <div class="row">
                 
-                {% for event in events_list %}
+                {% for events in events_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                         
-                         
-                                <h2 class="card-title">{{ event.venue }}</h2>
-                                <p class="card-text">{{ event.event_date }}</p>
-                            
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="image-container card card-cascade narrower">
+                                        {% if "placeholder" in events.venue_image.url %}
+                                        <img class="card-img-top view view-cascade overlay"
+                                            src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                        {% else %}
+                                        <img class="card-img-top" src=" {{ events.venue_image.url }}">
+                                        {% endif %}
+                                        <div class="image-flash">
+                                            <h2 class="card-title">{{ events.venue }}</h2>
+                                        </div>
+                                            <p class="card-text">{{ events.event_date }}</p>
+                                        <div class="image-flash">
+                                            <p class="author">Location: {{ events.location }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <hr/>
-                            <p class="card-text text-muted h6">{{ events.event_date}} <i class="far fa-heart"></i>
+                            <p class="card-text text-muted h6">{{ events.event_date}}</p>
                              
                         </div>
                     </div>

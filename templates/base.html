@@ -13,13 +13,13 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     
-    <link rel="shortcut icon" type="image/png" href="{% static '/images/favicon-gin.png' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon-gin.png' %}">
 </head>
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'images/logo.png' %}" alt="Logo Image" width="60" height="48">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

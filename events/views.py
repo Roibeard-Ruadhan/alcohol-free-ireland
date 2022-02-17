@@ -8,13 +8,13 @@ from django.shortcuts import render
 # Create your views here.
 
 class EventList(generic.ListView):
-        model = events
-        queryset = events.objects.filter(approve = True).order_by("-event_date")
-        template_name = "events.html"
-        paginate_by = 6
-        # upcoming = Event.objects.filter(date__gte=now).order_by('date')
-        # passed = Event.objects.filter(date__lt=now).order_by('-date')
-        # return list(upcoming) + list(passed)
+    model = events
+    queryset = events.objects.filter(approve = True).order_by("-event_date")
+    template_name = "events.html"
+    paginate_by = 6
+    # upcoming = Event.objects.filter(date__gte=now).order_by('date')
+    # passed = Event.objects.filter(date__lt=now).order_by('-date')
+    # return list(upcoming) + list(passed)
 
 
 

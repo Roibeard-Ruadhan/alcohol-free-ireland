@@ -11,7 +11,7 @@ class EventForm(ModelForm):
             'venue_image': 'venue_image',
         }
         widgets = {
-            'event_date': forms.DateInput(attrs={'class':'form-control', 'type': 'date', 'placeholder': 'Select a date'}),
+            'event_date': forms.DateInput(attrs={'type': 'date', 'placeholder': 'Select a date'}),
         }
 
 

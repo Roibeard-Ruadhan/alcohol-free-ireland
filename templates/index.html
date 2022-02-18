@@ -26,47 +26,49 @@
     </div>
 </header>
 <!-- Content section-->
-<section class="py-5">
+<section>
     <div class="container">
         <div class="row">
-            <img src="{% static 'images/blog.jpg' %}"  class="rounded-circle mb-1 blog-circle" alt="Blog page image introduction" />
-                <div class="col-lg-6 text-dark justify-content-center">
-                    <h2>Check out the Blog</h2>
-                    <p class="lead">A place to add your experience with Alcohol Free Drinks</p>
-                    <p class="mb-0">A space to share a variety of storys from drink reviews, dry January, to times of soberiety. 20% of the population of Ireland 
-                        do not drink alcohol & often feel left out of weekend/social gatherings. <br><br>
-                        Have you enjoyed any non alcohol drinks recently that you would like to share your experience of, feel free to share in the blog space. 
-                        Walking in to large supermarkets recently I can't help notice how the non alcoholic section continues to grow, take you more shelf space
-                        & seems to add a new drink every week. <br><br>
-                        Many people are quietly considerning taking a break from alcohol & would like to learn more about other peoples experiences with this.
-                        The Blog provides that space for people to share there good & bad experiences with abstaining from alcohol.
-                        -Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptas architecto, fuga, sit 
-                        facilis nulla tempora placeat distinctio culpa officia debitis nesciunt optio voluptates laudantium itaque animi 
-                        inventore ex. Vitae.</p>
-                </div>
+            <div class="col-4">
+                <img src="{% static 'images/blog.jpg' %}"  class="rounded-circle mb-1 blog-circle" alt="Blog page image introduction" />
+            <div class="col-8 text-dark justify-content-right">
+                <h2>Check out the Blog</h2>
+                <p class="lead">A place to add your experience with Alcohol Free Drinks</p>
+                <p class="mb-0">A space to share a variety of storys from drink reviews, dry January, to times of soberiety. 20% of the population of Ireland 
+                    do not drink alcohol & often feel left out of weekend/social gatherings. <br><br>
+                    Have you enjoyed any non alcohol drinks recently that you would like to share your experience of, feel free to share in the blog space. 
+                    Walking in to large supermarkets recently I can't help notice how the non alcoholic section continues to grow, take you more shelf space
+                    & seems to add a new drink every week. <br><br>
+                    Many people are quietly considerning taking a break from alcohol & would like to learn more about other peoples experiences with this.
+                    The Blog provides that space for people to share there good & bad experiences with abstaining from alcohol.
+                    -Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptas architecto, fuga, sit 
+                    facilis nulla tempora placeat distinctio culpa officia debitis nesciunt optio voluptates laudantium itaque animi 
+                    inventore ex. Vitae.</p>
+            </div>
         </div>
     </div>
 </section>
 <!-- Image element -->
 <div class="events-body py-5 bg-image-full events-image">
     <div class="columns is-mobile text-position-1"></div>   
-        <h1 class="text-white fs-3 fw-bolder">Events Page</h1>
-        <h4 class="text-white-50 mb-0">Set up &/or join events in your locality here</h4>
+        <h1 class="text-white fs-3 fw-bolder">CREATE AN EVENT HERE</h1>
+        <a href="{% url 'events' %}" type="button" class="btn btn-success px-3">
+            <i class="fa-regular fa-champagne-glasses"></i>  ADD EVENT  <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
     </div>
 </div>
     <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
-<section class=>
-    <div class="container my-5">
-        <img src="{% static 'images/strawberry.jpg' %}" class="img-fluid rounded-circle mb-1 events-circle" alt="Events page image introduction" /> 
-        <div class="row justify-content-center">
-            <div class="col-lg-6 text-dark">    
-                <div style="height: 8rem">
-                    <h2>Check out our Events Page</h2>
-                            <p class="lead">A place to set up & join Alcohol Free Events in your locality</p>
-                            <p class="mb-0">Are you the only one in the village who enjoys a non-alcoholic 
-                                drink & find it hard to find people to join you? Here is the place to find out by looking through the open Events
-                            or setting up one in your village/town/county.</p>
-                </div>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h2>Check out our Events Page</h2>
+                <p class="lead">A place to set up & join Alcohol Free Events in your locality</p>
+                <p class="mb-0">Are you the only one in the village who enjoys a non-alcoholic 
+                    drink & find it hard to find people to join you? Here is the place to find out by looking through the open Events
+                    or setting up one in your village/town/county.</p>
+            </div>
+            <div class="col-4"></div>
+                <img src="{% static 'images/strawberry.jpg' %}" class="img-fluid rounded-circle mb-1 events-circle" alt="Events page image introduction" /> 
             </div>
         </div>
     </div>

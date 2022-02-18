@@ -10,8 +10,8 @@
                 <h1 class="text-white fs-3 fw-bolder">ALCOHOL FREE IRELAND</h1>
                     <div class="line-up">
                         <!-- <div class="line"></div> -->
-                            <a href="{% url 'blog' %}" class="links">Blog</a>
-                            <a class="links" href="{% url 'events' %}">Events</a>
+                            <a href="{% url 'blog' %}" class="links">-Blog-</a>
+                            <a class="links" href="{% url 'events' %}">~Events~</a>
                         <!-- <div class="line"></div> -->
                     </div>
                 
@@ -31,6 +31,7 @@
         <div class="row">
             <div class="col-4">
                 <img src="{% static 'images/blog.jpg' %}"  class="rounded-circle blog-circle" alt="Blog page image introduction" />
+            </div>
             <div class="col-8 text-dark justify-content-right">
                 <h2>Check out the Blog</h2>
                 <p class="lead">A place to add your experience with Alcohol Free Drinks</p>
@@ -40,10 +41,7 @@
                     Walking in to large supermarkets recently I can't help notice how the non alcoholic section continues to grow, take you more shelf space
                     & seems to add a new drink every week. <br><br>
                     Many people are quietly considerning taking a break from alcohol & would like to learn more about other peoples experiences with this.
-                    The Blog provides that space for people to share there good & bad experiences with abstaining from alcohol.
-                    -Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptas architecto, fuga, sit 
-                    facilis nulla tempora placeat distinctio culpa officia debitis nesciunt optio voluptates laudantium itaque animi 
-                    inventore ex. Vitae.</p>
+                    The Blog provides that space for people to share there good & bad experiences with abstaining from alcohol.</p>
             </div>
         </div>
     </div>
@@ -52,7 +50,7 @@
 <div class="events-body py-5 bg-image-full events-image">
     <div class="columns is-mobile text-position-1"></div>   
         <h1 class="text-white fs-3 fw-bolder">CREATE AN EVENT HERE</h1>
-        <a href="{% url 'events' %}" type="button" class="btn btn-success px-3">
+        <a href="{% url 'add-event' %}" type="button" class="btn btn-success px-3">
             <i class="fa-regular fa-champagne-glasses"></i>  ADD EVENT  <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
     </div>
 </div>
@@ -67,16 +65,16 @@
                     drink & find it hard to find people to join you? Here is the place to find out by looking through the open Events
                     or setting up one in your village/town/county.</p>
             </div>
-            <div class="col-4"></div>
+            <div class="col-4">
                 <img src="{% static 'images/strawberry.jpg' %}" class="img-fluid rounded-circle mb-1 events-circle" alt="Events page image introduction" /> 
             </div>
         </div>
     </div>
 </section>
 <!-- Content section-->
-<section class="py-5">
-    <div class="container my-5">
-        <iframe width="420" height="315"
+<section>
+    <div class="container justify-content-center">
+        <iframe width="420" height="315" class="video-home"
                 src="https://www.youtube.com/embed/watch?v=5wgvpo-xBnA&t=43s">
         </iframe>
         <div class="row justify-content-center">

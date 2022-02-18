@@ -4,11 +4,14 @@ from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm, PostForm, ContactForm
 from django.template.defaultfilters import slugify
+from django.contrib.auth.decorators import login_required
 
 def Homepage(request):
     template_name= 'index.html'
     return render(request, template_name)
 
+
+@login_required
 def create_post(request):
     form = PostForm()
     if request.method == "POST":

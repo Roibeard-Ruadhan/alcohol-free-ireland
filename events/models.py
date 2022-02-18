@@ -8,7 +8,7 @@ class events(models.Model):
     location = models.CharField(max_length=150, unique=True)
     venue = models.CharField(max_length=150, unique=True)
     venue_image = CloudinaryField('image', default='placeholder')
-    event_date = models.DateTimeField('Event Time')
+    event_date = models.DateField('Event Date', blank=True, null=True)
     guest_limit = models.IntegerField('Guest limit',
                                         default=0,
                                         choices=[(0, u"No limit")] + list(zip(range(1,100), range(1,100))))
@@ -19,3 +19,16 @@ class events(models.Model):
     def __str__(self):
         return self.location
 
+    class Meta:
+        verbose_name_plural = "Event"
+
+# class ExampleForm(ModelForm):
+#     class Meta:
+#         model = Example
+#         fields = ['my_date_field', 'my_time_field', 'my_date_time_field']
+
+#         widgets = {
+#             'my_date_field' : DatePickerInput(),
+#             'my_time_field' : TimePickerInput(),
+#             'my_date_time_field'' : DateTimePickerInput()
+#         }

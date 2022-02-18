@@ -29,7 +29,7 @@ body {
 }
 
 .main-bg {
-    background-color: #F9E0D9;
+    background-color: beige;
 }
 
 .card {
@@ -190,6 +190,17 @@ body {
     font-size: 2rem;
     letter-spacing: 2px;
 }
+/* Pagination page turning links*/
+.page-link {
+    bottom: 1rem;
+}
+/* Youtube video*/
+.video-home {
+    position: relative;
+    margin: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .signup-btn {
     font-weight: 600;
@@ -225,6 +236,7 @@ body {
     background-size: cover;
     max-height: fit-content;
     object-fit: contain;
+    
 }
 
 .text-position-1 {

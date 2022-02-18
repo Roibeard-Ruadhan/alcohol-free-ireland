@@ -4,7 +4,7 @@ from blog.models import User
 from datetime import datetime
 from django.http import HttpResponseRedirect,HttpResponse
 from .forms import EventForm
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 # Create your views here.
 
 class EventList(generic.ListView):
@@ -25,8 +25,9 @@ def add_event(request):
     if request.method == "POST":
         form = EventForm(request.POST)
         if form.is_valid():
+            print('mess')
             form.save()
-            return HttpResponse('success')
+            return redirect('home')
         else:
             form = EventForm
             if 'submitted' in request.POST:

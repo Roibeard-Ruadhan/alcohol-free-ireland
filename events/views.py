@@ -5,6 +5,8 @@ from datetime import datetime
 from django.http import HttpResponseRedirect,HttpResponse
 from .forms import EventForm
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 class EventList(generic.ListView):
@@ -18,7 +20,7 @@ class EventList(generic.ListView):
 
 
 
-# @login_required
+@login_required
 def add_event(request):
     submitted = False
     form = EventForm()

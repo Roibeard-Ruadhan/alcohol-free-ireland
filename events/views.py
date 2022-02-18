@@ -36,3 +36,15 @@ def add_event(request):
                 submitted = True
 
     return render(request, 'add_event.html', {'form':form, 'submitted':submitted})
+
+
+# class PostUsers(View):
+    
+#     def post(self, request, slug, *args, **kwargs):
+#         post = get_object_or_404(Post, slug=slug)
+#         if post.likes.filter(id=request.user.id).exists():
+#             post.likes.remove(request.user)
+#         else:
+#             post.likes.add(request.user)
+
+#         return HttpResponseRedirect(reverse('events', args=[slug]))

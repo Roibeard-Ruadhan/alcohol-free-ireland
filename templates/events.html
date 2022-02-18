@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %} Alcohol Free Ireland Blogs {% endblock %}
+{% load static %}
 {% block content %}
 
 
@@ -34,12 +35,12 @@
                                 </div>
                             </div>
                             <hr/>
-                            <p class="card-text">{{ events.description }}</p>
-                            <p class="card-text">Confirmed Attending: </p><i class="fa-solid fa-user"></i>{{ post.num_of_users_attending }}</p>
-                            <div class="col-1">
+                            <p class="card-text">{{ events.description }}</p><i class="fa-solid fa-user"></i>
+                            <p class="card-text">Confirmed Attending: <i class="fa-solid fa-user"></i></p><!--<{{ post.num_of_users_attending }}</p>-->
+                            <!-- <div class="col-1">
                                 <strong>
                                     {% if user.is_authenticated %}
-                                    <form class="d-line" action="{% url 'post_like' post.slug %}" method="POST">
+                                    
                                         {% csrf_token %}
                                         {% if liked %}
         
@@ -55,10 +56,10 @@
         
                                     <span class="text-secondary"><i class="far fa-heart"></i></span>
                                     {% endif %}
-                                    <!-- The number of likes goes before the closing span tag -->
-                                    <span class="text-secondary"> {{ post.number_of_likes }}</span>
+                                      The number of users attending goes before the closing span tag -->
+                                    <span class="text-secondary"> {{ post.num_of_users_attending }}</span>
                                 </strong>
-                            </div>
+                            </div> -->
                             <p class="card-text text-muted h6">{{ events.event_date}}</p>
                         </div>
                     </div>

@@ -27,9 +27,6 @@ def create_post(request):
     return render(request,"add_blog.html",{"form":form})
 
 
-# class contact(View):
-#     def contact(request):
-#         return render(request, 'contact.html')
 def contact(request):
     submitted = False
     if request.method == 'POST':

@@ -22,13 +22,10 @@ class events(models.Model):
     class Meta:
         verbose_name_plural = "Event"
 
-# class ExampleForm(ModelForm):
-#     class Meta:
-#         model = Example
-#         fields = ['my_date_field', 'my_time_field', 'my_date_time_field']
+class User_Count(models.Model):
+    Guests_attending = models.ManyToManyField(
+        User, related_name='events_guests', blank=True)
 
-#         widgets = {
-#             'my_date_field' : DatePickerInput(),
-#             'my_time_field' : TimePickerInput(),
-#             'my_date_time_field'' : DateTimePickerInput()
-#         }
+
+    def number_of_users_attending(self):
+        return self.Guests_attending.count()

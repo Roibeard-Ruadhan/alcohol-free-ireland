@@ -1,5 +1,5 @@
 from django import forms
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 
 class ContactForm(forms.Form):
@@ -13,9 +13,9 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            cd = form.cleaned_data
+            
             # assert False
-            return HttpResponseRedirect('/contact?submitted=True')
+            return redirect("home")
     else:
         form = ContactForm()
         if 'submitted' in request.GET:

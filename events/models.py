@@ -6,7 +6,7 @@ from cloudinary.models import CloudinaryField
 class events(models.Model):
     # organiser = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     location = models.CharField(max_length=150, unique=False)
-    venue = models.CharField(max_length=150, unique=True)
+    venue = models.CharField(max_length=150, unique=False)
     venue_image = CloudinaryField('image', default='placeholder')
     event_date = models.DateField('Event Date', blank=True, null=True)
     description = models.TextField(blank=True, max_length=200)

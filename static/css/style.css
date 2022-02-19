@@ -17,15 +17,16 @@ body {
     font-family: 'Convergence', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
 }
 
 .light-bg {
-    background-color: #fff;
+    background-color: beige;
+    color: #461801;
 }
 
 .dark-bg {
-    background-color: #000000;
+    background-color: #364652;
+    color: beige;
 }
 
 .main-bg {
@@ -207,11 +208,8 @@ body {
 }
 
 .blog-circle {
-    object-fit: contain;
-    float: left;
-    width: 30%;
-    display: flex;
-    left: 0px;
+    width: 50vh;
+    justify-content:center;
   }
 
 .events-circle {

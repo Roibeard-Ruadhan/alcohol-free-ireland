@@ -22,7 +22,7 @@ def add_event(request):
     submitted = False
     form = EventForm()
     if request.method == "POST":
-        form = EventForm(request.POST)
+        form = EventForm(request.POST, request.FILES)
         if form.is_valid():
             print('mess')
             form.save()

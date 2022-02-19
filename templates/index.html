@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
-<header>
-    <div class="hero py-5 bg-image-full hero-image"><style>.hero-image {background: linear-gradient(rgba(0, 0, 0, 0.1), 
+<style>.hero-image {background: linear-gradient(rgba(0, 0, 0, 0.1), 
     rgba(0, 0, 0, 0.1)), url('/static/images/bar.jpg') no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -12,17 +10,15 @@
     height: 80vh;
     object-fit: contain;
     position: relative;}</style>
+<header>
+    <div class="hero py-5 bg-image-full hero-image">
         <div class="columns is-mobile is-justify-content-center">
             <div class="text-position-1">   
                 <img src="{% static 'images/logo.png' %}" alt="Logo Image" width="280" height="220">
                 <h1 class="text-white fs-3 fw-bolder">ALCOHOL FREE IRELAND</h1>
-                    <div class="line-up">
-                        <!-- <div class="line"></div> -->
-                            <a href="{% url 'blog' %}" class="links">-Blog-</a>
-                            <a class="links" href="{% url 'events' %}">~Events~</a>
-                        <!-- <div class="line"></div> -->
-                    </div>
-                
+                        <a href="{% url 'blog' %}" class="links">-Blog-</a>
+                        <a class="links" href="{% url 'events' %}">~Events~</a>
+            </div>
                 <form>
                     {% if not request.user.is_authenticated %}
                     <a href="{% url 'account_signup' %}" type="button" class="btn btn-primary px-3">
@@ -37,10 +33,10 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-4">
-                <img src="{% static 'images/blog.jpg' %}"  class="rounded-circle blog-circle" alt="Blog page image introduction" />
+            <div class="col-12 col-md-4">
+                <img src="{% static 'images/blog.jpg' %}"  class="rounded-circle blog-circle col-4" alt="Blog page image introduction" />
             </div>
-            <div class="col-8 text-dark">
+            <div class="col-12 col-md-8 text-dark">
                 <h2>Check out the Blog</h2>
                 <p class="lead">A place to add your experience with Alcohol Free Drinks</p>
                 <p class="mb-0">A space to share a variety of storys from drink reviews, dry January, to times of soberiety. 20% of the population of Ireland 
@@ -81,9 +77,7 @@
         </div>
         <div class="row">
             <div class="col-4 offset-md-1">
-                <iframe width="420" height="315" class="video-home"
-                    src="https://www.youtube.com/embed/watch?v=5wgvpo-xBnA&t=43s">
-                </iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/5wgvpo-xBnA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="col-6 offset-md-1">
                 <h2>Becoming More Widespread</h2>

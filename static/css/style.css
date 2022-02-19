@@ -169,19 +169,17 @@ body {
     background-color: #24262b;
 }
 
-.hero-image {
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('/static/images/bar.jpg') no-repeat top center fixed;
+.hero-image img {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 90vh;
+    height: 80vh;
     object-fit: contain;
     position: relative;
 }
 /*Header Details */
 .links {
-    background: 0;
     margin: 4px;
     color: white;
     text-decoration: none;

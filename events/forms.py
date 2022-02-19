@@ -6,13 +6,8 @@ from .models import events
 class EventForm(ModelForm):
     class Meta:
         model = events
-        # my_date_field = forms.DateField(widget=DatePickerInput)
-        # my_time_field = forms.TimeField(widget=TimePickerInput)
-        # my_date_time_field = forms.DateTimeField(widget=DateTimePickerInput)
-
-        fields = ('location', 'venue', 'venue_image', 'guest_limit', 'event_date', 'description')
-
-       
+        
+        fields = ('location', 'venue', 'venue_image', 'event_date', 'description')
 
         labels = {
             'venue_image': 'venue_image',

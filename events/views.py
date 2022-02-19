@@ -37,10 +37,13 @@ def add_event(request):
 
     
 def PostEvents(request, location):
+    print("post request")
     post = get_object_or_404(events, location=location)
+    print(post)
     if post.guests.filter(id=request.user.id).exists():
         post.guests.remove(request.user)
     else:
+        print("add")
         post.guests.add(request.user)
 
-    return HttpResponseRedirect(('events'))
+    return redirect('events')

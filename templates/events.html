@@ -36,15 +36,15 @@
                             </div>
                             <hr/>
                             <p class="card-text">{{ events.description }}</p>
-                            <span>{{event.number_of_guests}}</span>
-                            <p class="card-text">Click icon to Confirm Attending: <i class="fas fa-regular fa-user"></i></p>
+                           
+                            <p class="card-text">Click icon to Confirm Attending: </p>
                             
                             <form class="d-line" action="{% url 'post_event' events.location %}" method="POST">
                                 {% csrf_token %}
                                
 
                                 <button type="submit" name="blogpost_id" value="{{events.location}}" class="btn-like"><i 
-                                    class="fas fa-heart"></i></button>
+                                    class="far fa-user"></i> <span>{{events.number_of_guests}}</span></button>
                         
                             </form>
                             

@@ -3,10 +3,12 @@ from .models import events
 # Register your models here.
 
 class EventAdmin(admin.ModelAdmin):
+    list_display = ["location","approve"]
     actions = ['approve_events']
 
-    def approve_comments(self, request, queryset):
+    def approve_events(self, request, queryset):
         queryset.update(approve=True)
+
 admin.site.register(events, EventAdmin)
 
     # def approve_events(self, request, queryset):

@@ -15,7 +15,7 @@ class events(models.Model):
 
     def __str__(self):
         return self.location
-
+# Events plural in the 
     class Meta:
         verbose_name_plural = "Event"
 

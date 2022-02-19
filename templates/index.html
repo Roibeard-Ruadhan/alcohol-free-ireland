@@ -55,13 +55,15 @@
     </div>
 </section>
 <!-- Image element -->
-<div class="events-body py-5 bg-image-full events-image">
-    <div class="columns is-mobile text-position-1"></div>   
-        <h1 class="text-white fs-3 fw-bolder">CREATE AN EVENT HERE</h1>
-        <a href="{% url 'add-event' %}" type="button" class="btn btn-success px-3">
-            <i class="fa-regular fa-champagne-glasses"></i>  ADD EVENT  <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
+<section>
+    <div class="events-body py-5 bg-image-full events-image">
+        <div class="columns is-mobile text-position-1"></div>   
+            <h1 class="text-white fs-3 fw-bolder">CREATE AN EVENT HERE</h1>
+            <a href="{% url 'add-event' %}" type="button" class="btn btn-success px-3">
+                <i class="fa-regular fa-champagne-glasses"></i>  ADD EVENT  <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
+        </div>
     </div>
-</div>
+</section>
     <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
 <section>
     <div class="container">
@@ -69,7 +71,7 @@
             <div class="col-8">
                 <h2>Check out our Events Page</h2>
                 <p class="lead">A place to set up & join Alcohol Free Events in your locality</p>
-                <p class="mb-0">Are you the only one in the village who enjoys a non-alcoholic 
+                <p class="mb-0">Are you the only one in your local communtiy who enjoys a non-alcoholic 
                     drink & find it hard to find people to join you? Here is the place to find out by looking through the open Events
                     or setting up one in your village/town/county.</p>
             </div>
@@ -77,19 +79,13 @@
                 <img src="{% static 'images/strawberry.jpg' %}" class="img-fluid rounded-circle mb-1 events-circle" alt="Events page image introduction" /> 
             </div>
         </div>
-    </div>
-</section>
-<!-- Content section-->
-<section>
-    <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-4 offset-md-1">
                 <iframe width="420" height="315" class="video-home"
                     src="https://www.youtube.com/embed/watch?v=5wgvpo-xBnA&t=43s">
                 </iframe>
             </div>
-            </div>
-            <div class="col-8">
+            <div class="col-6 offset-md-1">
                 <h2>Becoming More Widespread</h2>
                 <p class="lead">As per the video above, non alcoholic drinks are becoming more appealing & more accepted every day.
                     Walking into supermarkets now you can't help but realise, almost every week a new drink is added. 

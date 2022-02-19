@@ -4,7 +4,7 @@ from blog.models import User
 from datetime import datetime
 from django.http import HttpResponseRedirect,HttpResponse
 from .forms import EventForm
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404,redirect
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -35,13 +35,12 @@ def add_event(request):
     return render(request, 'add_event.html', {'form':form, 'submitted':submitted})
 
 
-# class PostUsers(View):
     
-#     def post(self, request, slug, *args, **kwargs):
-#         post = get_object_or_404(Post, slug=slug)
-#         if post.likes.filter(id=request.user.id).exists():
-#             post.likes.remove(request.user)
-#         else:
-#             post.likes.add(request.user)
+def PostEvents(request, location):
+    post = get_object_or_404(events, location=location)
+    if post.guests.filter(id=request.user.id).exists():
+        post.guests.remove(request.user)
+    else:
+        post.guests.add(request.user)
 
-#         return HttpResponseRedirect(reverse('events', args=[slug]))
+    return HttpResponseRedirect(('events'))

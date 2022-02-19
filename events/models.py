@@ -11,8 +11,11 @@ class events(models.Model):
     event_date = models.DateField('Event Date', blank=True, null=True)
     description = models.TextField(blank=True, max_length=200)
     approve = models.BooleanField(default=False)
+    guests = models.ManyToManyField(
+        User, related_name='events_guests', blank=True)
 
-
+    def number_of_guests(self):
+        return self.guests.count()
     def __str__(self):
         return self.location
 # Events plural in the 

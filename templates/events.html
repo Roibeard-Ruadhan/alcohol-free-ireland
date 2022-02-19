@@ -36,30 +36,19 @@
                             </div>
                             <hr/>
                             <p class="card-text">{{ events.description }}</p>
-                            <p class="card-text">Click icon to Confirm Attending: <i class="fas fa-regular fa-user"></i></p><!-- <{{ post.num_of_users_attending }}</p>
-                                <div class="col-1">
-                                <strong>
-                                    {% if user.is_authenticated %}
-                                    
-                                        {% csrf_token %}
-                                        {% if liked %}
-        
-                                        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i 
-                                            class="fa-solid fa-users"></i></button>
-                                        {% else %}
-                                        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i 
-                                            class="fa-solid fa-user"></i></button>
-        
-                                        {% endif %}
-                                    </form>
-                                    {% else %}
-        
-                                    <span class="text-secondary"><i class="far fa-heart"></i></span>
-                                    {% endif %}
-                                      The number of users attending goes before the closing span tag 
-                                    <span class="text-secondary"> {{ post.num_of_users_attending }}</span>
-                                </strong>
-                            </div> -->
+                            <span>{{event.number_of_guests}}</span>
+                            <p class="card-text">Click icon to Confirm Attending: <i class="fas fa-regular fa-user"></i></p>
+                            
+                            <form class="d-line" action="{% url 'post_event' events.location %}" method="POST">
+                                {% csrf_token %}
+                               
+
+                                <button type="submit" name="blogpost_id" value="{{events.location}}" class="btn-like"><i 
+                                    class="fas fa-heart"></i></button>
+                        
+                            </form>
+                            
+                           
                             <p class="card-text text-muted h6">Event date: {{ events.event_date}}</p>
                         </div>
                     </div>

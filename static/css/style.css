@@ -206,8 +206,8 @@ body {
 }
 
 .blog-circle {
-    width: 50vh;
-    justify-content:center;
+    width: 100%;
+    margin: 10px;
   }
 
 .events-circle {

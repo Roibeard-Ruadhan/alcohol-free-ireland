@@ -21,7 +21,7 @@
                                     <div class="image-container card card-cascade narrower">
                                         {% if "placeholder" in events.venue_image.url %}
                                         <img class="card-img-top view view-cascade overlay"
-                                            src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                            src="{% static 'images/strawberry.jpg' %}">
                                         {% else %}
                                         <img class="card-img-top" src=" {{ events.venue_image.url }}">
                                         {% endif %}
@@ -35,9 +35,9 @@
                                 </div>
                             </div>
                             <hr/>
-                            <p class="card-text">{{ events.description }}</p><i class="fa-solid fa-user"></i>
-                            <p class="card-text">Confirmed Attending: <i class="fa-solid fa-user"></i></p><!--<{{ post.num_of_users_attending }}</p>-->
-                            <!-- <div class="col-1">
+                            <p class="card-text">{{ events.description }}</p>
+                            <p class="card-text">Confirmed Attending: <i class="fa-solid fa-user"></i></p><!-- <{{ post.num_of_users_attending }}</p>
+                                <div class="col-1">
                                 <strong>
                                     {% if user.is_authenticated %}
                                     
@@ -56,11 +56,11 @@
         
                                     <span class="text-secondary"><i class="far fa-heart"></i></span>
                                     {% endif %}
-                                      The number of users attending goes before the closing span tag -->
+                                      The number of users attending goes before the closing span tag 
                                     <span class="text-secondary"> {{ post.num_of_users_attending }}</span>
                                 </strong>
                             </div> -->
-                            <p class="card-text text-muted h6">{{ events.event_date}}</p>
+                            <p class="card-text text-muted h6">Event date: {{ events.event_date}}</p>
                         </div>
                     </div>
                 </div>

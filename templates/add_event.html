@@ -1,24 +1,26 @@
 {% extends "base.html" %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
-            {% if submitted %}
-            <p>Your Event Was Submitted Successfully</p>
+<div class="dark-bg">
+                {% if submitted %}
+                <p>Your Event Was Submitted Successfully</p>
 
-                {% else %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h1>Add Event</h1>
-            <br/><br/>
+                    {% else %}
+    <div class="container">
+        <div class="row">
+            <div class="col offset-md-1">
+                <h1>Add Event</h1>
+                <br/><br/>
 
-            <form action="" method="POST" style="margin-top: 1.3em;">
-                {% csrf_token %}
+                <form action="" method="POST" style="margin-top: 1.3em;">
+                    {% csrf_token %}
 
-                {{ form.as_p}}
-                <input type="submit" value="Submit" class="btn btn-success">
-            </form>
-            {% endif %}
-            <br/><br/>
+                    {{ form.as_p}}
+                    <input type="submit" value="Submit" class="btn btn-success">
+                </form>
+                {% endif %}
+                <br/><br/>
+            </div>
         </div>
     </div>
 </div>

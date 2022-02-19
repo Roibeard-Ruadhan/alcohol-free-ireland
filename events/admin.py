@@ -10,6 +10,3 @@ class EventAdmin(admin.ModelAdmin):
         queryset.update(approve=True)
 
 admin.site.register(events, EventAdmin)
-
-    # def approve_events(self, request, queryset):
-    #     queryset.update(approved=True)

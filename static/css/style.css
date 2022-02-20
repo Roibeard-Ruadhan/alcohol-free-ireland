@@ -11,6 +11,10 @@ body {
     max-width: 100%;
 }
 
+a {
+    color:black;
+}
+
 .brand {
     font-family: 'Convergence', sans-serif;
     font-size: 1.4rem;

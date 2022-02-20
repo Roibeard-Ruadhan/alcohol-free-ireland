@@ -4,7 +4,7 @@
 }
 
 body {
-    color: beige;
+    color: #f4f1de;
     font-family: 'Convergence', sans-serif;
     margin:0;
 	padding:0;
@@ -18,14 +18,9 @@ body {
     font-weight: 700;
 }
 
-.light-bg {
-    background-color: #5BC0EB;
-    color: f4f1de;
-}
-
 .dark-bg {
-    background-color: #548687;
-    color: f4f1de;
+    background-color: #F4F1DE;
+    color: #548687;
 }
 
 .main-bg {

@@ -4,7 +4,7 @@
 }
 
 body {
-    color: #461801;
+    color: beige;
     font-family: 'Convergence', sans-serif;
     margin:0;
 	padding:0;
@@ -19,17 +19,17 @@ body {
 }
 
 .light-bg {
-    background-color: beige;
-    color: #461801;
+    background-color: #5BC0EB;
+    color: f4f1de;
 }
 
 .dark-bg {
-    background-color: #364652;
-    color: beige;
+    background-color: #548687;
+    color: f4f1de;
 }
 
 .main-bg {
-    background-color: beige;
+    background-color: #548687;
 }
 
 .card {
@@ -113,7 +113,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #364652;
+    color: yellow;
 }
 
 .post-title {
@@ -226,8 +226,30 @@ body {
     background-size: cover;
     max-height: fit-content;
     object-fit: contain;
-    
 }
+.events-link {
+    float:right;
+}
+
+.blog-body {
+    padding: 0;
+    background-color: #24262b;
+}
+
+.blog-image {
+    background: url('/static/images/mocktails.jpg') no-repeat center center fixed;
+    height: 50vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-height: fit-content;
+    object-fit: contain;
+}
+.blog-link {
+    float:right;
+}
+
 
 .text-position-1 {
     text-align: center;

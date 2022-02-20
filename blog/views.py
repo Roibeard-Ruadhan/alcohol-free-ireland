@@ -5,7 +5,6 @@ from .models import Post
 from .forms import CommentForm, PostForm, ContactForm
 from django.template.defaultfilters import slugify
 from django.contrib.auth.decorators import login_required
-# from .forms import EditEntryForm
 
 def Homepage(request):
     template_name= 'index.html'
@@ -120,13 +119,3 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-# def update(request, id, slug):
-#     entry = get_object_or_404(Entry, id=id, slug=slug)
-#     if request.method == 'POST':
-#         form = EditEntryForm(data=request.POST, instance=entry)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('home')             
-#     else:
-#         form = EditEntryForm(instance=entry)
-#     return render(request, '/edit.html', {'form':form})

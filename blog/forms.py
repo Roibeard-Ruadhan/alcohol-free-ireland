@@ -19,8 +19,3 @@ class ContactForm(forms.Form):
     subject = forms.CharField(max_length=100)
     message = forms.CharField(widget=forms.Textarea)
 
-# class EditEntryForm(forms.ModelForm):
-#     class Meta:
-#         model = Post
-#         # fields = "__all__"
-#         exclude = ["author", "slug", "status" ,"likes"]

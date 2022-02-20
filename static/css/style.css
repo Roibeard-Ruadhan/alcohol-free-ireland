@@ -187,6 +187,10 @@ a {
     font-size: 2rem;
     letter-spacing: 2px;
 }
+.links:hover {
+    color:#172a3a; 
+}
+
 /* Pagination page turning links*/
 .page-link {
     bottom: 1rem;
@@ -258,16 +262,13 @@ a {
 /* Blog page */
 
 /* Events Page */
-.add-event-btn {
-    justif
-}
 
 .fa-user:before {
-    color: #fff;
+    color: #000000;
     font-size: x-large;
 }
 .guests_num {
-    color: #FFF;
+    color: #000000;
 }
 
 /* Footer */

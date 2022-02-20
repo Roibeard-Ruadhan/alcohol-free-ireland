@@ -163,7 +163,7 @@ body {
 
 
 /* Hero image */
-.hero-body {
+/* .hero-body {
     padding: 0;
     background-color: #24262b;
 }
@@ -176,7 +176,7 @@ body {
     height: 80vh;
     object-fit: contain;
     position: relative;
-}
+} */
 /*Header Details */
 .links {
     margin: 4px;

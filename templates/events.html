@@ -42,7 +42,7 @@
                                 {% csrf_token %}
                                
                             <p class="card-text">Click icon to Confirm Attending: <button type="submit" name="blogpost_id" 
-                            value="{{events.location}}" class="btn-like"><i class="far fa-user"></i> <span>{{events.number_of_guests}}</span></button></p>
+                            value="{{events.location}}" class="btn-like"><i class="far fa-user icon-4x"></i> <span class="guests_num">{{events.number_of_guests}}</span></button></p>
                         
                             </form>
                             

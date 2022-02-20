@@ -233,20 +233,16 @@ body {
     text-align: center;
 }
 /* Blog page */
-.blog-hero img {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 40vh;
-    object-fit: fill;
-    position: relative;
-}
-.blog-hero {
-    padding: 0;
-    object-fit:cover;
 
+/* Events Page */
+.fa-user:before {
+    color: #fff;
+    font-size: x-large;
 }
+.guests_num {
+    color: #FFF;
+}
+
 /* Footer */
 .container{
 	max-width:fit-content;

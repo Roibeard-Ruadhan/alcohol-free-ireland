@@ -13,13 +13,13 @@
 <header>
     <div class="hero py-5 bg-image-full hero-image">
         <div class="columns is-mobile is-justify-content-center">
-            <div class="text-position-1">   
+            <div class="position-center">   
                 <img src="{% static 'images/logo.png' %}" alt="Logo Image" width="280" height="220">
                 <h1 class="text-white fs-3 fw-bolder">ALCOHOL FREE IRELAND</h1>
                         <a href="{% url 'blog' %}" class="links">-Blog-</a>
                         <a class="links" href="{% url 'events' %}">~Events~</a>
             </div>
-            <div class="text-position-1">
+            <div class="position-center">
                 <form>
                     {% if not request.user.is_authenticated %}
                     <a href="{% url 'account_signup' %}" type="button" class="btn btn-success px-3">
@@ -42,13 +42,13 @@
             <div class="col-12 col-md-8 text-center" style="margin-top: 3rem;">
                 <h2>Check out the Blog</h2>
                 <p class="lead">A place to add your experience with Alcohol Free Drinks</p>
-                <p class="mb-0">A space to share a variety of storys from drink reviews, dry January, to times of soberiety. 20% of the population of Ireland 
+                <p class="mb-0">To share a variety of storys from drink reviews, dry January, to times of soberiety. 20% of the population of Ireland 
                     do not drink alcohol & often feel left out of weekend/social gatherings. <br><br>
                     Have you enjoyed any non alcohol drinks recently that you would like to share your experience of, feel free to share in the blog space. 
                     Walking in to large supermarkets recently I can't help notice how the non alcoholic section continues to grow, take you more shelf space
                     & seems to add a new drink every week. <br><br>
-                    Many people are quietly considerning taking a break from alcohol & would like to learn more about other peoples experiences with this.
-                    The Blog provides that space for people to share there good & bad experiences with abstaining from alcohol.</p>
+                    Many people are quietly considerning taking a break from alcohol & would be great for them to have a space to learn more about other peoples 
+                    experiences with this. The Blog provides that space & more, a space for people to share there good & bad experiences with time away from alcohol.</p>
             </div>
         </div>
     </div>
@@ -56,7 +56,7 @@
 <!-- Image element -->
 <section>
     <div class="events-body bg-image-full events-image">
-        <div class="text-position-1">  
+        <div class="position-center">  
             <h1 class="text-white">CREATE AN EVENT HERE</h1>
             <a href="{% url 'add-event' %}" type="button" class="btn btn-success px-3">
                 <i class="fa-regular fa-champagne-glasses"></i>  ADD EVENT  <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
@@ -71,8 +71,8 @@
                 <h2>Check out our Events Page</h2>
                 <p class="lead">A place to set up & join Alcohol Free Events in your locality</p>
                 <p class="mb-0">Are you the only one in your local communtiy who enjoys a non-alcoholic 
-                    drink & find it hard to find people to join you? Here is the place to find out by looking through the open Events
-                    or setting up one in your town or county.</p>
+                    drink & find it hard to find people to join you? You have come to the right place. Here you can find out by looking through the open 
+                    Events available if there is one near you. If you, look no further as you also have the option of setting an event in your town or county.</p>
             </div>
             <div class="col-12 col-md-4">
                 <a class="links" href="{% url 'events' %}">
@@ -84,7 +84,7 @@
 </section>
 <section>
     <div class="blog-body bg-image-full blog-image">
-        <div class="text-position-1">   
+        <div class="position-center">   
             <h1 class="text-white">CREATE A BLOG HERE</h1>
             <a href="{% url 'add_blog' %}" type="button" class="btn btn-success px-3">
                 <i class="fa-regular fa-champagne-glasses"></i>  CREATE BLOG  <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
@@ -94,19 +94,20 @@
 <section>
     <div class="container">
         <div class="col text-center" style="margin-top: 2rem;">
-            <div class="text-position-1">
+            <div class="position-center">
                 <h2>Becoming More Widespread</h2>
-                <p>As per the video below, non alcoholic drinks are becoming more accepeted & even more appealing every day.
-                    Walking into supermarkets now you can't help but realise, almost every week a new drink is added. 
-                    Every month a new shelf is added to the non-alcohol drinks section, its gradually taking over the whole supermarket 
-                    one day at a time.</p>
+                    <p>It can still very much be a touchy subject when people first here of somebody abstaining from alcohol. It has always played
+                       a huge role in many cultures across the world, specifically on social occasions. As per the video below, non alcoholic drinks 
+                       are becoming more accepeted & even more appealing every day. Walking into supermarkets now you can't help but realise, almost 
+                       every week a new drink is added. Every month a new shelf is added to the non-alcohol drinks section. It is gradually taking over 
+                       the whole supermarket one day at a time.</p>
             </div>
         </div>
     </div>
 </section>
 <section>
     <div style="margin-top: 2rem;">
-        <div class="text-position-1 embed-responsive embed-responsive-16by9">
+        <div class="position-center embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/5wgvpo-xBnA" 
             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
             gyroscope; picture-in-picture" allowfullscreen></iframe>

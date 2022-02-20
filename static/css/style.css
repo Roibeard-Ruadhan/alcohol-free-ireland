@@ -9,7 +9,6 @@ body {
     margin:0;
 	padding:0;
     max-width: 100%;
-    /* overflow: hidden; */
 }
 
 .brand {
@@ -19,7 +18,7 @@ body {
 }
 
 .dark-bg {
-    background-color: #F4F1DE;
+    background-color: white;
     color: #548687;
 }
 
@@ -103,12 +102,13 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #fff;
+    color: #548687;
 }
 
 .post-link:hover,
 .page-link {
-    color: yellow;
+    color: white;
+    background: #548687;
 }
 
 .post-title {
@@ -186,6 +186,8 @@ body {
 /* Pagination page turning links*/
 .page-link {
     bottom: 1rem;
+    color: #fff;
+    background-color:#24262b;
 }
 /* Youtube video*/
 .video-home {
@@ -246,12 +248,16 @@ body {
 }
 
 
-.text-position-1 {
+.position-center {
     text-align: center;
 }
 /* Blog page */
 
 /* Events Page */
+.add-event-btn {
+    justif
+}
+
 .fa-user:before {
     color: #fff;
     font-size: x-large;

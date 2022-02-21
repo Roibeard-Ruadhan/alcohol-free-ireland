@@ -1,20 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<style>.hero-image {background: linear-gradient(rgba(0, 0, 0, 0.1), 
-    rgba(0, 0, 0, 0.1)), url('/static/images/bar.jpg') no-repeat top center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 80vh;
-    object-fit: contain;
-    position: relative;}</style>
 <header>
     <div class="hero py-5 bg-image-full hero-image">
         <div class="columns is-mobile is-justify-content-center">
-            <div class="position-center">   
-                <img src="{% static 'images/logo.png' %}" alt="Logo Image" width="280" height="220">
+            <div class="position-center">
+                <img src='{{ MEDIA_URL }}logo.png' alt="Logo Image" width="280" height="220">
                 <h1 class="text-white fs-3 fw-bolder">ALCOHOL FREE IRELAND</h1>
                         <a href="{% url 'blog' %}" class="links">-Blog-</a>
                         <a class="links" href="{% url 'events' %}">~Events~</a>
@@ -36,7 +27,7 @@
         <div class="row">
             <div class="col-12 col-md-4">
                 <a href="{% url 'blog' %}" class="links">
-                    <img src="{% static 'images/blog.jpg' %}"  class="rounded-circle blog-circle col-4" alt="Blog page image introduction" />
+                    <img src="{{ MEDIA_URL }}blog.jpg"  class="rounded-circle blog-circle col-4" alt="Blog page image introduction" />
                 </a>
             </div>
             <div class="col-12 col-md-8 text-center" style="margin-top: 3rem;">
@@ -58,7 +49,7 @@
     <div class="events-body bg-image-full events-image">
         <div class="position-center">  
             <h1 class="text-white">CREATE AN EVENT HERE</h1>
-            <a href="{% url 'add-event' %}" type="button" class="btn btn-success px-3">
+            <a href='{{ MEDIA_URL }}media/add-event' type="button" class="btn btn-success px-3">
                 <i class="fa-regular fa-champagne-glasses"></i>  ADD EVENT  <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
         </div>
     </div>
@@ -76,7 +67,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <a class="links" href="{% url 'events' %}">
-                    <img src="{% static 'images/events.png' %}" class="img-fluid rounded-circle mb-1 events-circle page-link" alt="Events page image introduction" />
+                    <img src='{{ MEDIA_URL }}events.png' class="img-fluid rounded-circle mb-1 events-circle page-link" alt="Events page image introduction" />
                 </a> 
             </div>
         </div>

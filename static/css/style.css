@@ -162,12 +162,13 @@ a {
 
 
 /* Hero image */
-/* .hero-body {
+.hero-body {
     padding: 0;
     background-color: #24262b;
 }
 
-.hero-image img {
+.hero-image {background: linear-gradient(rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.1)), url('/media/bar.jpg') no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -175,7 +176,7 @@ a {
     height: 80vh;
     object-fit: contain;
     position: relative;
-} */
+}
 
 /*Header Details */
 .links {
@@ -223,7 +224,7 @@ a {
 }
 
 .events-image {
-    background: url('/static/images/events.png') no-repeat center center fixed;
+    background: url('/media/events.png') no-repeat center center fixed;
     height: 50vh;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -242,7 +243,7 @@ a {
 }
 
 .blog-image {
-    background: url('/static/images/mocktails.jpg') no-repeat center center fixed;
+    background: url('/media/mocktails.jpg') no-repeat center center fixed;
     height: 50vh;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -259,9 +260,8 @@ a {
 .position-center {
     text-align: center;
 }
-/* Blog page */
 
-/* Events Page */
+/* Events Page + Blog page */
 
 .fa-user:before {
     color: #000000;

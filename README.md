@@ -130,12 +130,22 @@ The images were sourced using various websites _________ which offered free imag
 [Back to contents](#contents)
 
 ## **Features**
-
+- Users can confirm they are attending an event by clicking on the large user icon underneath the event card. The number beside the 
+icon will add one when clicked to confirm to the organizer the guest attendance. Counting the likes inspired this idea to resolve user attendance confirmation.
+- The user is able to write there own blog & set up there own event when they are logged in.
+- Non users can see the events & blogs but cannot confirm attendance or write their own blog etc. 
 
 ### **Site Navigation**
+- Site navigation is simplified & the same on the majority of pages stored in the base file.
+- When a user is logged in the navigation will change to suit & vice versa.
+- When a non user tries to write a blog or set up an event they will be directed to the sign-up form
 
 ### **Features Implemented**
-
+- The users can like & comment on posts.
+- Users can write there own blog posts
+- Users can set up there own events
+- Users can confirm attendance att
+- Too many to mention in 5 minutes.
 #### **Features relevant to all pages** (extended via *base.html*):
 
 - **Header**
@@ -223,13 +233,135 @@ The images were sourced using various websites _________ which offered free imag
 
 ## **Deployment**
 
+The project was developed using [GitPod](https://gitpod.io/) and pushed to [GitHub](https://github.com/) then deployed on Heroku using these instructions:
+
+1. Create a requirements.txt file using command *pip3 freeze --local > requirements.txt*
+2. Create a Procfile with the terminal command *echo web: python app.py > Procfile* and at this point checking the Procfile to make sure there is no stray line as this can cause issues when deploying to Heroku.
+3. The new requirements file and Procfile committed to GitHub.
+4. New app created in Heroku by clicking "New" and "Create New App" and giving it an original name and setting the region to closest to location.
+5. From Heroku dashboard click "Deploy" -> "Deployment Method" and select "GitHub"
+6. Search for GitHub repo and connect.
+7. In the dashboard click "Settings" -> "Reveal Config Vars"
+8. Set config vars:
+
+### ** Heroku ** 
+
+1. Login to Heroku.com and click New -> Create New App
+- Add a name
+- Select region
+- Click Create App
+
+2. To add the postgres database in Heroku:
+In the Resources tab -> Add ons:
+
+- Search for postgres
+- Select Heroku Postgres
+- Select the free option
+- Click submit
+3. In the gitpod environment install dj_database_url and psycopy2 packages using the commands:
+
+pip3 install psycopy2-binary
+
+pip3 install dj_database_url
+4. Freeze these requirements into the requirements.txt file by running the following command:
+
+pip3 freeze —local > requirements.txt
+
+This will ensure all the dependencies currently used by the app are in the requirements.txt file.
+
+5. Update the settings.py file by adding:
+
+import dj_database_url
+And setting up the new database settings:
+
+    DATABASES = {
+        ‘default’ = dj_databse_url.parse(‘<postgres_url>’)
+    }
+Comment out the original database setting for now so that we are connected to the postgres database.
+
+6. Now run migrations for the new postgres database. First showmigrations to see that the migrations still need to be applied using
+
+python3 manage.py showmigrations
+Apply the migrations using:
+
+    python3 manage.py migrate
+7. Create a superuser:
+
+python3 manage.py createsuperuser
+8. To get the data from the original sqlite database used in Gitpod:
+
+Reconnect to the original sqlite database in settings.py
+
+Backup the sqlite database and load it into a db.json file using the command:
+
+./manage.py dumpdata --exclude auth.permission --exclude contenttypes --indent 2 > db.json
+9. Then connect back to the postgres database in settings.py
+
+Load the data from the db.json file into the postgres database using the command:
+
+  ./manage.py loaddata db.json
+Then we can run the site using the postgres database.
+
+10. Setup settings.py file to use either the sqlite database when running on gitpod or the postgres database when running on Heroku by using the following code:
+
+If 'DATABASE_URL' in os.environ:
+
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+
+else:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+Ensuring the DATABASE_URL environment variable is set in the Heroku config vars.
+
+11. Install gunicorn which acts as our webserver:
+pip3 install gunicorn
+And then:
+
+pip3 freeze —local > requirements.txt
+To save it in the requirements.txt file.
+
+12. Create a Procfile and add the following code to it which tells Heroku to create a web dyno which will run gunicorn and serve our app.
+
+Web: gunicorn <app_name>.wsgi:application
+13. Initially disable collectstatic in Heroku, this can be done in the cli:
+
+Heroku login -i
+
+Enter Heroku login details
+
+And run:
+
+  Heroku config:set DISABLE_COLLECTSTATIC = 1
+14. Update allowed hosts in settings.py to
+
+ALLOWED_HOSTS = [‘<heroku_app_name>.herokuapp.com’, ‘localhost’]
+
+15. Git add, git commit and git push files to GitHub so they are available to Heroku which will use them to build the app.
+
+16. Initialise the Heroku git remote in the CLI:
+
+Heroku git:remote -a <heroku_app_name>
+17. Push to Heroku:
+git push Heroku main
+The app is now deployed via Heroku.
+
+18. In Heroku we can now set up automatic deployments so that each time the code is pushed to github it also deploys to Heroku. In the deploy tab:
+- Select Connect to GitHub, when the Github profile is displayed add the name of your repo and click search, once it finds & displays the correct repo click connect.
+- Select the branch the repo is using
+- Click Enable Automatic Deploys
+19. In Heroku Config Vars set up a SECRET_KEY.
 
 
 ## **Credits**
 
 ### **Code**
-
-### **Inspiration**
 
 
 ### **Acknowledgements**

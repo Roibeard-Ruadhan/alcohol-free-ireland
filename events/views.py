@@ -34,8 +34,8 @@ def add_event(request):
 
     return render(request, 'add_event.html', {'form':form, 'submitted':submitted})
 
-
-    
+# login required resolves issues with non-users. 
+@login_required  
 def PostEvents(request, location):
     print("post request")
     post = get_object_or_404(events, location=location)

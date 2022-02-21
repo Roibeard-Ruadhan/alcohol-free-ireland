@@ -25,7 +25,7 @@
                                     <div class="image-container card card-cascade narrower">
                                         {% if "placeholder" in events.venue_image.url %}
                                         <img class="card-img-top view view-cascade overlay"
-                                            src="{% static 'images/strawberry.jpg' %}">
+                                            src='{{ MEDIA_URL }}strawberry.jpg'>
                                         {% else %}
                                         <img class="card-img-top" src=" {{ events.venue_image.url }}">
                                         {% endif %}

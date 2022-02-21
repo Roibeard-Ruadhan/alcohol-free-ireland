@@ -87,7 +87,7 @@ The images were sourced using various websites _________ which offered free imag
 ![Blog](media/wireframes/blog.png)
 ![Events](media/wireframes/events.png)
 
-## **Technologies**
+## **Technologies / Languages**
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
   - Used as the main markup language for the website content.
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -96,8 +96,6 @@ The images were sourced using various websites _________ which offered free imag
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
     - Used to show the questions through pagination and for the game play. -->
 
-
-### **Languages**
 
 ### **Database**
 - [Postgres]
@@ -109,10 +107,15 @@ The images were sourced using various websites _________ which offered free imag
     -CSS Framework for developing responsive and mobile-first websites.
 
 ### **Tools**
-
+- [Jinja2](https://palletsprojects.com/p/jinja/)
+    - Jinja2 is a full-featured template engine for Python
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+    - Boostrap the world’s most popular framework for building responsive, mobile-first sites, with jsDelivr and a template starter page.
+  
 [Back to contents](#contents)
 
 ## **Features**
+
 
 ### **Site Navigation**
 
@@ -215,5 +218,7 @@ The images were sourced using various websites _________ which offered free imag
 
 
 ### **Acknowledgements**
+I don't have much time to write this but I can't thank the Tutor team enough for their incredible guidance & support throughout this porject. 
+To my Mentor Felipe Souza Alarcon for all his exellent advice, feedback & support. To Kasia for her endless inspiration & advice.
 [Back to contents](#contents)
 

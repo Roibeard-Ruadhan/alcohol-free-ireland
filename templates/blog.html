@@ -19,7 +19,7 @@
                             <div class="image-container card card-cascade narrower">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top view view-cascade overlay"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    src="'{{ MEDIA_URL }}blog.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}

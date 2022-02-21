@@ -5,6 +5,8 @@ This website was setup to provide a platform for people who are considering taki
 
 It is also a place for people who enjoy going out to drink non-alcoholic drinks to meet other alcohol free drinkers in their locality. 
 
+Link to [live site](https://non-alc-ireland.herokuapp.com/)
+
 ## **Contents**
 
 - [**UX (User Experience)**](#ux-user-experience)

@@ -1,4 +1,4 @@
-# Alcoholic Free Social Drinks Ireland
+# Alcohol Free Social Drinks Ireland
 
 ## About
 This website was setup to provide a platform for people who are considering taking a break from alcohol & those who don't drink alcohol. It allows people to freely share their experiences with a non-alcoholic drink lifestyle & leaves open a comments space for curious people to interact.
@@ -62,9 +62,6 @@ Link to [live site](https://non-alc-ireland.herokuapp.com/)
     - I would like to be able to register via a simple process so that I can join the community.
     - I would like the navigation to be self explanotory & User friendly on all devices
 
-- As a returning user
-  - I would like to be able to delete my posts or comments or likes on request.
-  - I would like to be able to log in to see book reviews I have written and favourited on one page
 
 
 ### **Site Owner Goals** 
@@ -80,7 +77,7 @@ The Colours started with a dark mahogony frame to express an atmosphere of a dar
 ### **Fonts**
 
 ### **Imagery**
-The images were sourced using various websites _________ which offered free images when referenced respectively 
+The images were sourced using various websites _________ which offered free images when referenced respectfully 
 
 ### **Wireframes**
 ![Home](media/wireframes/home.png)
@@ -364,8 +361,8 @@ The app is now deployed via Heroku.
 
 
 ### **Acknowledgements**
-I don't have much time to write this but I can't thank the Tutor team enough for their incredible guidance & support throughout this porject. 
-To my Mentor Felipe Souza Alarcon for all his exellent advice, feedback & support. To Kasia for her endless inspiration & advice.
+I don't have much time to write this but I can't thank the Tutor team enough for their incredible guidance & support throughout this project. 
+To my Mentor Felipe Souza Alarcon for all his excellent advice, feedback & support. To Kasia for her endless inspiration & advice.
 Many thanks to the Slack community & to the team at Code Institute for their help throughout the development process
 [Back to contents](#contents)
 

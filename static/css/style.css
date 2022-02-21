@@ -9,6 +9,13 @@ body {
     margin:0;
 	padding:0;
     max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
 }
 
 a {
@@ -111,7 +118,7 @@ a {
 
 .post-link:hover,
 .page-link {
-    color: white;
+    color: #000000;
     background: #548687;
 }
 
@@ -132,7 +139,7 @@ a {
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
+    background-color: #000000;
     color: #23BBBB;
 }
 
@@ -143,7 +150,7 @@ a {
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #f4f1de;
     text-decoration: underline;
 }
 
@@ -168,7 +175,7 @@ a {
 }
 
 .hero-image {background: linear-gradient(rgba(0, 0, 0, 0.1), 
-    rgba(0, 0, 0, 0.1)), url('/media/bar_q5hm36.jpg') no-repeat top center fixed;
+    rgba(0, 0, 0, 0.1)), url('/media/bar.jpg') no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -224,7 +231,7 @@ a {
 }
 
 .events-image {
-    background: url('/media/events_h8lkji.png') no-repeat center center fixed;
+    background: url('/media/events.png') no-repeat center center fixed;
     height: 50vh;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -243,7 +250,7 @@ a {
 }
 
 .blog-image {
-    background: url('/media/mocktails_w3ikhx.jpg') no-repeat center center fixed;
+    background: url('/media/mocktails.jpg') no-repeat center center fixed;
     height: 50vh;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -255,7 +262,9 @@ a {
 .blog-link {
     float:right;
 }
-
+.card-text {
+    color: #f4f1de;
+}
 
 .position-center {
     text-align: center;

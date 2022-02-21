@@ -149,19 +149,28 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 #### **Features relevant to all pages** (extended via *base.html*):
 
 - **Header**
+- It also has 3 buttons, 1 to sign-up, 1 to enter the blog page & one to enter the events page.
   - **Navigation**
+- Navigation is simplified using boostrap which turns into a hamburger buton after a certain breakpoint for responsiveness.
+- The navigation bar has drop downs for the Blog & Events options.
+- The NavBar & the footer are the same colour & both using bootstrap for responsiveness
+- Completed logo using Adobe
 
 - **Hero sections**
-
+- The header provides a welcoming atmosphere of a modern cocktail bar.
 - **Footer** 
-
+- The footer is a modern professional look with social network connections, navbar tools & contact links plus details
 #### **Home Page** (*index.html*) 
 
-#### **Log In Page** (*login.html*)
+#### **Log In Page** (*login.html*) & **Register** (*signup.html*)
   **Form** 
+- Login & Register forms were made using the Django inbuilt form.
+- Forms are decorated using bootstrap & CSS.
+- Text colour changed to make clearer over background color.
 
-#### **Register** (*register.html*)
-   **Form**
+#### **Add a blog** (*add_blog.html*) & **Add an Event** (*add_event.html*)
+- Login & Register forms were made using the Django inbuilt form.
+- All forms are decorated using bootstrap & CSS 
 
 [Back to contents](#contents)
 
@@ -170,13 +179,13 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 
 [Back to contents](#contents)
 
-### **Error Pages**
-
-#### *404.html*
-
 ### **Responsive Design**
+- Design was made responsive by using Django & Bootstrap primarily.
 
 ### **Future Features**
+- This may well expand to become 0'0 Europe but need to see how it works in Ireland first
+- User can confirm time & date of event via the database.
+- Event organiser can add a limit to guests in the database
 
 ## **Database Layout**
 - **Posts Diagram**
@@ -204,20 +213,8 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 |            |created+on  |DateTimeField|auto_now_add_True|
 |            |approved    |BooleanField |default False    |
 
-- **Add Events Diagram**
-
-|     Key    |     Name     |     Type       |
-| -----------| -------------| ---------------|
-|            |Title(Unique) |Char(200)       |
-<!-- |ForeignKey  |Author        |User model      |
-|            |Created date  |DateTime        |
-|            |Updated date  |DateTime        |
-|            |Content       |TextField       |
-|            |Featured Image|Cloudinary Image|
-|            |Excerpt       |TextField       |
-|Many to Many|Likes         |User model      |
-|            |Slug(Unique)  |SlugField       |
-|            |Status        |Integer         |  -->
+- **Database Schema Map**
+![Database](media/map-diagram.png)
 
 [Back to contents](#contents)
 
@@ -235,10 +232,11 @@ Meaningful commit messages were used to allow to roll back any changes made thro
 
 [Back to contents](#contents)
 
-## **Testing**
+## Testing & bugs
+[Click here for testing & bugs](/media/bugs.md)
 
 ## **Deployment**
-
+### Github
 The project was developed using [GitPod](https://gitpod.io/) and pushed to [GitHub](https://github.com/) then deployed on Heroku using these instructions:
 
 1. Create a requirements.txt file using command *pip3 freeze --local > requirements.txt*
@@ -250,7 +248,7 @@ The project was developed using [GitPod](https://gitpod.io/) and pushed to [GitH
 7. In the dashboard click "Settings" -> "Reveal Config Vars"
 8. Set config vars:
 
-### ** Heroku ** 
+### **Heroku** 
 
 1. Login to Heroku.com and click New -> Create New App
 - Add a name

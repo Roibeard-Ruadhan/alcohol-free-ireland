@@ -5,7 +5,7 @@
 <div class="container-fluid light-bg">
     <div class="col">
         <a href="{% url 'add_blog' %}" type="button" class="btn btn-light px-3 d-flex justify-content-center">
-        <i class="fas fa-users" aria-hidden="true"></i>~YOU CAN ADD YOUR VERY OWN BLOG BY CLICKING HERE~<i class="fas fa-users" aria-hidden="true"></i></a>
+        <i class="fas fa-users" aria-hidden="true"></i>  YOU CAN ADD YOUR VERY OWN BLOG BY CLICKING HERE  <i class="fas fa-users" aria-hidden="true"></i></a>
     </div>
     <div class="row">
 
@@ -19,7 +19,7 @@
                             <div class="image-container card card-cascade narrower">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top view view-cascade overlay"
-                                    src="'{{ MEDIA_URL }}blog.jpg">
+                                    src="'{{ MEDIA_URL }}blog.png">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}

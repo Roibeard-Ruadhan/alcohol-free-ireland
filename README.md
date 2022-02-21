@@ -83,9 +83,9 @@ The Colours started with a dark mahogony frame to express an atmosphere of a dar
 The images were sourced using various websites _________ which offered free images when referenced respectively 
 
 ### **Wireframes**
-- [Home](media/wireframes/home.png)
-- [Blog](media/wireframes/blog.png)
-- [Events](media/wireframes/events.png)
+![Home](media/wireframes/home.png)
+![Blog](media/wireframes/blog.png)
+![Events](media/wireframes/events.png)
 
 ## **Technologies**
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)

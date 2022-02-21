@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<style>.hero-image {background: linear-gradient(rgba(0, 0, 0, 0.1), 
-    rgba(0, 0, 0, 0.1)), url('/static/images/bar.jpg') no-repeat top center fixed;
+<!-- <style>.hero-image {background: linear-gradient(rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.1)), url{% static 'images/bar.jpg' %} no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height: 80vh;
     object-fit: contain;
-    position: relative;}</style>
+    position: relative;}</style> -->
 <header>
-    <div class="hero py-5 bg-image-full hero-image">
+    <div class="hero py-5 bg-image-full hero-image" style="background-image: url({{ hero-image.url }})">
         <div class="columns is-mobile is-justify-content-center">
             <div class="position-center">   
                 <img src="{% static 'images/logo.png' %}" alt="Logo Image" width="280" height="220">

@@ -24,7 +24,6 @@ def add_event(request):
     if request.method == "POST":
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():
-            print('mess')
             form.save()
             return redirect('home')
         else:

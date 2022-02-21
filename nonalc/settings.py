@@ -164,6 +164,9 @@ if 'DEVELOPMENT' in os.environ:
 else:
     MEDIA_URL = "https://res.cloudinary.com/roibeard/media/"
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'

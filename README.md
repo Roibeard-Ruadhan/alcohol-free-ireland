@@ -223,9 +223,15 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 
 ## **Version Control**
 
-### Gitpod Workspaces
+- Version control was managed within GitHub and Gitpod and regular commits pushed to GitHub. See below for how this was managed:
 
-### Gitpod branching and committing to GitHub
+- Gitpod Workspaces
+- Starting from GitHub clone the Code Institute template by clicking Use This Template and copying to my repository under the name ms1-ali-shiatsu. The workspace is then launched by clicking GitPod - this action only needs to be performed once and then workspace reopened from GitPod.
+Start the Gitpod Workspace which opens an online IDE editor window.
+Gitpod branching and committing to GitHub
+
+- I created various branches to work on different sections of code to push to master. I did this by typing into the terminal the commands: git status to find out which branch currently on; git switch -c <branchname> to create a new branch and switch to it immediately and then once the work was completed on that branch typed git add <files to be added> , git commit -m <commit message> and git push --set-upstream <remote> <branchname> to push to GitHub. I then created a pull request to pull the changes to the master if happy with the changes. From this point I would use git -d <branchname> to delete the local branch and delete the remote branch on GitHub.
+Meaningful commit messages were used to allow to roll back any changes made throughout the journey.
 
 [Back to contents](#contents)
 
@@ -359,13 +365,9 @@ The app is now deployed via Heroku.
 19. In Heroku Config Vars set up a SECRET_KEY.
 
 
-## **Credits**
-
-### **Code**
-
-
 ### **Acknowledgements**
 I don't have much time to write this but I can't thank the Tutor team enough for their incredible guidance & support throughout this porject. 
 To my Mentor Felipe Souza Alarcon for all his exellent advice, feedback & support. To Kasia for her endless inspiration & advice.
+Many thanks to the Slack community & to the team at Code Institute for their help throughout the development process
 [Back to contents](#contents)
 

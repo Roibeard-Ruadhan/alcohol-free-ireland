@@ -111,7 +111,22 @@ The images were sourced using various websites _________ which offered free imag
     - Jinja2 is a full-featured template engine for Python
 - [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
     - Boostrap the world’s most popular framework for building responsive, mobile-first sites, with jsDelivr and a template starter page.
-  
+- [Google fonts](https://fonts.google.com/)
+  - Used to compare and choose fonts. 
+- [Favicons](https://favicon.io/)
+  - Used to generate a favicon for the website title.
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+  - Used to audit the site for quality and ensure responsiveness.
+- [Coolors](https://coolors.co/)
+  - Used to research and choose the colour scheme by comparing and contrasting similar colours in the generator.
+- [Git](https://git-scm.com/)
+  - Git was used for version control (commit to Git and push to GitHub).
+- [GitHub](https://github.com/)
+  - Used to store, host and deploy the project files and source code after being pushed from Git. I also used it for the Project Kanban board to keep track and split tasks into smaller tasks to make them easier to fulfill.
+- [Gitpod](https://www.gitpod.io/)
+  - An online IDE linked to the GitHub repository used to write my code.
+- [Heroku](https://www.heroku.com/home)
+    - A Cloud Application Platform used to deploy the site
 [Back to contents](#contents)
 
 ## **Features**

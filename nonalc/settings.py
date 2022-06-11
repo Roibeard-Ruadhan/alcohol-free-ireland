@@ -118,8 +118,10 @@ WSGI_APPLICATION = 'nonalc.wsgi.application'
 #     }
 # }
 
+# updated below from parse:, due to error in terminal after
+# re-installing dj_database_url 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.config("DATABASE_URL")
 }
 
 # Password validation

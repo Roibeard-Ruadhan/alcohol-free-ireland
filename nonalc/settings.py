@@ -31,6 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = False
 
 ALLOWED_HOSTS = ['non-alc-ireland.herokuapp.com', 'localhost']
 
@@ -177,3 +178,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# API_KEY = os.environ.get('API_KEY')
+# API_SECRET_KEY = os.environ.get('API_SECRET_KEY')
+# CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')

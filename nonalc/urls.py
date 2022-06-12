@@ -18,6 +18,8 @@ from django.urls import path, include
 from django.views.generic.base import RedirectView
 from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls import handler403, handler404, handler500
+from blog.views import handler_403, handler_404, handler_500
 
 favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
@@ -30,3 +32,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('favicon-gin.png.', favicon_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler403 = handler_403
+handler404 = handler_404
+handler500 = handler_500

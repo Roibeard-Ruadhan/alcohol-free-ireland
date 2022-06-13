@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm, PostForm, ContactForm
 from django.template.defaultfilters import slugify
 from django.contrib.auth.decorators import login_required
@@ -26,27 +26,13 @@ def handler_500(request, *args, **argv):
     return render(request, '500.html', status=500)
 
 
+# Homepage details
 def Homepage(request):
     template_name= 'index.html'
     return render(request, template_name)
 
 
-@login_required
-def create_post(request):
-    form = PostForm()
-    if request.method == "POST":
-        form = PostForm(request.POST,request.FILES)
-        if form.is_valid():
-            new = form.save(commit = False)
-            new.slug = slugify(new.slug)
-            new.author = request.user
-            new.save()
-            form.save()
-
-            return redirect("home")
-    return render(request,"add_blog.html",{"form":form})
-
-
+#Contact form details
 def contact(request):
     submitted = False
     if request.method == 'POST':
@@ -66,6 +52,22 @@ def contact(request):
         )
 
 
+@login_required
+def create_post(request):
+    form = PostForm()
+    if request.method == "POST":
+        form = PostForm(request.POST,request.FILES)
+        if form.is_valid():
+            new = form.save(commit = False)
+            new.slug = slugify(new.slug)
+            new.author = request.user
+            new.save()
+            form.save()
+
+            return redirect("home")
+    return render(request,"add_blog.html",{"form":form})
+
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -74,7 +76,7 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-
+     """ Post Detail"""
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -96,7 +98,7 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-
+        """ Post Method"""
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -127,6 +129,42 @@ class PostDetail(View):
         )
 
 
+# Edit Blog Post
+@login_required
+def edit_blog(request, blog_post_id):
+    """
+    Allow an admin user to edit a product to the store
+    """
+    if request.user.is_superuser:
+
+        blog_post = get_object_or_404(Post, pk=blog_post_id)
+
+        if request.method == 'POST':
+            form = PostForm(request.POST, request.FILES, instance=blog_post)
+            if form.is_valid():
+                form.save()
+                messages.info(request, 'Blog post updated successfully!')
+                return redirect(reverse('post_detail', args=[blog_post.id]))
+            else:
+                messages.error(request, 'Please check the form for errors. \
+                    Blog post failed to update.')
+        else:
+            form = PostForm(instance=blog_post)
+            messages.info(request, f'Editing {blog_post.title}')
+    else:
+        messages.error(request, 'Sorry, you do not have permission for that.')
+        return redirect(reverse('home'))
+
+    template = 'blog/edit_post.html'
+
+    context = {
+        'form': form,
+        'blog_post': blog_post,
+    }
+
+    return render(request, template, context)
+
+
 class PostLike(View):
     
     def post(self, request, slug, *args, **kwargs):
@@ -137,5 +175,3 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-

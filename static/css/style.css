@@ -18,6 +18,14 @@ main {
     flex-grow: 1;
 }
 
+.navbar {
+    background: #548687;
+  }
+
+.nav-link {
+    color:white;
+}
+
 a {
     color:black;
 }

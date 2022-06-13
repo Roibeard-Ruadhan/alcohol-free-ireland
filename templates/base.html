@@ -17,10 +17,10 @@
 <body id="page-top">
     <!-- Navigation-->
     <header>
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg text-white>
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src='{{ MEDIA_URL }}logo.png' alt="Logo Image" width="60" height="48">
+                    <img src='{{ MEDIA_URL }}media/logo.png' alt="Logo Image" width="60" height="48">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,10 +32,10 @@
                             <i class="fas fa-home"></i> Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle bg-dark" href="{% url 'blog' %}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="{% url 'blog' %}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-book"></i> Blog
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+                            <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="{% url 'blog' %}">Blog</a></li>
                             <li><a class="dropdown-item" href="{% url 'add_blog' %}">Add Blog</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -43,10 +43,10 @@
                         </li>
                         <li class="nav-item">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle bg-dark" href="{% url 'events' %}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="{% url 'events' %}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-glass-martini-alt"></i> Events
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
+                            <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="{% url 'events' %}">Events</a></li>
                             <li><a class="dropdown-item" href="{% url 'add-event' %}">Add Event</a></li>
                             </ul>

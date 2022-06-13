@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
+from django.contrib import messages
 from .forms import CommentForm, PostForm, ContactForm
 from django.template.defaultfilters import slugify
 from django.contrib.auth.decorators import login_required
@@ -52,6 +53,7 @@ def contact(request):
         )
 
 
+
 @login_required
 def create_post(request):
     form = PostForm()
@@ -76,7 +78,8 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-     """ Post Detail"""
+    """ Post Detail"""
+    
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -87,7 +90,7 @@ class PostDetail(View):
 
         return render(
             request,
-            "post_detail.html",
+            "blog_detail.html",
             {
                 "post": post,
                 "comments": comments,
@@ -118,7 +121,7 @@ class PostDetail(View):
 
         return render(
             request,
-            "post_detail.html",
+            "blog_detail.html",
             {
                 "post": post,
                 "comments": comments,
@@ -144,7 +147,7 @@ def edit_blog(request, blog_post_id):
             if form.is_valid():
                 form.save()
                 messages.info(request, 'Blog post updated successfully!')
-                return redirect(reverse('post_detail', args=[blog_post.id]))
+                return redirect(reverse('blog_detail', args=[blog_post.id]))
             else:
                 messages.error(request, 'Please check the form for errors. \
                     Blog post failed to update.')
@@ -155,7 +158,7 @@ def edit_blog(request, blog_post_id):
         messages.error(request, 'Sorry, you do not have permission for that.')
         return redirect(reverse('home'))
 
-    template = 'blog/edit_post.html'
+    template = 'blog/edit_blog.html'
 
     context = {
         'form': form,
@@ -174,4 +177,4 @@ class PostLike(View):
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('blog_detail', args=[slug]))

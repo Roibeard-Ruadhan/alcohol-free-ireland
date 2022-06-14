@@ -19,11 +19,11 @@ main {
 }
 
 .navbar {
-    background: #548687;
+    background: black;
   }
 
 .nav-link {
-    color:white;
+    color: white;
 }
 
 a {
@@ -308,7 +308,7 @@ ul{
 }
 
 .footer{
-	background-color: #24262b;
+	background-color: black;
     line-height: 1;
 	font-family: 'Poppins', sans-serif;
     padding: 0;

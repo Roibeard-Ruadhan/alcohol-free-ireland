@@ -197,7 +197,7 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 |            |Featured Image|Cloudinary Image|
 |            |Excerpt       |TextField       |
 |Many to Many|Likes         |User model      |
-|            |Slug(Unique)  |SlugField       |
+|            |blog_post_id  |Integer         |
 |            |Status        |Integer         |
 - **Comments Diagram**
 

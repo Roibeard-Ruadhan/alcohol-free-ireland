@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from django.contrib import messages
 from .forms import CommentForm, PostForm, ContactForm
-from django.template.defaultfilters import slugify
 from django.contrib.auth.decorators import login_required
 
 
@@ -54,22 +54,6 @@ def contact(request):
 
 
 
-@login_required
-def create_post(request):
-    form = PostForm()
-    if request.method == "POST":
-        form = PostForm(request.POST,request.FILES)
-        if form.is_valid():
-            new = form.save(commit = False)
-            new.slug = slugify(new.slug)
-            new.author = request.user
-            new.save()
-            form.save()
-
-            return redirect("home")
-    return render(request,"add_blog.html",{"form":form})
-
-
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -77,12 +61,46 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
+# Add blog
+@login_required
+def create_post(request):
+    """
+    Allow an admin user to create a Blop Post
+    """
+    if request.user.is_superuser:
+
+        if request.method == 'POST':
+            form = PostForm(request.POST, request.FILES)
+            if form.is_valid():
+                blog_post = form.save(commit=False)
+                blog_post.user = request.user
+                blog_post.save()
+                messages.info(request, 'Blog added successfully!')
+                return redirect(reverse('blog_detail', args=[blog_post.id]))
+            else:
+                messages.error(request, 'Please check the form for errors. \
+                    Blog failed to add.')
+        else:
+            form = PostForm()
+    else:
+        messages.error(request, 'Sorry, you do not have permission to do that.')
+        return redirect(reverse('home'))
+
+    template = 'blog/add_blog.html'
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
 class PostDetail(View):
     """ Post Detail"""
     
-    def get(self, request, slug, *args, **kwargs):
+    def get(self, request, blog_post_id):
         queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(queryset, blog_post_id)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -100,10 +118,10 @@ class PostDetail(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, blog_post_id):
         """ Post Method"""
         queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(queryset, blog_post_id)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -130,6 +148,7 @@ class PostDetail(View):
                 "liked": liked
             },
         )
+
 
 
 # Edit Blog Post
@@ -170,11 +189,11 @@ def edit_blog(request, blog_post_id):
 
 class PostLike(View):
     
-    def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
+    def post(self, request, blog_post_id):
+        post = get_object_or_404(Post, blog_post_id)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('blog_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('blog_detail', 'blog_post_id'))

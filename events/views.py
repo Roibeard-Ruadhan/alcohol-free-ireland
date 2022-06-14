@@ -46,3 +46,5 @@ def PostEvents(request, location):
         post.guests.add(request.user)
 
     return redirect('events')
+
+

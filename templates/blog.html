@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %} Alcohol Free Ireland Blogs {% endblock %}
+{% load cloudinary %}
 {% load static %}
 {% block content %}
 
@@ -28,7 +29,7 @@
                                     <p class="label">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'blog_detail' post.slug  %}" class="post-link">
+                            <a href="{% url 'blog_detail' blog_post.id  %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>

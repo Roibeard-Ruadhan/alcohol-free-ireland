@@ -7,8 +7,8 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
+    """Post Model """
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
@@ -25,10 +25,19 @@ class Post(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
+        """Returns a string showing title."""
         return self.title
 
     def number_of_likes(self):
         return self.likes.count()
+
+    def can_edit(self, request):
+        """Allows author to edit their blog."""
+        if self.author:
+            return True
+        else:
+            return False
+
 
 
 class Comment(models.Model):

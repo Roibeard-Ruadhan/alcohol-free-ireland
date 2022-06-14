@@ -32,7 +32,7 @@ class Post(models.Model):
         return self.likes.count()
 
     def can_edit(self, request):
-        """Allows author to edit their blog."""
+        """Allows author to edit blog."""
         if self.author:
             return True
         else:

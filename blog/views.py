@@ -67,26 +67,27 @@ def create_post(request):
     """
     Allow an admin user to create a Blop Post
     """
-    if request.user.is_superuser:
 
-        if request.method == 'POST':
-            form = PostForm(request.POST, request.FILES)
-            if form.is_valid():
-                blog_post = form.save(commit=False)
-                blog_post.user = request.user
-                blog_post.save()
-                messages.info(request, 'Blog added successfully!')
-                return redirect(reverse('blog_detail', args=[blog_post.id]))
-            else:
-                messages.error(request, 'Please check the form for errors. \
-                    Blog failed to add.')
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            blog_post = form.save(commit=False)
+            blog_post.author = request.user
+            blog_post.save()
+            messages.info(request, 'Blog added successfully!')
+            return redirect(reverse('blog_detail', args=[blog_post.id]))
+            # return redirect(reverse('home'))
         else:
-            form = PostForm()
+            messages.error(request, 'Please check the form for errors. \
+                Blog failed to add.')
     else:
-        messages.error(request, 'Sorry, you do not have permission to do that.')
-        return redirect(reverse('home'))
+        form = PostForm()
+    # else:
+    #     messages.error(
+    #         request, 'Sorry, you do not have permission to do that.')
+    #     return redirect(reverse('home'))
 
-    template = 'blog/add_blog.html'
+    template = 'add_blog.html'
 
     context = {
         'form': form,
@@ -100,7 +101,7 @@ class PostDetail(View):
     
     def get(self, request, blog_post_id):
         queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, blog_post_id)
+        post = get_object_or_404(queryset, author)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -148,7 +149,6 @@ class PostDetail(View):
                 "liked": liked
             },
         )
-
 
 
 # Edit Blog Post

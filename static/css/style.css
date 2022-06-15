@@ -186,38 +186,31 @@ a {
     position: relative;
 }
 
-/*Header Details */
-/* .text-links {
-    margin: 4px;
-    color: white;
-    text-decoration: none;
-    padding: 5px 5px;
-    display: inline-block;
-    font-weight: 800;
-    font-size: 2rem;
-    letter-spacing: 2px;
+.btn-success {
+    background: #548687;
 }
-/* Text links on the hero image */ /*
-.text-links:hover {
-    transform: scale(1.5);
-    color: #e0be36;
-    text-decoration: none;
-} */
+
+.btn-success:hover {
+    background: #000000;
+}
 
 .text-links {
     box-shadow: inset 0 0 0 0 #ffffff;
     color: #ffffff;
     font-size: 2rem;
-    margin: .25;
-    padding: .25;
+    margin: 5px;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
   }
-  .text-links:hover {
-    border-radius: 25%;
-    box-shadow: inset 100px 0 0 0 #ffffff;
-    color: rgb(0, 0, 0);
+  
+.text-links:hover {
+    border-radius: 15%;
+    margin: 1;
+    padding: 3;
+    box-shadow: inset 100px 0 0 0 #000000;
+    border: 1px solid green;
+    color: rgb(255, 255, 255);
     text-decoration: none;
-  }
+}
 
 .links:hover {
     transform: scale(1.1);
@@ -242,7 +235,7 @@ a {
 /* The circular images on the home page acting as links to pages */
 .image-circle {
     width: 100%;
-    margin: 1rem;
+    margin-top: 1rem;
   }
 
 .image-circle:hover {

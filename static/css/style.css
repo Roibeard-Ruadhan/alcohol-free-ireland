@@ -227,17 +227,19 @@ a {
 .navbar-dark .navbar-nav .nav-link {
     color: white;
 }
-.navbar-dark .navbar-nav .nav-link:hover,
-.fa-envelope-open:hover {
-    color: #5E0B15;
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #F4E9CD;
 }
 
 .bg-dark {
     background-color: #031926 !important;
 }
 
-.dropdown-menu {
-    color: #5E0B15;
+
+.dropdown-menu:hover,
+.dropdown-item:hover {
+    background-color: #5E0B15;
+    color: #F4E9CD;
 }
 
 /* Pagination page turning links*/
@@ -391,7 +393,7 @@ ul{
 	transition: all 0.3s ease;
 }
 .footer-col ul li a:hover{
-	color: #fff;
+	color: #F4E9CD;
 	padding-left: 8px;
 }
 .footer-col .social-links a{

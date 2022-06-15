@@ -192,20 +192,20 @@ a {
 
 .btn-success:hover {
     background: #000000;
+    text-decoration: none;
 }
 
 .text-links {
     box-shadow: inset 0 0 0 0 #ffffff;
     color: #ffffff;
-    font-size: 2rem;
+    font-weight: 600;
+    font-size: 3rem;
     margin: 5px;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
   }
   
 .text-links:hover {
     border-radius: 15%;
-    margin: 1;
-    padding: 3;
     box-shadow: inset 100px 0 0 0 #000000;
     border: 1px solid green;
     color: rgb(255, 255, 255);
@@ -215,6 +215,12 @@ a {
 .links:hover {
     transform: scale(1.1);
     color: #ffffff;
+}
+
+/* -------------------------------Nav-bar */
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
 }
 
 /* Pagination page turning links*/
@@ -235,7 +241,7 @@ a {
 /* The circular images on the home page acting as links to pages */
 .image-circle {
     width: 100%;
-    margin-top: 1rem;
+    margin: 3rem, 3rem, 3rem, 3rem;
   }
 
 .image-circle:hover {

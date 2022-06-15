@@ -9,14 +9,14 @@
                 <img src='{{ MEDIA_URL }}media/logo.png' alt="Logo Image" width="280" height="220">
                 <h1 class="text-white fs-3 fw-bolder">ALCOHOL FREE IRELAND</h1>
                         <a href="{% url 'blog' %}" class="text-links">Blog</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a class="text-links" href="{% url 'events' %}">Events </a><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a class="text-links" href="{% url 'events' %}">Events</a><br>
             </div>
             <div class="position-center">
                 <form>
                     {% if not request.user.is_authenticated %}
                     <a href="{% url 'account_signup' %}" type="button" class="btn btn-success px-3">
-                        <i class="fas fa-users" aria-hidden="true"></i>  JOIN US   <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
+                        <i aria-hidden="true"></i>  JOIN US   <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
                     {% endif %}
                 </form>
             </div> 

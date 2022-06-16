@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Contact_message
+from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -21,27 +21,3 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
-
-
-@admin.register(Contact_message)
-class ContactAdmin(admin.ModelAdmin):
-    """
-    Setup Contact section as viewed in Admin Panel
-    """
-
-    list_display = ('full_name', 'email', 'subject', 'message')
-
-    readonly_fields = (
-        'full_name',
-        'email',
-        'subject',
-        'message',
-    )
-
-    search_fields = (
-        'subject',
-        'message',
-        'full_name',
-    )
-
-    ordering = ['-date']

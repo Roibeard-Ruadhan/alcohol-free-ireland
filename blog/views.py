@@ -67,25 +67,24 @@ def create_post(request):
     """
     Allow an admin user to create a Blop Post
     """
+    if request.user.is_superuser:
 
-    if request.method == 'POST':
-        form = PostForm(request.POST, request.FILES)
-        if form.is_valid():
-            blog_post = form.save(commit=False)
-            blog_post.author = request.user
-            blog_post.save()
-            messages.info(request, 'Blog added successfully!')
-            return redirect(reverse('blog_detail', args=[blog_post.id]))
-            # return redirect(reverse('home'))
+        if request.method == 'POST':
+            form = PostForm(request.POST, request.FILES)
+            if form.is_valid():
+                blog_post = form.save(commit=False)
+                blog_post.user = request.user
+                blog_post.save()
+                messages.info(request, 'Blog added successfully!')
+                return redirect(reverse('blog_detail', args=[blog_post.id]))
+            else:
+                messages.error(request, 'Please check the form for errors. \
+                    Blog failed to add.')
         else:
-            messages.error(request, 'Please check the form for errors. \
-                Blog failed to add.')
+            form = PostForm()
     else:
-        form = PostForm()
-    # else:
-    #     messages.error(
-    #         request, 'Sorry, you do not have permission to do that.')
-    #     return redirect(reverse('home'))
+        messages.error(request, 'Sorry, you do not have permission to do that.')
+        return redirect(reverse('home'))
 
     template = 'add_blog.html'
 
@@ -95,35 +94,29 @@ def create_post(request):
 
     return render(request, template, context)
 
-
 class PostDetail(View):
     """ Post Detail"""
-    
     def get(self, request, blog_post_id):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, author)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+
+        post = get_object_or_404(Post, pk=blog_post_id)
+        comments = post.comments.filter(post=post).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        return render(
-            request,
-            "blog_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "comment_form": CommentForm()
-            },
-        )
+        context = {
+            "blog_post": post,
+            "comments": comments,
+            "commented": False,
+            "liked": liked,
+            "comment_form": CommentForm()
+        }
+        return render(request,"blog_detail.html", context)
 
     def post(self, request, blog_post_id):
         """ Post Method"""
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, blog_post_id)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        post = get_object_or_404(Post, pk=blog_post_id)
+        comments = post.comments.filter(post=post).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -138,18 +131,14 @@ class PostDetail(View):
         else:
             comment_form = CommentForm()
 
-        return render(
-            request,
-            "blog_detail.html",
-            {
+        context = {
                 "post": post,
                 "comments": comments,
                 "commented": True,
                 "comment_form": comment_form,
                 "liked": liked
-            },
-        )
-
+                    }
+        return redirect(reverse('blog_detail', args=[blog_post_id]))
 
 # Edit Blog Post
 @login_required
@@ -166,7 +155,7 @@ def edit_blog(request, blog_post_id):
             if form.is_valid():
                 form.save()
                 messages.info(request, 'Blog post updated successfully!')
-                return redirect(reverse('blog_detail', args=[blog_post.id]))
+                return redirect(reverse('edit_blog', args=[blog_post.id]))
             else:
                 messages.error(request, 'Please check the form for errors. \
                     Blog post failed to update.')
@@ -177,7 +166,7 @@ def edit_blog(request, blog_post_id):
         messages.error(request, 'Sorry, you do not have permission for that.')
         return redirect(reverse('home'))
 
-    template = 'blog/edit_blog.html'
+    template = 'edit_blog.html'
 
     context = {
         'form': form,

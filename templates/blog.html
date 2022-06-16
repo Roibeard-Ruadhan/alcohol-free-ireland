@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} Alcohol Free Ireland Blogs {% endblock %}
-{% load cloudinary %}
 {% load static %}
+{% load cloudinary %}
 {% block content %}
 
 <div class="container-fluid light-bg">
@@ -38,9 +38,9 @@
                                 {{ post.number_of_likes }}</p>
                                 {% if comment.user == request.user or request.user.is_superuser %}
                                     <div class="edit-delete-links ms-3">
-                                        <a href="{% url 'edit_blog' blog_post.id %}" class="edit-link info-text">Edit</a>
+                                        <a href="{% url 'edit_blog' post.id %}" class="edit-link info-text">Edit</a>
                                         <span> | </span>
-                                        <a href="{% url 'delete_blog' blog_post.id %}" class=" error-text">Delete</a>
+                                        <a href="{% url 'delete_blog' post.id %}" class=" error-text">Delete</a>
                                     </div>
                                 {% endif %}
                             

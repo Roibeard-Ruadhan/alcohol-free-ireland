@@ -30,13 +30,7 @@
                     <!-- Edit Blog Form -->
                     <form action="{% url 'edit_blog' blog_post.id %}" method="POST" class="form" enctype="multipart/form-data">
                         {% csrf_token %}
-                        {% for field in form %}
-                            {% if field.name == 'image' %}
-                                {{ field }}
-                            {% else %}  
-                                {{ field | as_crispy_field }}
-                            {% endif %}
-                        {% endfor %}
+                        {{ form.as_p }}
                         <div class="text-end">
                             <!-- Cancel Button -->
                             <a href="{% url 'blog' %}" class="button btn btn btn-black">

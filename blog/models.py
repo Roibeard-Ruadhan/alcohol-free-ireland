@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django.utils import timezone
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -55,24 +54,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-
-class Contact_message(models.Model):
-    """
-    A model to create a contact message which includes
-    the user, their email, the message
-    & the date it's sent
-    """
-
-    class Meta:
-        verbose_name_plural = 'Contact Messages'
-
-    full_name = models.CharField(max_length=50, null=False, blank=False)
-    email = models.EmailField(max_length=80, null=False, blank=False)
-    subject = models.CharField(max_length=254, null=False, blank=False)
-    message = models.TextField(blank=False, null=False)
-    date = models.DateTimeField(default=timezone.now)
-
-
-    def __str__(self):
-        return self.subject

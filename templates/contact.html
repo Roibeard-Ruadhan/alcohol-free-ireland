@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block title %}Contact Us{% endblock title %}
-  
+{% load crispy_forms_tags %}
+
 {% block content %}
 <h1>Contact us</h1>
 
@@ -13,7 +14,7 @@
 {% else %}
 <form action="{% url 'contact' %}" method="POST" class="form" novalidate>
 <table>
-    {{ form.as_table }}
+    {{ form.as_p }}
     <tr>
     <td>&nbsp;</td>
     <td><input type="submit" value="Submit" class="btn btn-light"></td>

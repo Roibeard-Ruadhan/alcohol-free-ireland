@@ -5,8 +5,9 @@ from django import forms
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = "__all__"
-        # exclude = ["author", "status", "likes"]
+        exclude = ('status', 'date_posted', 'likes')
+        
+
 
 class CommentForm(forms.ModelForm):
     class Meta:

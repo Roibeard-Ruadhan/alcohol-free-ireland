@@ -68,3 +68,11 @@ def edit_event(request, pk):
 
     context = {'form': form}
     return render(request, 'edit_event.html',context)
+
+
+
+@login_required 
+def delete_event(request, pk):
+    events_obj = events.objects.get(id=pk)
+    events_obj.delete()
+    return redirect('events')

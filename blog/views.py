@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from django.contrib import messages
 from .forms import CommentForm, PostForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 
@@ -57,6 +58,7 @@ def create_post(request):
                 blog_post.save()
                 messages.info(request, 'Blog added successfully!')
                 return redirect(reverse('blog_detail', args=[blog_post.id]))
+                
             else:
                 messages.error(request, 'Please check the form for errors. \
                     Blog failed to add.')
@@ -73,6 +75,8 @@ def create_post(request):
     }
 
     return render(request, template, context)
+
+
 
 class PostDetail(View):
     """ Post Detail"""

@@ -166,6 +166,7 @@ def delete_blog(request, blog_post_id):
 
 
 def edit_comment(request, id):
+    """User may edit comment method """
     comment_obj = Comment.objects.get(id=id)
     post_id = comment_obj.post.id
     form = CommentForm(instance=comment_obj)
@@ -181,6 +182,14 @@ def edit_comment(request, id):
 
     return render(request, 'edit_comment.html', context)
 
+
+
+def delete_comment(request, id):
+    comment_obj = Comment.objects.get(id=id)
+    blog_post_id = comment_obj.post.id
+    comment_obj.delete()
+    messages.info(request, 'Comment deleted successfully!')
+    return redirect(reverse('blog_detail', args=[blog_post_id]))
 
 
 class PostLike(View):

@@ -55,6 +55,8 @@
                             <p class="card-text small">Event date: {{ events.event_date}}</p>
                         </div>
                     </div>
+                    <a href="{% url 'edit_event' events.id  %}" class="button btn">Edit</a>
+                    <a href="" class="button btn">Delete</a>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>

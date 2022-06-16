@@ -94,6 +94,8 @@
                         </p>
                         <!-- The body of the comment goes before the | -->
                         {{ comment.body | linebreaks }}
+                        <a href="{% url 'edit_comment' comment.id %}" style="color: blue;">Edit</a>
+                        <a href="" style="color: blue;">Delete</a>
                     </div>
                     <!-- Our for loop ends here -->
                     {% endfor %}

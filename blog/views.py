@@ -161,7 +161,25 @@ def delete_blog(request, blog_post_id):
     blog_post = get_object_or_404(Post, pk=blog_post_id)
     blog_post.delete()
 
-    return redirect('home') 
+    return redirect('home')
+
+
+
+def edit_comment(request, id):
+    comment_obj = Comment.objects.get(id=id)
+    post_id = comment_obj.post.id
+    form = CommentForm(instance=comment_obj)
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment_obj)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('blog_detail', args=[post_id]))
+
+    context = {
+        'form':form
+    }
+
+    return render(request, 'edit_comment.html', context)
 
 
 

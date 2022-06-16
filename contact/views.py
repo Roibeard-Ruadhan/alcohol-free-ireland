@@ -24,7 +24,7 @@ def error_500(request, *args, **argv):
     return render(request, '500.html', status=500)
 
 
-def Contact(request):
+def contact(request):
     """
     A view to return the contact page
     """
@@ -42,7 +42,7 @@ def Contact(request):
     else:
         contact_form = ContactForm()
 
-    template = 'contact/contact.html'
+    template = 'contact.html'
 
     context = {
         'contact_form': contact_form,

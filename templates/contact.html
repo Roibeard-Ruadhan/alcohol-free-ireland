@@ -11,7 +11,7 @@
     Your message was submitted successfully. Thank you.
 </h1>
 {% else %}
-<form action="" method="post" novalidate>
+<form action="{% url 'contact' %}" method="POST" class="form" novalidate>
 <table>
     {{ form.as_table }}
     <tr>

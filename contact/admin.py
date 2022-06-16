@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact_message
+from .models import Contact_emails
 
 class ContactAdmin(admin.ModelAdmin):
     """
@@ -31,4 +31,4 @@ class ContactAdmin(admin.ModelAdmin):
     ordering = ['-date']
 
 
-admin.site.register(Contact_message, ContactAdmin)
+admin.site.register(Contact_emails, ContactAdmin)

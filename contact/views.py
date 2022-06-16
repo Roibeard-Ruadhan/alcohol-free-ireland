@@ -2,7 +2,7 @@ from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.contrib import messages
 from .forms import ContactForm
-from .models import Contact_message
+from .models import Contact_emails
 
 
 def error_403(request, exception):

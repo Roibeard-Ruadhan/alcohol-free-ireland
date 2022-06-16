@@ -4,7 +4,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from django.contrib import messages
-from .forms import CommentForm, PostForm, ContactForm
+from .forms import CommentForm, PostForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -31,26 +31,6 @@ def handler_500(request, *args, **argv):
 def Homepage(request):
     template_name= 'index.html'
     return render(request, template_name)
-
-
-#Contact form details
-def contact(request):
-    submitted = False
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            # assert False
-            return HttpResponseRedirect('/contact?submitted=True')
-    else:
-        form = ContactForm()
-        if 'submitted' in request.GET:
-            submitted = True
- 
-    return render(request, 
-        'contact.html', 
-        {'form': form, 'submitted': submitted}
-        )
 
 
 

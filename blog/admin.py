@@ -10,6 +10,10 @@ class PostAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on')
     summernote_fields = ('content',)
+    actions = ['approve_post']
+
+    def approve_post(self, request, queryset):
+        queryset.update(approved=True)
 
 
 @admin.register(Comment)

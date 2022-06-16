@@ -67,7 +67,7 @@ def create_post(request):
     """
     Allow an admin user to create a Blop Post
     """
-    if request.user.is_superuser:
+    if request.user:
 
         if request.method == 'POST':
             form = PostForm(request.POST, request.FILES)
@@ -146,7 +146,7 @@ def edit_blog(request, blog_post_id):
     """
     Allow all users to edit the blogs they created
     """
-    if request.user.is_superuser:
+    if request.user:
 
         blog_post = get_object_or_404(Post, pk=blog_post_id)
 

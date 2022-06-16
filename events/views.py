@@ -19,14 +19,13 @@ class EventList(generic.ListView):
 
 @login_required
 def add_event(request):
-    """ Methon"""
+    """Add Event Method"""
     submitted = False
     form = EventForm()
     if request.method == "POST":
         form = EventForm(request.POST, request.FILES)
         print("chk post")
         if form.is_valid():
-            print("valid*****************")
             form.save()
             return redirect('events')
         else:
@@ -63,6 +62,7 @@ def edit_event(request, pk):
         form = EventForm(request.POST, request.FILES, instance=events_obj)
         if form.is_valid():
             form.save()
+            messages.success(self.request, 'The event has been updated successfully!')
 
             return redirect('events')
 
@@ -75,4 +75,6 @@ def edit_event(request, pk):
 def delete_event(request, pk):
     events_obj = events.objects.get(id=pk)
     events_obj.delete()
+    messages.success(
+            self.request, 'The event has been deleted successfully!')
     return redirect('events')

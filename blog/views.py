@@ -164,6 +164,7 @@ def delete_blog(request, blog_post_id):
     """User can delet their own blog post"""
     blog_post = get_object_or_404(Post, pk=blog_post_id)
     blog_post.delete()
+    messages.success(request, 'The blog has been deleted successfully!')
 
     return redirect('home')
 
@@ -178,6 +179,7 @@ def edit_comment(request, id):
         form = CommentForm(request.POST, instance=comment_obj)
         if form.is_valid():
             form.save()
+            messages.success(request, 'The comment has been updated successfully!')
             return redirect(reverse('blog_detail', args=[post_id]))
 
     context = {
@@ -204,5 +206,5 @@ class PostLike(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-
+        messages.success(request, 'Blog has been liked successfully!')
         return HttpResponseRedirect(reverse('blog_detail', 'blog_post_id'))

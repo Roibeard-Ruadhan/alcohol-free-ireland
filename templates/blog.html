@@ -4,7 +4,7 @@
 {% load cloudinary %}
 {% block content %}
 
-<div class="container-fluid light-bg">
+<div class="container-fluid">
     <div class="col">
         <a href="{% url 'add_blog' %}" type="button" class="btn btn-light px-3 d-flex justify-content-center">
         <i class="fas fa-users" aria-hidden="true"></i>  ADD YOUR VERY OWN BLOG BY CLICKING HERE  <i class="fas fa-users" aria-hidden="true"></i></a>
@@ -30,17 +30,17 @@
                                 </div>
                             </div>
                             <a href="{% url 'blog_detail' post.id  %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
+                                <h2 class="card-text">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
                             <hr/>
-                            <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i>
+                            <p class="card-text small">{{ post.created_on }} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
-                                {% if comment.user == request.user or request.user.is_superuser %}
+                                {% if post.user == request.user or request.user.is_superuser %}
                                     <div class="edit-delete-links ms-3">
                                         <a href="{% url 'edit_blog' post.id %}" class="edit-link info-text">Edit</a>
                                         <span> | </span>
-                                        <a href="" class=" error-text">Delete</a>
+                                        <a href="{% url 'delete_blog' post.id %}" class=" error-text">Delete</a>
                                     </div>
                                 {% endif %}
                             

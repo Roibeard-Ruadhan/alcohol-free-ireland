@@ -176,6 +176,15 @@ def edit_blog(request, blog_post_id):
     return render(request, template, context)
 
 
+def delete_blog(request, blog_post_id):
+    """User can delet their own blog post"""
+    blog_post = get_object_or_404(Post, pk=blog_post_id)
+    blog_post.delete()
+
+    return redirect('home') 
+
+
+
 class PostLike(View):
     
     def post(self, request, blog_post_id):

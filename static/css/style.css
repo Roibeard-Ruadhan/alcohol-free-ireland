@@ -30,6 +30,7 @@ a {
 
 .light-bg {
     background-color: #031926;
+    color: #F4E9CD;
 }
 
 .main-bg {
@@ -316,9 +317,9 @@ a {
 }
 
  
-.card-text:last-child {
+/* .card-text:last-child {
     color: #031926;
-}
+} */
 
 .card-title {
     color: #031926;

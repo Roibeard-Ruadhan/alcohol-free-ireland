@@ -96,14 +96,13 @@ def create_post(request):
 
 class PostDetail(View):
     """ Post Detail"""
-    def get(self, request, blog_post_id):
 
+    def get(self, request, blog_post_id):
         post = get_object_or_404(Post, pk=blog_post_id)
         comments = post.comments.filter(post=post).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-
         context = {
             "blog_post": post,
             "comments": comments,
@@ -111,7 +110,7 @@ class PostDetail(View):
             "liked": liked,
             "comment_form": CommentForm()
         }
-        return render(request,"blog_detail.html", context)
+        return render(request, "blog_detail.html", context)
 
     def post(self, request, blog_post_id):
         """ Post Method"""
@@ -140,11 +139,12 @@ class PostDetail(View):
                     }
         return redirect(reverse('blog_detail', args=[blog_post_id]))
 
+
 # Edit Blog Post
 @login_required
 def edit_blog(request, blog_post_id):
     """
-    Allow an admin user to edit a product to the store
+    Allow all users to edit the blogs they created
     """
     if request.user.is_superuser:
 
@@ -155,7 +155,7 @@ def edit_blog(request, blog_post_id):
             if form.is_valid():
                 form.save()
                 messages.info(request, 'Blog post updated successfully!')
-                return redirect(reverse('edit_blog', args=[blog_post.id]))
+                return redirect(reverse('blog_detail', args=[blog_post.id]))
             else:
                 messages.error(request, 'Please check the form for errors. \
                     Blog post failed to update.')

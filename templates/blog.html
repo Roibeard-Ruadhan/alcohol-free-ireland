@@ -29,7 +29,7 @@
                                     <p class="label">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'blog_detail' blog_post.id  %}" class="post-link">
+                            <a href="{% url 'blog_detail' post.id  %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
@@ -40,7 +40,7 @@
                                     <div class="edit-delete-links ms-3">
                                         <a href="{% url 'edit_blog' post.id %}" class="edit-link info-text">Edit</a>
                                         <span> | </span>
-                                        <a href="{% url 'delete_blog' post.id %}" class=" error-text">Delete</a>
+                                        <a href="" class=" error-text">Delete</a>
                                     </div>
                                 {% endif %}
                             

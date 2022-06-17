@@ -30,7 +30,7 @@ Link to [live site](https://non-alc-ireland.herokuapp.com/)
   - [**Database Layout**](#database-layout)
   - [**Responsive Design**](#responsive-design)
 - [**Version Control**](#version-control)
-- [**Testing**](#testing)
+- [Testing & bugs](#testing-&-bugs)
 - [**Deployment**](#deployment)
   - [**Running Locally**](#running-locally)
 - [**Credits**](#credits)
@@ -229,8 +229,8 @@ Meaningful commit messages were used to allow to roll back any changes made thro
 
 [Back to contents](#contents)
 
-## Testing & bugs
-[Click here for testing & bugs](/media/bugs.md)
+## **Testing & bugs**
+The testing process can be viewed [here](TESTING.md).
 
 ## **Deployment**
 ### Github

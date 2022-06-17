@@ -57,8 +57,8 @@
                         </div>
                     </div>
                     {% if events.creator == request.user %}
-                    <a href="{% url 'edit_event' events.id  %}" class="btn btn-standard">Edit</a>
-                    <a href="{% url 'delete_event' events.id  %}" class="btn btn-standard">Delete</a>
+                        <a href="{% url 'edit_event' events.id  %}" class="btn btn-standard">Edit</a>
+                        <a href="{% url 'delete_event' events.id  %}" class="btn btn-standard">Delete</a>
                     {% endif %}
                 </div>
                 {% if forloop.counter|divisibleby:3 %}

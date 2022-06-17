@@ -56,7 +56,7 @@
                             <p class="card-text small">Event date: {{ events.event_date}}</p>
                         </div>
                     </div>
-                    {% if events.user == request.user or request.user.is_superuser %}
+                    {% if events.creator == request.user %}
                     <a href="{% url 'edit_event' events.id  %}" class="btn btn-standard">Edit</a>
                     <a href="{% url 'delete_event' events.id  %}" class="btn btn-standard">Delete</a>
                     {% endif %}

@@ -21,9 +21,7 @@ class events(models.Model):
         return self.guests.count()
     def __str__(self):
         return self.location
-
-
-    # Events plural in the admin
+# Events plural in the admin
     class Meta:
         verbose_name_plural = "Event"
    

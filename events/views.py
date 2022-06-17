@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .forms import EventForm
 from django.shortcuts import render, get_object_or_404,redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
@@ -14,7 +15,6 @@ class EventList(generic.ListView):
     queryset = events.objects.filter(approve = True).order_by("-event_date")
     template_name = "events.html"
     paginate_by = 6
-
 
 
 @login_required
@@ -26,7 +26,10 @@ def add_event(request):
         form = EventForm(request.POST, request.FILES)
         print("chk post")
         if form.is_valid():
-            form.save()
+            event_obj = form.save(commit=False)
+            event_obj.creator = request.user
+            event_obj.save()
+            form.save_m2m()
             return redirect('events')
         else:
             print("Error")
@@ -62,7 +65,7 @@ def edit_event(request, pk):
         form = EventForm(request.POST, request.FILES, instance=events_obj)
         if form.is_valid():
             form.save()
-            messages.success(self.request, 'The event has been updated successfully!')
+            messages.success(request, 'The event has been updated successfully!')
 
             return redirect('events')
 
@@ -74,7 +77,10 @@ def edit_event(request, pk):
 @login_required 
 def delete_event(request, pk):
     events_obj = events.objects.get(id=pk)
-    if events_obj.creator == request.user:
-        events_obj.delete()
-        messages.success(request, 'The event has been deleted successfully!')
-    return redirect('events')
+    if request.method == "POST":
+        if events_obj.creator == request.user:
+            events_obj.delete()
+            messages.success(request, 'The event has been deleted successfully!')
+            return redirect('events')
+    else:
+        return render(request, 'delete_event.html')

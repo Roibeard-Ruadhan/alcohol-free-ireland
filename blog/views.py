@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views import generic, View
@@ -54,10 +55,10 @@ def create_post(request):
             form = PostForm(request.POST, request.FILES)
             if form.is_valid():
                 blog_post = form.save(commit=False)
-                blog_post.user = request.user
+                blog_post.author = request.user
                 blog_post.save()
                 messages.info(request, 'Blog added successfully!')
-                return redirect(reverse('blog_detail', args=[blog_post.id]))
+                return redirect('blog')
                 
             else:
                 messages.error(request, 'Please check the form for errors. \
@@ -139,7 +140,7 @@ def edit_blog(request, blog_post_id):
             if form.is_valid():
                 form.save()
                 messages.info(request, 'Blog post updated successfully!')
-                return redirect(reverse('blog_detail', args=[blog_post.id]))
+                return redirect('blog')
             else:
                 messages.error(request, 'Please check the form for errors. \
                     Blog post failed to update.')
@@ -162,11 +163,14 @@ def edit_blog(request, blog_post_id):
 
 def delete_blog(request, blog_post_id):
     """User can delet their own blog post"""
-    blog_post = get_object_or_404(Post, pk=blog_post_id)
-    blog_post.delete()
+    if request.method == "POST":
+        blog_post = get_object_or_404(Post, pk=blog_post_id)
+        blog_post.delete()
+    else:
+        return render(request,'delete_blog.html')
     messages.success(request, 'The blog has been deleted successfully!')
 
-    return redirect('home')
+    return redirect('blog')
 
 
 
@@ -193,10 +197,16 @@ def edit_comment(request, id):
 def delete_comment(request, id):
     comment_obj = Comment.objects.get(id=id)
     blog_post_id = comment_obj.post.id
-    if request.user == comment_obj.name:
-        comment_obj.delete()
-        messages.info(request, 'Comment deleted successfully!')
-    return redirect(reverse('blog_detail', args=[blog_post_id]))
+    if request.method == "POST":
+        if request.user == comment_obj.name:
+            comment_obj.delete()
+            messages.info(request, 'Comment deleted successfully!')
+            return redirect(reverse('blog_detail', args=[blog_post_id]))
+    else:
+        context = {
+            'blog_post_id':blog_post_id
+        }
+        return render(request,'delete_comment.html',context)
 
 
 class PostLike(View):

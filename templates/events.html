@@ -41,7 +41,6 @@
                             </div>
                             <hr/>
                             <p class="card-text">{{ events.description }}</p>
-                            {{ events.guests.all }}
 
                             
                             <form class="d-line" action="{% url 'post_event' events.location %}" method="POST">
@@ -51,6 +50,7 @@
                             value="{{events.location}}" class="btn-like"><i class="far fa-user"></i> <span class="guests_num">{{events.number_of_guests}}</span></button></p>
                         
                             </form>
+                            <p class="card-text"> Guests attending: {{ events.guests.all }}</p>
                             
                            
                             <p class="card-text small">Event date: {{ events.event_date}}</p>

@@ -95,7 +95,7 @@
                             </span>
                         </p>
                         <!-- The body of the comment goes before the | -->
-                        {% if comment.user == request.user or request.user.is_superuser %}
+                        {% if request.user == comment.name or request.user.is_superuser %}
                             <a href="{% url 'edit_comment' comment.id %}" style="color: rgb(255, 255, 255);">Edit   |</a>
                             <a href="{% url 'delete_comment' comment.id %}" style="color: rgb(255, 255, 255);">Delete</a>
                         {% endif %}

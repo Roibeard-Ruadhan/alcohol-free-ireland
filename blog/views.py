@@ -199,7 +199,7 @@ def delete_comment(request, id):
 
 
 class PostLike(View):
-    
+    """Method for liking Blogs"""
     def post(self, request, blog_post_id):
         post = get_object_or_404(Post, blog_post_id)
         if post.likes.filter(id=request.user.id).exists():

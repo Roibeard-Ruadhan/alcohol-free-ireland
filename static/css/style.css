@@ -146,6 +146,18 @@ a {
     color: #5E0B15;
 }
 
+.btn-standard {
+    margin: 1rem;
+    color: #F4E9CD;
+    background-color:#031926;
+}
+
+.btn-standard:hover {
+    background-color: #F4E9CD;
+    color: #5E0B15;
+    border: 1px solid #000;
+}
+
 .link {
     color: #F4E9CD;
     text-decoration: none;

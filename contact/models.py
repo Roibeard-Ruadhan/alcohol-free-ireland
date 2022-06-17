@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class Contact_emails(models.Model):
+class Contact_mails(models.Model):
     """
     A model to create a contact message which includes
     the user, their email, the message

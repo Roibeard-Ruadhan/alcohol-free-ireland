@@ -1,27 +1,43 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Contact Us{% endblock title %}
-
+{% block extra_title %}- Contact Us{% endblock %}
 {% load crispy_forms_tags %}
-  
-{% block content %}
-<h1>Contact us</h1>
+{% block page_header %}
+    <div class="header-container container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
-{% if submitted %}
-<h1 class="success">
-    Your message was submitted successfully. Thank you.
-</h1>
-{% else %}
-<form action="{% url 'contact' %}" method="POST" class="form" novalidate>
-<table>
-    {{ form.as_table }}
-    <tr>
-    <td>&nbsp;</td>
-    <td><input type="submit" value="Submit" class="btn btn-light"></td>
-    </tr>
-</table>
-{% csrf_token %}
-</form>
-{% endif %}
-{% endblock content %}
+{% block content %}
+    <div class="container">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col page-heading">
+                <h1 class="heading">Contact Us</h1>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <!-- Contact Form -->
+                    <form action="{% url 'contact' %}" method="POST" class="form">
+                        {% csrf_token %}
+                        {{ contact_form|crispy }}
+                        <div class="text-end">
+                            <!-- Submit button -->
+                            <button id="submit-button" class="btn button dark-bg-btn">
+                                <span class="p-text text-bold page-link">Send Message</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+{% endblock %}

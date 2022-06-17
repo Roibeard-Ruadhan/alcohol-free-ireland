@@ -121,7 +121,7 @@ class PostDetail(View):
                 "comment_form": comment_form,
                 "liked": liked
                     }
-        return redirect(reverse('blog_detail', args=[blog_post_id]))
+        return redirect(reverse('blog_detail',  args=[blog_post_id]))
 
 
 # Edit Blog Post

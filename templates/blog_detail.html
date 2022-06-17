@@ -84,7 +84,7 @@
                     <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                     
                     {% for comment in comments %}
-                    <div class="comments main-bg border" style="padding: 10px; background: #031926;">
+                    <div class="comments main-bg border" style="padding: 10px;">
                     {{ comment.body | linebreaks }}
                         <p class="font-weight-bold text-muted">  By
                             <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
@@ -96,10 +96,10 @@
                         </p>
                         <!-- The body of the comment goes before the | -->
                         {% if comment.user == request.user or request.user.is_superuser %}
-                            <a href="{% url 'edit_comment' comment.id %}" style="color: blue;">Edit</a>
-                            <a href="{% url 'delete_comment' comment.id %}" style="color: blue;">Delete</a>
+                            <a href="{% url 'edit_comment' comment.id %}" style="color: rgb(255, 255, 255);">Edit   |</a>
+                            <a href="{% url 'delete_comment' comment.id %}" style="color: rgb(255, 255, 255);">Delete</a>
                         {% endif %}
-                    </div>
+                    </div><br>
                     <!-- Our for loop ends here -->
                     {% endfor %}
                 </div>

@@ -2,7 +2,6 @@ from .models import events
 from django.views import generic, View
 from blog.models import User
 from datetime import datetime
-from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
 from .forms import EventForm
 from django.shortcuts import render, get_object_or_404,redirect
@@ -63,7 +62,7 @@ def edit_event(request, pk):
         form = EventForm(request.POST, request.FILES, instance=events_obj)
         if form.is_valid():
             form.save()
-            messages.success(request, 'The event has been updated successfully!')
+            messages.success(self.request, 'The event has been updated successfully!')
 
             return redirect('events')
 
@@ -75,7 +74,7 @@ def edit_event(request, pk):
 @login_required 
 def delete_event(request, pk):
     events_obj = events.objects.get(id=pk)
-    events_obj.delete()
-    messages.success(
-            request, 'The event has been deleted successfully!')
+    if events_obj.creator == request.user:
+        events_obj.delete()
+        messages.success(request, 'The event has been deleted successfully!')
     return redirect('events')

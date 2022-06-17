@@ -4,7 +4,6 @@ from .models import events
 # from .widgets import DatePickerInput, TimePickerInput, DateTimePickerInput
 
 class EventForm(ModelForm):
-    """Event form structure"""
     class Meta:
         model = events
         

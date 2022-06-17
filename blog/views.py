@@ -107,7 +107,7 @@ class PostDetail(View):
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
-            comment_form.instance.name = request.user.username
+            comment_form.instance.name = request.user
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
@@ -193,8 +193,9 @@ def edit_comment(request, id):
 def delete_comment(request, id):
     comment_obj = Comment.objects.get(id=id)
     blog_post_id = comment_obj.post.id
-    comment_obj.delete()
-    messages.info(request, 'Comment deleted successfully!')
+    if request.user == comment_obj.name:
+        comment_obj.delete()
+        messages.info(request, 'Comment deleted successfully!')
     return redirect(reverse('blog_detail', args=[blog_post_id]))
 
 

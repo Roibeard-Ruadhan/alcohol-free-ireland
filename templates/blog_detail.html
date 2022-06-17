@@ -86,10 +86,10 @@
                     {% for comment in comments %}
                     <div class="comments main-bg border" style="padding: 10px; background: #031926;">
                     {{ comment.body | linebreaks }}
-                        <p class="font-weight-bold" style="background: #5e0b15">  By
+                        <p class="font-weight-bold text-muted">  By
                             <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                             {{ comment.name }}
-                            <span class=" text-muted font-weight-normal">
+                            <span class=" text-muted font-weight-normal small">&#160;
                                 <!-- The comment's created date goes here -->
                                 {{ comment.created_on }}
                             </span>

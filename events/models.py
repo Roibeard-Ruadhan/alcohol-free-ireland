@@ -22,6 +22,11 @@ class events(models.Model):
     class Meta:
         verbose_name_plural = "Event"
 
+
+    # def __str__(self):
+    #     return self.events
+
+
 # class User_Count(models.Model):
 #     Guests_attending = models.ManyToManyField(
 #         User, related_name='events_guests', blank=True)

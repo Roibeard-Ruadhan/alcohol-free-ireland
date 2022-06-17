@@ -41,6 +41,7 @@
                             </div>
                             <hr/>
                             <p class="card-text">{{ events.description }}</p>
+                            {{ events.guests.all }}
 
                             
                             <form class="d-line" action="{% url 'post_event' events.location %}" method="POST">

@@ -80,6 +80,8 @@
         <div class="row">
             <div class="">
                 <h3>Comments:</h3>
+                <p class="text-white">{{ post.id }}</p>
+                <p>{{ request.user.id }}</p>
                 <div class="comment-body">
                     <!-- A loop inside the empty control tags to iterate through each comment in comments -->
                     
@@ -94,7 +96,7 @@
                                 {{ comment.created_on }}
                             </span>
                         </p>
-                        {% if request.user == comment.name %}
+                        {% if request.user == comment.name or request.user.is_superuser %}
                             <a href="{% url 'edit_comment' comment.id %}" class="btn-standard">Edit</a>
                             <a href="{% url 'delete_comment' comment.id %}" class="btn-standard">Delete</a>
                         {% endif %}

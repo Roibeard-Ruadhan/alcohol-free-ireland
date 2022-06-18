@@ -21,7 +21,7 @@
                             <div class="image-container card card-cascade narrower h-100">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top view view-cascade overlay"
-                                    src="'{{ MEDIA_URL }}media/placeholder.jpg.">
+                                    src="https://res.cloudinary.com/roibeard/image/upload/v1655126879/strawberry.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}
@@ -32,15 +32,15 @@
                             <a href="{% url 'blog_detail' post.id  %}" class="post-link">
                                 <h2 class="card-text">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
+                            
                             </a>
                             <hr/>
                             <p class="card-text small">{{ post.created_on }} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
-                                {% if post.user == request.user or request.user.is_superuser %}
+                                {% if request.user == post.name or request.user.is_superuser %}
                                         <a href="{% url 'edit_blog' post.id %}" class="btn btn-standard">Edit</a>
                                         <a href="{% url 'delete_blog' post.id %}" class="btn btn-standard">Delete</a>
                                 {% endif %}
-                            
                         </div>
                     </div>
                 </div>

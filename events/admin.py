@@ -3,7 +3,7 @@ from .models import events
 # Register your models here.
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ["location", "event_date", "approve"]
+    list_display = ["location", "creator", "venue", "event_date", "approve"]
     actions = ['approve_events']
 
     def approve_events(self, request, queryset):

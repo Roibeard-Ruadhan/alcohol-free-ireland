@@ -82,5 +82,7 @@ def delete_event(request, pk):
             events_obj.delete()
             messages.success(request, 'The event has been deleted successfully!')
             return redirect('events')
-    else:
-        return render(request, 'delete_event.html')
+        else:
+            messages.error(request, 'Please check for errors before submitting')
+    return render(request, 'delete_event.html')
+

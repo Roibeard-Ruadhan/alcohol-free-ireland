@@ -85,6 +85,9 @@ class PostDetail(View):
     def get(self, request, blog_post_id):
         post = get_object_or_404(Post, pk=blog_post_id)
         comments = post.comments.filter(post=post).order_by("-created_on")
+
+        queryset = Comment.objects.filter(post=post, approved=False)
+
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -92,6 +95,7 @@ class PostDetail(View):
             "post": post,
             "comments": comments,
             "commented": False,
+            'queryset': queryset, 
             "liked": liked,
             "comment_form": CommentForm()
         }
@@ -101,6 +105,9 @@ class PostDetail(View):
         """ Post Method"""
         post = get_object_or_404(Post, pk=blog_post_id)
         comments = post.comments.filter(post=post).order_by("-created_on")
+
+        queryset = Comment.objects.filter(post=post, approved=False)
+        
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -120,7 +127,8 @@ class PostDetail(View):
         context = {
                 "post": post,
                 "comments": comments,
-                "commented": True,
+                'queryset': queryset,
+                "commented": False,
                 "comment_form": comment_form,
                 "liked": liked
                     }

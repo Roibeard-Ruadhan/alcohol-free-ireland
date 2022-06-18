@@ -84,8 +84,8 @@
                 <p>{{ request.user.id }}</p> -->
                 <div class="comment-body">
                     <!-- A loop inside the empty control tags to iterate through each comment in comments -->
-                    
-                    {% for comment in comments %}
+                   
+                    {% for comment in queryset %}
                     <div class="comments main-bg border" style="padding: 10px;">
                     {{ comment.body | linebreaks }}
                         <p class="font-weight-bold text-muted">  By

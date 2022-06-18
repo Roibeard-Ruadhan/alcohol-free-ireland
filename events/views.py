@@ -4,7 +4,7 @@ from blog.models import User
 from datetime import datetime
 from django.http import HttpResponseRedirect, HttpResponse
 from .forms import EventForm
-from django.shortcuts import render, get_object_or_404,redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -46,13 +46,11 @@ def add_event(request):
 # login required resolves issues with non-users. 
 @login_required  
 def PostEvents(request, location):
-    print("post request")
     post = get_object_or_404(events, location=location)
     print(post)
     if post.guests.filter(id=request.user.id).exists():
         post.guests.remove(request.user)
     else:
-        print("add")
         post.guests.add(request.user)
 
     return redirect('events')

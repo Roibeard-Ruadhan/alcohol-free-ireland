@@ -120,7 +120,7 @@
                         {% csrf_token %}
                         <div class="float-end mt-2 pt-1">
                             {% if user.is_authenticated %}
-                            <button type="submit" class="btn btn-light">Post comment</button>
+                            <button type="submit" class="btn btn-nonstandard">Post comment</button>
                             {% else %}
                             <p class="p-text">Please
                                 <a class="btn btn-nonstandard" href="{% url 'account_login' %}"> Login </a>or

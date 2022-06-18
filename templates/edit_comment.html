@@ -19,11 +19,11 @@
 
 {% block content %}
 <div class="h-100">
-    <div class="col-sm col-md-8 offset-md-2 p-2 my-5 bg-light">
+    <div class="col-sm col-md-8 offset-md-2 p-2 my-5">
         <form  method="POST" class="form" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form |crispy }}
-            <input class="btn btn-standard" type="submit" value="Update">
+            <input class="btn-standard" type="submit" value="Update">
             <a class="btn btn-standard" href="{% url 'blog' %}">Cancel</a>
         </form>
     </div>

@@ -41,14 +41,14 @@
                         <div class="col-1">
                             <strong>
                                 {% if user.is_authenticated %}
-                                <form class="d-line" action="{% url 'post_like' blog_post.id %}" method="POST">
+                                <form class="d-line" action="{% url 'post_like' post.id %}" method="POST">
                                     {% csrf_token %}
                                     {% if liked %}
 
-                                    <button type="submit" name="blogpost_id" value="{{blog_post.title}}" class="btn-like"><i 
+                                    <button type="submit" name="blogpost_id" value="{{post.title}}" class="btn-like"><i 
                                         class="fas fa-heart"></i></button>
                                     {% else %}
-                                    <button type="submit" name="blogpost_id" value="{{blog_post.title}}" class="btn-like"><i 
+                                    <button type="submit" name="blogpost_id" value="{{post.title}}" class="btn-like"><i 
                                         class="far fa-heart"></i></button>
 
                                     {% endif %}

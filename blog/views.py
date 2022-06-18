@@ -89,7 +89,7 @@ class PostDetail(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
         context = {
-            "blog_post": post,
+            "post": post,
             "comments": comments,
             "commented": False,
             "liked": liked,
@@ -212,10 +212,10 @@ def delete_comment(request, id):
 class PostLike(View):
     """Method for liking Blogs"""
     def post(self, request, blog_post_id):
-        post = get_object_or_404(Post, blog_post_id)
+        post = Post.objects.get(id=blog_post_id)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
         messages.success(request, 'Blog has been liked successfully!')
-        return HttpResponseRedirect(reverse('blog_detail', 'blog_post_id'))
+        return HttpResponseRedirect(reverse('blog_detail', args=[blog_post_id]))

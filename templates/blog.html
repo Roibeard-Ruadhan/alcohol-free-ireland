@@ -37,7 +37,7 @@
                             <hr/>
                             <p class="card-text small">{{ post.created_on }} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
-                                {% if request.user == post.name or request.user.is_superuser %}
+                                {% if request.user == post.author or request.user.is_superuser %}
                                         <a href="{% url 'edit_blog' post.id %}" class="btn btn-standard">Edit</a>
                                         <a href="{% url 'delete_blog' post.id %}" class="btn btn-standard">Delete</a>
                                 {% endif %}

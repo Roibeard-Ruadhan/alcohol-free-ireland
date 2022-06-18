@@ -89,7 +89,7 @@ a {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #5E0B15;
     color: white;
     position: relative;
 }
@@ -97,6 +97,7 @@ a {
 .masthead-image {
     position: relative;
     overflow: hidden;
+    height: auto;
 }
 
 .masthead-image:after {
@@ -106,7 +107,7 @@ a {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #5E0B15;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);

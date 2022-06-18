@@ -6,7 +6,7 @@
 
 
 <div class="light-bg">
-    <div class="masthead light-bg">
+    <div class="light-bg">
         <div class="">
             <div class="row">
                 <div class="col masthead-text">
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div class="container light-bg">
+    <div class="light-bg">
         <div class="row">
             <div class="col card mb-4  mt-3 left top">
                 <div class="card-body">
@@ -38,7 +38,7 @@
                     </p>
                     <div class="row">
 
-                        <div class="col-1">
+                        <div class="">
                             <strong>
                                 {% if user.is_authenticated %}
                                 <form class="d-line" action="{% url 'post_like' post.id %}" method="POST">

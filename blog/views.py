@@ -112,8 +112,10 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.success(request, 'Comment added successfully!')
         else:
             comment_form = CommentForm()
+            messages.info(request, 'You need to be logged in to add a comment')
 
         context = {
                 "post": post,
@@ -139,7 +141,7 @@ def edit_blog(request, blog_post_id):
             form = PostForm(request.POST, request.FILES, instance=blog_post)
             if form.is_valid():
                 form.save()
-                messages.info(request, 'Blog post updated successfully!')
+                messages.success(request, 'Blog post updated successfully!')
                 return redirect('blog')
             else:
                 messages.error(request, 'Please check the form for errors. \
@@ -167,7 +169,7 @@ def delete_blog(request, blog_post_id):
         blog_post = get_object_or_404(Post, pk=blog_post_id)
         blog_post.delete()
     else:
-        return render(request,'delete_blog.html')
+        return render(request, 'delete_blog.html')
     messages.success(request, 'The blog has been deleted successfully!')
 
     return redirect('blog')

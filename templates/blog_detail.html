@@ -104,7 +104,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="">
+            <div >
                 <div class="card-body">
                     <!-- For later -->
                     {% if commented %}
@@ -112,7 +112,6 @@
                         Your comment is awaiting approval
                     </div>
                     {% else %}
-                    {% if user.is_authenticated %}
 
                     <h3>Leave a comment:</h3>
                     <p>Posting as: {{ user.username }}</p>
@@ -120,10 +119,15 @@
                         {{ comment_form | crispy }}
                         {% csrf_token %}
                         <div class="float-end mt-2 pt-1">
+                            {% if user.is_authenticated %}
                             <button type="submit" class="btn btn-light">Post comment</button>
+                            {% else %}
+                            <p class="p-text">Please
+                                <a class="btn btn-nonstandard" href="{% url 'account_login' %}"> Login </a>or
+                                <a class="btn btn-nonstandard" href="{% url 'account_signup' %}">Signup</a>to add a comment.</p>
+                            {% endif %}
                         </div>
                     </form>
-                    {% endif %}
                     {% endif %}
                 </div>
             </div>

@@ -158,6 +158,19 @@ a {
     border: 1px solid #000;
 }
 
+.btn-nonstandard {
+    margin: 1rem;
+    color: #031926;
+    background-color:#F4E9CD;
+}
+
+.btn-nonstandard:hover {
+    background-color: #5E0B15;
+    color: #F4E9CD;
+    border: 1px solid #000;
+    text-decoration: none;
+}
+
 .link {
     color: #F4E9CD;
     text-decoration: none;

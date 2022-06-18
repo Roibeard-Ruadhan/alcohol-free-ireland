@@ -29,7 +29,9 @@ def add_event(request):
             event_obj = form.save(commit=False)
             event_obj.creator = request.user
             event_obj.save()
-            form.save_m2m()
+            form.save()
+            messages.success(
+                request, 'The event has been added successfully, awaiting approval')
             return redirect('events')
         else:
             print("Error")

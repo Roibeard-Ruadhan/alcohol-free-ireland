@@ -37,11 +37,8 @@
                             <p class="card-text small">{{ post.created_on }} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                                 {% if post.user == request.user or request.user.is_superuser %}
-                                    <div class="edit-delete-links ms-3">
-                                        <a href="{% url 'edit_blog' post.id %}" class="edit-link info-text">Edit</a>
-                                        <span> | </span>
-                                        <a href="{% url 'delete_blog' post.id %}" class=" error-text">Delete</a>
-                                    </div>
+                                        <a href="{% url 'edit_blog' post.id %}" class="btn btn-standard">Edit</a>
+                                        <a href="{% url 'delete_blog' post.id %}" class="btn btn-standard">Delete</a>
                                 {% endif %}
                             
                         </div>

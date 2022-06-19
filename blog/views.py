@@ -31,9 +31,8 @@ def handler_500(request, *args, **argv):
 
 # Homepage details
 def Homepage(request):
-    template_name= 'index.html'
+    template_name = 'index.html'
     return render(request, template_name)
-
 
 
 class PostList(generic.ListView):
@@ -59,14 +58,14 @@ def create_post(request):
                 blog_post.save()
                 messages.info(request, 'Blog added successfully!')
                 return redirect('blog')
-                
             else:
                 messages.error(request, 'Please check the form for errors. \
                     Blog failed to add.')
         else:
             form = PostForm()
     else:
-        messages.error(request, 'Sorry, you do not have permission to do that.')
+        messages.error(
+            request, 'Sorry, you do not have permission to do that.')
         return redirect(reverse('home'))
 
     template = 'add_blog.html'
@@ -76,7 +75,6 @@ def create_post(request):
     }
 
     return render(request, template, context)
-
 
 
 class PostDetail(View):
@@ -95,7 +93,7 @@ class PostDetail(View):
             "post": post,
             "comments": comments,
             "commented": False,
-            'queryset': queryset, 
+            'queryset': queryset,
             "liked": liked,
             "comment_form": CommentForm()
         }
@@ -107,7 +105,7 @@ class PostDetail(View):
         comments = post.comments.filter(post=post).order_by("-created_on")
 
         queryset = Comment.objects.filter(post=post, approved=False)
-        
+
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -183,7 +181,6 @@ def delete_blog(request, blog_post_id):
     return redirect('blog')
 
 
-
 def edit_comment(request, id):
     """User may edit comment method """
     comment_obj = Comment.objects.get(id=id)
@@ -193,15 +190,15 @@ def edit_comment(request, id):
         form = CommentForm(request.POST, instance=comment_obj)
         if form.is_valid():
             form.save()
-            messages.success(request, 'The comment has been updated successfully!')
+            messages.success(
+                request, 'The comment has been updated successfully!')
             return redirect(reverse('blog_detail', args=[post_id]))
 
     context = {
-        'form':form
+        'form': form
     }
 
     return render(request, 'edit_comment.html', context)
-
 
 
 def delete_comment(request, id):
@@ -214,9 +211,9 @@ def delete_comment(request, id):
             return redirect(reverse('blog_detail', args=[blog_post_id]))
     else:
         context = {
-            'blog_post_id':blog_post_id
+            'blog_post_id': blog_post_id
         }
-        return render(request,'delete_comment.html',context)
+        return render(request, 'delete_comment.html', context)
 
 
 class PostLike(View):
@@ -228,4 +225,5 @@ class PostLike(View):
         else:
             post.likes.add(request.user)
         messages.success(request, 'Blog has been liked successfully!')
-        return HttpResponseRedirect(reverse('blog_detail', args=[blog_post_id]))
+        return HttpResponseRedirect(
+            reverse('blog_detail', args=[blog_post_id]))

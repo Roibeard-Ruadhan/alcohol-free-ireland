@@ -43,24 +43,12 @@ The project was tested thoroughly and the results are presented below:
 ### HTML
 ## [HTML](https://validator.w3.org):
 
-All pages were free from errors, except those noted below
-base.html:
-Error :Element li not allowed as child of element nav in this context.
-* All li tags are wrapped in ul tags
-Error: Duplicate ID user-options & specials-link
-* Used on the same page for the same function
+Some minor errors MIME errors & using the drop down ID more than once on my Navbar
 
 The rest of the issues are related to Templating{}
 
-![HTML Validation](readme/assets/)
+![HTML Validation](readme/testing/html-validator.jpg)
 
-
-
-#### W3C Markup Validation Service 
-
-* [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML of the project. Each page was validated by its URL and produced no errors or warnings. When each HTML page was validated by direct input, all errors produced were due to templating.
-
-![HTML Validation](readme/assets/)
 
 ### CSS
 
@@ -68,34 +56,28 @@ The rest of the issues are related to Templating{}
 
 * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to validate the CSS of the project. As well as showing no errors when validating the projects CSS through its URI, there was also no errors when each CSS file was validated through direct input.
 
-![CSS Validation](readme/)
+![CSS Validation](readme/testing/css-validator.jpg)
 
 ### JavaScript
 
 #### JSHint
 
 * All JavaScript files or snippets of JavaScript at the bottom of HTML files were validated successfully through [JSHint](https://jshint.com/).
-    ![JavaScript Validation](readme/assets/t)
+    ![JavaScript Validation](readme/testing/js-validator.jpg)
 
 
 ### Python
 
 * All Python files were validated through the use of [PEP8 online](http://pep8online.com/) and all passed successfully.
 
-    ![Python Validation](readme/assets)
+    ![Python Validation](readme/testing/python-validator.jpg)
 
 ### Lighthouse
 
 * Lighthouse was also used to test the project on both desktop and mobile.
 
+ ![Lighthouse](readme/testing/lighthouse.jpg)
 
-#### Desktop
-
-![Lighthouse Desktop Result](readme/assets/)
-
-#### Mobile
-
-![Lighthouse Mobile Result](readme/assets/)
 
 ## Testing of User stories & UX value
 

@@ -6,6 +6,7 @@ This website was setup to provide a platform for people who are considering taki
 It is also a place for people who enjoy going out to drink non-alcoholic drinks to meet other alcohol free drinkers in their locality. 
 
 Link to [live site](https://non-alc-ireland.herokuapp.com/)
+![Responsive](readme/readme-images/responsive.jpg)
 
 ## **Contents**
 
@@ -72,12 +73,15 @@ Link to [live site](https://non-alc-ireland.herokuapp.com/)
 ## **Design Choices**
 
 ### **Colours**
-The Colours started with a dark mahogony frame to express an atmosphere of a dark, trendy, stylish cocktail bar. 
+The Colours were originally an emerald green with dark mahogony frame to express an atmosphere of a dark, trendy, stylish cocktail bar. This was later evolved to it's current more modern colour's to set a modern theme to frame & express this new concept. All Colours were sourced using [Coolors](https://coolors.co/).
+![Coolors Pallette 1](readme/readme-images/coolors-1.jpg)
+![Coolors Pallette 2](readme/readme-images/coolors-2.jpg)
 
 ### **Fonts**
+I used [Convergence](https://fonts.google.com/specimen/Convergence) which brings the subtlety of a bar atmosphere
 
 ### **Imagery**
-The images were sourced using various websites _________ which offered free images when referenced respectfully 
+The images were sourced via google images & from the website where the are article was sourced as referenced at the end of the blogs. 
 
 ### **Wireframes**
 ![Home](media/wireframes/home.png)
@@ -148,13 +152,13 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 - **Header**
 - It also has 3 buttons, 1 to sign-up, 1 to enter the blog page & one to enter the events page.
   - **Navigation**
-- Navigation is simplified using boostrap which turns into a hamburger buton after a certain breakpoint for responsiveness.
+- Navigation is simplified using boostrap which turns into a hamburger button after a certain breakpoint for responsiveness.
 - The navigation bar has drop downs for the Blog & Events options.
 - The NavBar & the footer are the same colour & both using bootstrap for responsiveness
 - Completed logo using Adobe
 
 - **Hero sections**
-- The header provides a welcoming atmosphere of a modern cocktail bar.
+- The header provides a welcoming atmosphere of a modern cocktail bar. The Navigation text on the Hero image for the Blog & events has a hover affect which I sourced from [developerdrive.com](https://www.developerdrive.com/8-simple-css-hover-effects/)
 - **Footer** 
 - The footer is a modern professional look with social network connections, navbar tools & contact links plus details
 #### **Home Page** (*index.html*) 
@@ -169,20 +173,19 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 - Login & Register forms were made using the Django inbuilt form.
 - All forms are decorated using bootstrap & CSS 
 
-[Back to contents](#contents)
-
-#### **Blog Page**
- etc......
 
 [Back to contents](#contents)
 
 ### **Responsive Design**
-- Design was made responsive by using Django & Bootstrap primarily.
+- Design was made responsive by using Django, CSS styling, Bootstrap, Devtools & many browsers for testing.
 
 ### **Future Features**
-- This may well expand to become 0'0 Europe but need to see how it works in Ireland first
-- User can confirm time & date of event via the database.
-- Event organiser can add a limit to guests in the database
+- Hopeful this will expand to become 0'0 Europe & beyond but I need to test the ground in Ireland first.
+- User can confirm time & date of event via nofication if one appears in there locality.
+- Event organiser can add a limit to guests in the database which I have currently tried to set at ten but not fully tested yet.
+- I have been in discussions with numerous interested people to help spread the concept so that it can begin to assert it's use case.
+- Looking to approach a few more prominent memebers of social media to discuss collaborating to grow the websites audience which will add more value in time to subcribers.
+- Add a profile page for subscribers to allow them to make updates.
 
 ## **Database Layout**
 - **Posts Diagram**
@@ -211,7 +214,7 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 |            |approved    |BooleanField |default False    |
 
 - **Database Schema Map**
-![Database](media/map-diagram.png)
+![Database](readme/readme-images/map-diagram.png)
 
 [Back to contents](#contents)
 
@@ -361,8 +364,7 @@ The app is now deployed via Heroku.
 
 
 ### **Acknowledgements**
-I don't have much time to write this but I can't thank the Tutor team enough for their incredible guidance & support throughout this project. 
-To my Mentor Felipe Souza Alarcon for all his excellent advice, feedback & support. To Kasia for her endless inspiration & advice.
-Many thanks to the Slack community & to the team at Code Institute for their help throughout the development process
+Thank you the Tutor team enough for their incredible guidance & support throughout this project. 
+To my Mentor Felipe Souza Alarcon for all their excellent advice, feedback & support. To Kasia for her endless inspiration & advice.
+Many thanks to the Slack community & to the team at Code Institute for their help throughout the development process. Also a huge thank you to Mentor Gurjot for all the excellent guidance, support & feedback in the latter end of this project.
 [Back to contents](#contents)
-

@@ -78,11 +78,11 @@ def edit_event(request, pk):
 def delete_event(request, pk):
     events_obj = events.objects.get(id=pk)
     if request.method == "POST":
-        if events_obj.creator == request.user:
+        if events_obj.creator == events_obj.creator:
             events_obj.delete()
             messages.success(request, 'The event has been deleted successfully!')
             return redirect('events')
-        else:
-            messages.error(request, 'Please check for errors before submitting')
+    else:
+        messages.error(request, 'You currently do not have access to delete this')
     return render(request, 'delete_event.html')
 

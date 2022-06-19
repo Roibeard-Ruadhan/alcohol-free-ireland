@@ -84,8 +84,11 @@ I used [Convergence](https://fonts.google.com/specimen/Convergence) which brings
 The images were sourced via google images & from the website where the are article was sourced as referenced at the end of the blogs. 
 
 ### **Wireframes**
+The [Home page](https://non-alc-ireland.herokuapp.com/)
 ![Home](readme/wireframes/home.png)
+The [Blog page](https://non-alc-ireland.herokuapp.com/blog/)
 ![Blog](readme/wireframes/blog.png)
+The [Events page]()
 ![Events](readme/wireframes/events.png)
 
 ## **Technologies / Languages**

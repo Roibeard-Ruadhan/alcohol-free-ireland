@@ -96,6 +96,24 @@ The rest of the issues are related to Templating{}
         ![Homepage-website goal](readme/testing/home-page-3.jpg)
 
 
+        * *As a user I can easily login or logout & receive messages to confirm the same*
+
+        * As per the folowing images the process to login or logout two simple steps
+        
+        * Logged in message
+        ![Logged in message](readme/testing/sign-in-message.jpg)
+        *
+       ![Sign out confirmation](readme/assets/testing-images/user-story/logout.jpg)
+        *  Sign out confirmation page
+        ![Sign out confirmation](readme/testing/sign-out-confirmation.jpg)
+        * *As a user I can easily Signup receive messages to confirm the same*
+        *  Sign up page
+        ![Sign up confirmation](readme/testing/sign-up-page.jpg)
+        * Confirmation user has signed out 
+        ![Sign out confirmation](readme/testing/logged-out-confirmed.jpg)
+  
+
+
     ### Events
     * *As a user I would like to attend an event in my local community
 
@@ -111,49 +129,58 @@ The rest of the issues are related to Templating{}
 
     ![Events setup message](readme/testing/event-added.jpg)
 
-    * As the person who set up an event I would like to see the number of people attending and the names of the users attending( The names of the users attending is in production & may or may not make the cut)
+    * As the user who set up an event I would like to see the number of people attending and the names of the users attending( The names of the users attending is in production & may or may not make the cut)
 
     ![Events setup message](readme/testing/confirmed-attending-no.jpg)
 
-    ### Checkout
+    
+    
+    * As I user I would like to be able to update or delete the event I set up
+
+     ![Events setup message](readme/)
   
 
     ### Blog
+    
+    
+    
     * *As a user/non user I can view comments on an individual post so that I can read other peoples opinion*
 
         * 
 
-        ![Read Comments](readme/assets/testing-ima)
+        ![Read Comments](readme/testing/see-comments.jpg)
 
-    * *As a User I can view a list of posts so that I can select one to read based on the synopsis*
-
-        * 
-
-        ![Read blogs](readme/assets)
-
-    * *As a user I can leave comments on a post so that I can be involved & express my view*
+    * *As a user/non I can view a list of blogs so that I can select one to read based on the synopsis*
 
         * 
 
-        ![Add comments](readme/assets/tes)
+        ![Read blogs](readme/testing/blog-list.jpg)
+
+    * *As a user I can leave comments on a post so that I can be involved & received confirmation of the same*
+
+        * 
+
+        ![Add comments](readme/testing/post-comment-confirmed.jpg)
+
+      
+    * *As a user I can write a blog post so that I can share my experiences & receive confirmation of the same*
+
+        * 
+
+        ![Add comments](readme/testing/add-blog.jpg)
+
+        * As I user I would like to be able to update or delete the blog I set up
+
+    ![Add comments](readme/testing/blog-list.jpg)
 
     ### Contact
+
+    * *As a user I can contact the website so that I can make a query*
+
+        * 
+
+        ![Sign up location](readme/testing/contact.jpg)
    
-
-
-
-
-
-## Testing process
-## Manual Testing
-The website was thoroughly tested as per the detailed account of the manual testing is below:
-
-#### Navigation bar
-
-
-#### Footer
-
-#### Home
 
 
 #### Sign up page
@@ -184,19 +211,6 @@ The website was thoroughly tested as per the detailed account of the manual test
 * When the user confirms they are logging out, by clicking on the 'Sign Out' button it correctly signs them out of their account withh a messge confirming. &check;
 
 
-#### Events Page
-
-
-#### Blog
-
-##### Blog page
-
-
-##### Blog Detail page
-
-
-#### Blog Comment
-
 #### Contact
 
 * All form fields show a message if nothing is inputted into them or its content is not valid and stops the user submitting the form until it is valid. &check;
@@ -220,17 +234,17 @@ The website was thoroughly tested as per the detailed account of the manual test
     * Brave + Mobile
     * Duck Duck Go(mobile)
 
-
-
 #### Defensive Programming
 
 
 ## Bugs
 ### Fixed Bugs
 ##### Bug 1
-
+ • Placeholder image fixed in the Blog page but currently not fully functioning on the Events page. The blog page one was resolved by copying the url & adding it to the models, media & templates with using {{ media url }}.
 
 ##### Bug 2
+Bug:- When updating the models user to allow efficient crud (with 'Cascade') I received the a Django error. I tried to change as much as possible to avoid deleting all data & migrations + sql but could not find another solution. Unfortunately I deleted the __init__/ pages by accident due being a late night fix. I resolved this by adding my own innit files to the apps & then running migrations again.
+
 
 ##### Bug 3
 * My contact page would not open due to a programming error for at least a few days. Every time I went back to it I would tweet the code a bit & run migrations. Nothing seemed to work so I decided to delete the migrations file & run migrations again. when this didn't work decided to delete all migration files in the tree & make migrations again. As this did not work I tried deleting the back on from a different angle to make sure all migrations we removed. Until I finally tried : python3 manage.py migrate contact zero, which managed to clear the database for me to run migrations & resolve problem &check;

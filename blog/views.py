@@ -84,7 +84,7 @@ class PostDetail(View):
         post = get_object_or_404(Post, pk=blog_post_id)
         comments = post.comments.filter(post=post).order_by("-created_on")
 
-        queryset = Comment.objects.filter(post=post, approved=False)
+        queryset = Comment.objects.filter(post=post, approved=True)
 
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -104,7 +104,7 @@ class PostDetail(View):
         post = get_object_or_404(Post, pk=blog_post_id)
         comments = post.comments.filter(post=post).order_by("-created_on")
 
-        queryset = Comment.objects.filter(post=post, approved=False)
+        queryset = Comment.objects.filter(post=post, approved=True)
 
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():

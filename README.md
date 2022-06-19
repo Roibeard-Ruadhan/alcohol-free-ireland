@@ -84,9 +84,9 @@ I used [Convergence](https://fonts.google.com/specimen/Convergence) which brings
 The images were sourced via google images & from the website where the are article was sourced as referenced at the end of the blogs. 
 
 ### **Wireframes**
-![Home](media/wireframes/home.png)
-![Blog](media/wireframes/blog.png)
-![Events](media/wireframes/events.png)
+![Home](readme/wireframes/home.png)
+![Blog](readme/wireframes/blog.png)
+![Events](readme/wireframes/events.png)
 
 ## **Technologies / Languages**
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -99,7 +99,7 @@ The images were sourced via google images & from the website where the are artic
 
 
 ### **Database**
-- [Postgres]
+- [Postgres](https://www.postgresql.org/)
 
 ### **Libraries & Frameworks**
 - [Django](https://www.djangoproject.com/)
@@ -133,7 +133,8 @@ The images were sourced via google images & from the website where the are artic
 ## **Features**
 - Users can confirm they are attending an event by clicking on the large user icon underneath the event card. The number beside the 
 icon will add one when clicked to confirm to the organizer the guest attendance. Counting the likes inspired this idea to resolve user attendance confirmation.
-- The user is able to write there own blog & set up there own event when they are logged in.
+- The user is able to write their own blog & set up there own event when they are logged in.
+- The user can comment on & like a blog. 
 - Non users can see the events & blogs but cannot confirm attendance or write their own blog etc. 
 
 ### **Site Navigation**
@@ -186,6 +187,8 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 - I have been in discussions with numerous interested people to help spread the concept so that it can begin to assert it's use case.
 - Looking to approach a few more prominent memebers of social media to discuss collaborating to grow the websites audience which will add more value in time to subcribers.
 - Add a profile page for subscribers to allow them to make updates.
+- Add a link so that users can share blogs or events on social media
+- Add a way for people to register at ease using a social media account
 
 ## **Database Layout**
 - **Posts Diagram**

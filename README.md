@@ -187,6 +187,8 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 - Add a profile page for subscribers to allow them to make updates.
 - Add a link so that users can share blogs or events on social media
 - Add a way for people to register at ease using a social media account
+- The images are too large on the main screen inside the blog page & need some repair work.
+- A loop to confirm the name of attendees for each event(so close!)
 
 ## **Database Layout**
 - **Posts Diagram**

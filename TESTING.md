@@ -84,18 +84,36 @@ The rest of the issues are related to Templating{}
 * Starting from an unregistered customer...
 
     #### General
+    * *As a user I can I want to be clear what the site is for so that I can avoid wasting time if it does not offer me value*
 
+        * On arrival of the website, the user is able to understand the purpose of the website. This is due to the use of imagery, logo, the homepage content and the navigation links available to the user to visit.
 
-
+        * The home page describes the content available & what it can be used for to benifit its users, in the image below the user is informed about the capabilities that become available from using a blog to express their experiences
+        ![Homepage description of Blog](readme/testing/home-page-1.jpg)
+        * The image below the user is informed about the capabilities that become available from using a Events page to either join an event or to set one up in their local area 
+        ![Homepage-description of Events](readme/testing/home-page-2.jpg)
+        * A description of the space is expanding & the possibilities that will exist
+        ![Homepage-website goal](readme/testing/home-page-3.jpg)
 
 
     ### Events
-    * *As a user
+    * *As a user I would like to attend an event in my local community
 
-        * The
+        * The user can confirm attendance of the event by click on the user icon. The user icon when clicked will store the data of that users attendance & the number will rise the state the number of attendees expected. The user can remove themselves from the attendance list by clicking the user icon again.
 
-        ![Homepage background](readme/assets/testing-imag)
+        ![Attendance Icon](readme/testing/attendance-icon.jpg)
 
+    * As I user I would like to be able to set up an event in my local area
+
+    ![Events setup page](readme/testing/attendance-icon.jpg)
+
+    * As a user I would like to get a notification to confirm that they have received my event.
+
+    ![Events setup message](readme/testing/event-added.jpg)
+
+    * As the person who set up an event I would like to see the number of people attending and the names of the users attending( The names of the users attending is in production & may or may not make the cut)
+
+    ![Events setup message](readme/testing/confirmed-attending-no.jpg)
 
     ### Checkout
   

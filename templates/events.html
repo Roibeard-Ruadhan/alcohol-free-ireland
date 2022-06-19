@@ -51,6 +51,9 @@
                         
                             </form>
                             <p class="card-text"> Guests attending: {{ events.guests.all }}</p>
+                            {% for guests in guests.all %}
+        
+                            {% endfor %}
                             
                            
                             <p class="card-text small">Event date: {{ events.event_date}}</p>

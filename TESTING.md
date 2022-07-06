@@ -132,7 +132,6 @@ The rest of the issues are related to Templating{}
     ![Events setup message](readme/testing/confirmed-attending-no.jpg)
 
     
-    
     * As I user I would like to be able to update or delete the event I set up
 
      ![Events setup message](readme/)

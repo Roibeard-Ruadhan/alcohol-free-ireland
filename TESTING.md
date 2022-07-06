@@ -98,12 +98,10 @@ The rest of the issues are related to Templating{}
 
         * *As a user I can easily login or logout & receive messages to confirm the same*
 
-        * As per the folowing images the process to login or logout two simple steps
+        - As per the folowing images the process to login or logout two simple steps
         
         * Logged in message
         ![Logged in message](readme/testing/sign-in-message.jpg)
-        *
-       ![Sign out confirmation](readme/assets/testing-images/user-story/logout.jpg)
         *  Sign out confirmation page
         ![Sign out confirmation](readme/testing/sign-out-confirmation.jpg)
         * *As a user I can easily Signup receive messages to confirm the same*

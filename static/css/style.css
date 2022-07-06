@@ -526,14 +526,13 @@ ul.errorlist {
     top: 8%;
 }
 
-.far {
+.error-far {
     position: absolute;
     font-size: 8.5rem;
     left: 42%;
     top: 15%;
     color: #ffffff;
 }
-
 
 .err2 {
     color: #ffffff;
@@ -542,7 +541,7 @@ ul.errorlist {
     position:absolute;
     left: 68%;
     top: 8%;
-  }
+}
 
 .msg {
     text-align: center;
@@ -553,17 +552,6 @@ ul.errorlist {
     top: 45%;
     width: 75%;
 }
-
-
-a {
-text-decoration: none;
-color: white;
-}
-
-a:hover {
-text-decoration: underline;
-}
-
 
 /*responsive*/
 @media(max-width: 767px){

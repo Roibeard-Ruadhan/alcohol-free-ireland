@@ -52,11 +52,17 @@
                             </form>
 <!-- I really wanted to add this statement below but unfortunately time would not allow as I left it till last to complete --> 
 
-                            <!-- <p class="card-text"> Guests attending: {{ events.guests.all }}</p>
-                            {% for guests in guests.all %}
+                            <p class=""> Guests attending:</p>
+                            {% for guests in events.guests.all %}
+                            <ul class="list-inline-item list">
+                                {% if guests %}
+                                 <li>{{ guests }}</li>
+                                 {% else %}
+                                 <li> Empty </li>
+                                {% endif %}
+                            </ul>
         
                             {% endfor %}
-                             -->
                            
                             <p class="card-text small">Event date: {{ events.event_date}}</p>
                         </div>

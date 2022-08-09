@@ -8,8 +8,7 @@ class EventForm(ModelForm):
     class Meta:
         model = events
 
-        fields =
-        ('location', 'venue', 'venue_image', 'event_date', 'description')
+        fields = ('location', 'venue', 'venue_image', 'event_date', 'description')
 
         labels = {
             'venue_image': 'venue_image',

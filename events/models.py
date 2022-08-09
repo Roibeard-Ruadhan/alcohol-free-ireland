@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
 # Create your models here.
 class events(models.Model):
     # organiser = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -20,14 +21,11 @@ class events(models.Model):
 
     def number_of_guests(self):
         return self.guests.count()
+
     def __str__(self):
         return self.location
+
+
 # Events plural in the admin
     class Meta:
         verbose_name_plural = "Event"
-   
-   
-    # def __str__(self):
-    #      return self.events
-
-

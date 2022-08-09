@@ -8,11 +8,11 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-# Create your views here.
 
+# Create your views here.
 class EventList(generic.ListView):
     model = events
-    queryset = events.objects.filter(approve = True).order_by("-event_date")
+    queryset = events.objects.filter(approve=True).order_by("-event_date")
     template_name = "events.html"
     paginate_by = 6
 
@@ -39,12 +39,11 @@ def add_event(request):
             if 'submitted' in request.POST:
                 submitted = True
 
-    return render(request, 'add_event.html', {'form': form, 'submitted':submitted})
+    return render(request, 'add_event.html', {'form': form, 'submitted': submitted})
 
 
-
-# login required resolves issues with non-users. 
-@login_required  
+# login required resolves issues with non-users.
+@login_required
 def PostEvents(request, location):
     post = get_object_or_404(events, location=location)
     print(post)
@@ -56,8 +55,7 @@ def PostEvents(request, location):
     return redirect('events')
 
 
-
-@login_required 
+@login_required
 def edit_event(request, pk):
     events_obj = events.objects.get(id=pk)
     form = EventForm(instance=events_obj)
@@ -65,24 +63,25 @@ def edit_event(request, pk):
         form = EventForm(request.POST, request.FILES, instance=events_obj)
         if form.is_valid():
             form.save()
-            messages.success(request, 'The event has been updated successfully!')
+            messages.success
+            (request, 'The event has been updated successfully!')
 
             return redirect('events')
 
     context = {'form': form}
-    return render(request, 'edit_event.html',context)
+    return render(request, 'edit_event.html', context)
 
 
-
-@login_required 
+@login_required
 def delete_event(request, pk):
     events_obj = events.objects.get(id=pk)
     if request.method == "POST":
         if events_obj.creator == events_obj.creator:
             events_obj.delete()
-            messages.success(request, 'The event has been deleted successfully!')
+            messages.success
+            (request, 'The event has been deleted successfully!')
             return redirect('events')
     else:
-        messages.error(request, 'You currently do not have access to delete this')
+        messages.error
+        (request, 'You currently do not have access to delete this')
     return render(request, 'delete_event.html')
-

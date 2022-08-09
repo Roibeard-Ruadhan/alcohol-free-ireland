@@ -6,7 +6,6 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         exclude = ('status', 'date_posted', 'likes')
-        
 
 
 class CommentForm(forms.ModelForm):

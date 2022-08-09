@@ -18,7 +18,5 @@ class Contact_mails(models.Model):
     message = models.TextField(blank=False, null=False)
     date = models.DateTimeField(default=timezone.now)
 
-
     def __str__(self):
         return self.subject
-

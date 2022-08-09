@@ -5,7 +5,6 @@ from .forms import ContactForm
 from .models import Contact_mails
 
 
-
 def contact(request):
     """
     A view to return the contact page

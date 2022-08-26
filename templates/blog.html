@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="container-fluid">
-    <div class="col text-center">
+    <div class="col text-center" data-aos="flip-up">
         <a href="{% url 'add_blog' %}" type="button" class="btn btn-standard bouncy justify-content-center">
         <i class="fas fa-users" aria-hidden="true"></i>  ADD BLOG HERE  <i class="fas fa-users" aria-hidden="true"></i></a>
     </div>
@@ -17,25 +17,25 @@
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <div class="card-body ">
-                            <div class="image-container card card-cascade narrower h-100">
+                        <div class="card-body">
+                            <div class="image-container card card-cascade narrower h-100" data-aos="zoom-in">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top view view-cascade overlay"
                                     src="https://res.cloudinary.com/roibeard/image/upload/v1655578160/placeholder.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}
-                                <div class="image-flash">
+                                <div class="image-flash" data-aos="fade-left">
                                     <p class="label">Author: {{ post.author }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'blog_detail' post.id  %}" class="post-link">
-                                <h2 class="card-text">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
+                                <h2 class="card-text" data-aos="fade-right">{{ post.title }}</h2>
+                                <p class="card-text" data-aos="fade-left">{{ post.excerpt }}</p>
                             
                             </a>
                             <hr/>
-                            <p class="card-text small">{{ post.created_on }} <i class="far fa-heart"></i>
+                            <p class="card-text small" data-aos="fade-up">{{ post.created_on }} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                                 {% if request.user == post.author or request.user.is_superuser %}
                                         <a href="{% url 'edit_blog' post.id %}" class="btn btn-standard">Edit</a>
@@ -65,4 +65,11 @@
     </nav>
     {% endif %}
 </div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 3000,
+        once: true,
+      });
+    </script>
 {%endblock%}

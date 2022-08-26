@@ -142,10 +142,10 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 
 ### **Features Implemented**
 - The users can like & comment on posts.
-- Users can write there own blog posts
-- Users can set up there own events
-- Users can confirm attendance att
-- Too many to mention in 5 minutes.
+- Users can write their own blog posts
+- Users can set up their own events
+- Users can confirm attendance at chosen Events
+- When the user scrolls the text and images animate for 3 seconds before settling in its place
 #### **Features relevant to all pages** (extended via *base.html*):
 
 - **Header**
@@ -161,7 +161,7 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 - **Footer** 
 - The footer is a modern professional look with social network connections, navbar tools & contact links plus details
 #### **Home Page** (*index.html*) 
-
+- Animation throughout the home page on the text & images. Text & images detailing the objectives & general function of the website & all its attributes. 
 #### **Log In Page** (*login.html*) & **Register** (*signup.html*)
   **Form** 
 - Login & Register forms were made using the Django inbuilt form.
@@ -182,13 +182,11 @@ icon will add one when clicked to confirm to the organizer the guest attendance.
 - Hopeful this will expand to become 0'0 Europe & beyond but I need to test the ground in Ireland first.
 - User can confirm time & date of event via nofication if one appears in there locality.
 - Event organiser can add a limit to guests in the database which I have currently tried to set at ten but not fully tested yet.
-- I have been in discussions with numerous interested people to help spread the concept so that it can begin to assert it's use case.
-- Looking to approach a few more prominent memebers of social media to discuss collaborating to grow the websites audience which will add more value in time to subcribers.
+- I have been in discussions with numerous interested people to help share the concept to give it legs so that it may assert it's use case.
 - Add a profile page for subscribers to allow them to make updates.
 - Add a link so that users can share blogs or events on social media
 - Add a way for people to register at ease using a social media account
 - The images are too large on the main screen inside the blog page & need some repair work.
-- A loop to confirm the name of attendees for each event(so close!)
 
 ## **Database Layout**
 - **Posts Diagram**

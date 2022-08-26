@@ -31,11 +31,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['non-alc-ireland.herokuapp.com', 'localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-roibeardrua-alcoholfree-uhnm99bqgii.ws-eu59.gitpod.io', 'https://non-alc-ireland.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-roibeardrua-alcoholfree-vr2x894vhhx.ws-eu63.gitpod.io', 'https://non-alc-ireland.herokuapp.com']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

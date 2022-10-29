@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # DEBUG = 'DEVELOPMENT' in os.environ
 DEBUG = False
 
-ALLOWED_HOSTS = ['non-alc-ireland.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['roibeard.ruadhan.com', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-roibeardrua-alcoholfree-vr2x894vhhx.ws-eu63.gitpod.io', 'https://non-alc-ireland.herokuapp.com']
 

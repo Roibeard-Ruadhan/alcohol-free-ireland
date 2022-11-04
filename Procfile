@@ -1,1 +1,1 @@
-web: gunicorn alcohol_free.wsgi:application --log-file
+web: gunicorn alcohol_free.wsgi: --log-file

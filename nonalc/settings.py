@@ -188,3 +188,6 @@ CLOUDINARY = {
       'api_secret': 'jvP5_GLgcUzb5qUfxta1g8EScu8',
       'api_proxy': 'http://proxy.server:3128'
 }
+
+CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+

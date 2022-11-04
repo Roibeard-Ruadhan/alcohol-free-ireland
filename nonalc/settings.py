@@ -182,15 +182,9 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CLOUD_NAME = os.environ.get('CLOUD_NAME')
-API_KEY = os.environ.get('API_KEY')
-API_SECRET_KEY = os.environ.get('API_SECRET_KEY')
-CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
-
-
 CLOUDINARY = {
-      'cloud_name': os.environ.get('CLOUD_NAME'),  
-      'api_key': os.environ.get('API_KEY'),  
+      'cloud_name': os.environ.get('CLOUD_NAME'),
+      'api_key': os.environ.get('API_KEY'),
       'api_secret': os.environ.get('API_SECRET_KEY'),
       'API_PROXY': 'http://proxy.server:3128',
       'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')

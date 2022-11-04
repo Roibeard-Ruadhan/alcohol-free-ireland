@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 # ALLOWED_HOSTS = ['roibeard.ruadhan.com', 'localhost']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://web-production-01b4.up.railway.app/', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-roibeardrua-alcoholfree-vr2x894vhhx.ws-eu63.gitpod.io', 'https://non-alc-ireland.herokuapp.com']
 

@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['roibeard.ruadhan.com', 'localhost']
 ALLOWED_HOSTS = ['*']
@@ -179,12 +179,5 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# CLOUDINARY = {
-#       'CLOUD_NAME': 'roibeard',
-#       'API_KEY': '562688784519216',
-#       'API_SECRET': 'jvP5_GLgcUzb5qUfxta1g8EScu8',
-#       'API_PROXY': 'http://proxy.server:3128'
-# }
 
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')

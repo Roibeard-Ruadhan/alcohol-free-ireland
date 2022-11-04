@@ -1,1 +1,1 @@
-web: gunicorn nonalc.wsgi --log-file -
+web: gunicorn nonalc.wsgi

@@ -181,10 +181,10 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CLOUDINARY = {
-      'cloud_name': 'roibeard',
-      'api_key': '562688784519216',
-      'api_secret': 'jvP5_GLgcUzb5qUfxta1g8EScu8',
-      'api_proxy': 'http://proxy.server:3128'
+      'CLOUD_NAME': 'roibeard',
+      'API_KEY': '562688784519216',
+      'API_SECRET': 'jvP5_GLgcUzb5qUfxta1g8EScu8',
+      'API_PROXY': 'http://proxy.server:3128'
 }
 
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')

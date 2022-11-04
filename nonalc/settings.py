@@ -186,5 +186,5 @@ CLOUDINARY = {
       'cloud_name': 'roibeard',
       'api_key': '562688784519216',
       'api_secret': 'jvP5_GLgcUzb5qUfxta1g8EScu8',
-      'CLOUDINARY_URL': 'cloudinary://562688784519216:jvP5_GLgcUzb5qUfxta1g8EScu8@roibeard'
+      'api_proxy': 'cloudinary://562688784519216:jvP5_GLgcUzb5qUfxta1g8EScu8@roibeard'
 }

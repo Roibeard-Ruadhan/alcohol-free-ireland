@@ -36,7 +36,7 @@ DEBUG = False
 # ALLOWED_HOSTS = ['roibeard.ruadhan.com', 'localhost']
 ALLOWED_HOSTS = ['web-production-01b4.up.railway.app', 'localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-roibeardrua-alcoholfree-vr2x894vhhx.ws-eu63.gitpod.io', 'https://non-alc-ireland.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://5500-roibeardrua-alcoholfree-eis7x0qp36l.ws-eu74.gitpod.io/', 'web-production-01b4.up.railway.app']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

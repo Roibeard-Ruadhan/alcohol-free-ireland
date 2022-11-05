@@ -34,9 +34,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 # ALLOWED_HOSTS = ['roibeard.ruadhan.com', 'localhost']
-ALLOWED_HOSTS = ['web-production-01b4.up.railway.app', 'localhost']
+ALLOWED_HOSTS = ['web-production-01b4.up.railway.app', 'localhost', 'sober.ireland.roibeardruadhan.com']
 
-CSRF_TRUSTED_ORIGINS = ['https://5500-roibeardrua-alcoholfree-eis7x0qp36l.ws-eu74.gitpod.io/', 'web-production-01b4.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://5500-roibeardrua-alcoholfree-eis7x0qp36l.ws-eu74.gitpod.io/', 'web-production-01b4.up.railway.app', 'sober.ireland.roibeardruadhan.com']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 

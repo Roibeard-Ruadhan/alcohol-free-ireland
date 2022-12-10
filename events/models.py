@@ -5,7 +5,10 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class events(models.Model):
-    # organiser = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    """
+    Model representing an event.
+    """
+    # Fields
     location = models.CharField(max_length=150, unique=False)
     venue = models.CharField(max_length=150, unique=False)
     venue_image = CloudinaryField(

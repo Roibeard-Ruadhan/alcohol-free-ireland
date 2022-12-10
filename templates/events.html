@@ -49,12 +49,11 @@
                                   <button type="submit" name="blogpost_id" value="{{events.location}}" class="btn-like"><i class="far fa-user"></i> <span class="guests_num">{{events.number_of_guests}}</span></button>
                                 </p>
                                 
-                                <p data-aos="fade-left">Guests attending:</p>
-                                <details>
+                                <details data-aos="fade-left">
                                   <summary>Click to see the list of guests</summary>
                                   <ul>
                                     {% for guests in events.guests.all %}
-                                      <li data-aos="fade-right">• {{ guests }}</li>
+                                      <li data-aos="fade-up">• {{ guests }}</li>
                                     {% endfor %}
                                   </ul>
                                 </details>

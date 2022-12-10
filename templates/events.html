@@ -53,13 +53,13 @@
                                   <summary>Click to see the list of guests</summary>
                                   <ul>
                                     {% for guests in events.guests.all %}
-                                      <li data-aos="fade-up">• {{ guests }}</li>
+                                      <li>• {{ guests }}</li>
                                     {% endfor %}
                                   </ul>
                                 </details>
-                              </form>
+                            </form>
                            
-                            <p class="card-text small" data-aos="fade-up">Event date: {{ events.event_date}}</p>
+                            <p class="small" data-aos="fade-up">Event date: {{ events.event_date}}</p>
                         </div>
                     </div>
                     {% if events.creator == request.user or request.user.is_superuser %}

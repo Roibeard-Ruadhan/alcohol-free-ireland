@@ -1,1 +1,1 @@
-web: gunicorn nonalc.wsgi
+web: gunicorn nonalc.wsgi:application

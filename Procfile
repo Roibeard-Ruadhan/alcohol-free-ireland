@@ -1,1 +1,1 @@
-web: gunicorn alcohol_free.wsgi
+web: gunicorn nonalc.wsgi

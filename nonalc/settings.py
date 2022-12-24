@@ -35,6 +35,10 @@ DEBUG = False
 
 # ALLOWED_HOSTS = ['roibeard.ruadhan.com', 'localhost']
 ALLOWED_HOSTS = ['web-production-01b4.up.railway.app', 'localhost', 'sober.ireland.roibeardruadhan.com']
+# Add Render.com URL to allowed hosts
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 CSRF_TRUSTED_ORIGINS = ['https://5500-roibeardrua-alcoholfree-eis7x0qp36l.ws-eu74.gitpod.io/', 'https://sober.ireland.roibeardruadhan.com']
 

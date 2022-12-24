@@ -3,7 +3,7 @@
 ## About
 This website was setup to provide a platform for people who are considering taking a break from alcohol & those who don't drink alcohol. It allows people to freely share their experiences with a non-alcoholic drink lifestyle & leaves open a comments space for curious people to interact.
 
-It is also a place for people who enjoy going out to drink non-alcoholic drinks to meet other alcohol free drinkers in their locality. 
+It is also a place for people who enjoy going out to drink non-alcoholic drinks to meet other alcohol free drinkers in their locality. Currently in the process of a new ideation phase to build for international use due to demand. 
 
 Link to [live site](https://sober.ireland.roibeardruadhan.com/)
 

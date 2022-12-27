@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Convergence&display=swap');
 *{
 	box-sizing: border-box;
-    overflow: hidden;
 }
 
 body {
@@ -14,6 +13,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 main {

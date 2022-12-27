@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Convergence&display=swap');
 *{
 	box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body {

@@ -5,7 +5,7 @@ This website was setup to provide a platform for people who are considering taki
 
 It is also a place for people who enjoy going out to drink non-alcoholic drinks to meet other alcohol free drinkers in their locality. Currently in the process of a new ideation phase to build for international use due to demand. 
 
-Link to [live site](https://sober.ireland.roibeardruadhan.com/)
+Link to [live site](https://alcohol-free-ireland.onrender.com/)
 
 ![Responsive](readme/readme-images/responsive.jpg)
 
